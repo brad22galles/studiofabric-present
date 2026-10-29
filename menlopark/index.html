@@ -155,6 +155,13 @@
     .fpo-note{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-6deg);z-index:3;padding:14px 22px;border:1.5px solid var(--accent);color:var(--accent);background:rgba(10,10,10,.55);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;text-align:center;max-width:34ch;line-height:1.5;pointer-events:none;}
     .pd-shot{position:relative;overflow:hidden;background:#161616;aspect-ratio:3/4;}
     .pd-portraits.pd-six{grid-template-columns:repeat(3,1fr);}
+    .fl-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1.5fr;gap:14px;margin-top:56px;}
+    .fl-grid .pd-shot{aspect-ratio:auto;height:38vh;opacity:1!important;transform:none!important;}
+    .fl-grid .fl-hero{grid-column:1/-1;height:auto;aspect-ratio:16/9;}
+    @media(max-width:760px){.fl-grid{grid-template-columns:1fr 1fr;}.fl-grid .pd-shot{height:auto;aspect-ratio:4/5;}.fl-grid .fl-hero{aspect-ratio:16/9;}}
+    .thread-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px;}
+    .thread-pair .pd-shot{aspect-ratio:4/5;opacity:1!important;transform:none!important;}
+    @media(max-width:760px){.thread-pair{grid-template-columns:1fr;}}
     .pd-portrait + .pd-portrait{margin-top:-24px;}
     .section-white .pd-shot{background:#e6e3dd;}
     .pd-shot img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -235,7 +242,7 @@
     .block-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:150px;}
     .block{border-top:1px solid var(--line-dark);padding-top:24px;}
     .block .pn{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:.14em;color:var(--accent-dark);margin-bottom:12px;}
-    .block h3{font-size:clamp(24px,2.6vw,34px);font-weight:200;letter-spacing:-.01em;margin-bottom:12px;}
+    .block h3{font-size:clamp(32px,3.6vw,50px);font-weight:200;letter-spacing:-.015em;line-height:1.1;margin-bottom:22px;}
     .block .pl-line{font-size:17px;font-style:italic;color:var(--accent-dark);margin-bottom:14px;}
     .block .pl-list{list-style:none;margin:0 0 18px;}
     .block .pl-list li{position:relative;padding-left:18px;margin-bottom:9px;font-size:14.5px;line-height:1.45;}
@@ -320,7 +327,7 @@
     @media(max-width:900px){.cd-grid{grid-template-columns:1fr 1fr;}}
 
     /* ghosted TBD overlay */
-    #rings,#map,#swot,#five,#house,#mindful-vs{position:relative;}
+    #rings,#map,#swot,#five,#house,#mindful-vs,.thread-page{position:relative;}
     .section-black .tbd{color:rgba(246,245,242,.07);}
     .tbd{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:2;
       font-family:'Anton',sans-serif;font-size:clamp(160px,32vw,520px);line-height:1;letter-spacing:.02em;color:rgba(17,17,17,.07);user-select:none;}
@@ -345,6 +352,70 @@
     .ig-4{grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;height:66vh;}
     .ig-4 .ig-tile:first-child{grid-row:1/3;}
     .ig-1{grid-template-columns:1fr;height:66vh;}
+    .lt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:1100px;margin:40px auto 0;}
+    .lt-grid .ig-tile{aspect-ratio:1.6;}
+    .lt-grid .ig-tile.p{aspect-ratio:.82;}
+    .lt-grid .ig-tile img{position:absolute;inset:0;}
+    @media(max-width:760px){.lt-grid{grid-template-columns:1fr;}}
+    .bh-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1100px;margin:40px auto 0;}
+    .bh-grid .ig-tile{aspect-ratio:.84;}
+    .bh-grid .big{grid-column:1/3;grid-row:1/3;aspect-ratio:auto;}
+    .bh-grid .wide{grid-column:span 2;aspect-ratio:1.5;}
+    .bh-grid .full{grid-column:1/-1;aspect-ratio:1.5;}
+    .bh-grid .ig-tile img{position:absolute;inset:0;}
+    @media(max-width:760px){.bh-grid{grid-template-columns:1fr 1fr;grid-auto-rows:auto;}.bh-grid .ig-tile{aspect-ratio:4/5;}.bh-grid .big,.bh-grid .wide{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3;}}
+    .amb-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;max-width:1100px;margin:40px auto 0;}
+    .amb-grid .ig-tile img{position:absolute;inset:0;}
+    .amb-grid .x1{grid-column:span 6;aspect-ratio:2.6;}
+    .amb-grid .x2{grid-column:span 4;aspect-ratio:1.5;}
+    .amb-grid .x3{grid-column:span 2;}
+    .amb-grid .x4{grid-column:span 3;aspect-ratio:1.5;}
+    @media(max-width:760px){.amb-grid{grid-template-columns:1fr 1fr;}.amb-grid .ig-tile{grid-column:auto!important;aspect-ratio:4/5!important;}.amb-grid .x1{grid-column:1/-1!important;aspect-ratio:2!important;}}
+    .ig-tea{grid-template-columns:1.5fr 1.02fr;max-width:1100px;margin-left:auto;margin-right:auto;}
+    .ig-tea .ig-tile{aspect-ratio:auto;}
+    .ig-tea .ig-tile:first-child{aspect-ratio:1.5;}
+    .ig-tea .ig-tile img{position:absolute;inset:0;}
+    @media(max-width:760px){.ig-tea{grid-template-columns:1fr;}.ig-tea .ig-tile{aspect-ratio:1.2!important;}}
+    .ig-snd{grid-template-columns:1fr 1fr;max-width:1100px;margin-left:auto;margin-right:auto;}
+    .ig-snd .a{grid-column:1/-1;aspect-ratio:1.9;}
+    .ig-snd .b{aspect-ratio:.86;}
+    @media(max-width:760px){.ig-snd{grid-template-columns:1fr;}}
+    .club-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;max-width:1100px;margin:40px auto 0;}
+    .club-grid .ig-tile img{position:absolute;inset:0;}
+    .club-grid .c1{grid-column:span 4;aspect-ratio:1.5;}
+    .club-grid .c2{grid-column:span 2;}
+    .club-grid .c3{grid-column:span 2;aspect-ratio:.66;}
+    .club-grid .c4,.club-grid .c5{grid-column:span 2;}
+    .club-grid .c6{grid-column:span 6;aspect-ratio:2.2;}
+    @media(max-width:760px){.club-grid{grid-template-columns:1fr 1fr;}.club-grid .ig-tile{grid-column:auto!important;aspect-ratio:4/5!important;}}
+    .ig-3o{grid-template-columns:repeat(3,1fr);max-width:1100px;margin-left:auto;margin-right:auto;}
+    .ig-3o .ig-tile{aspect-ratio:4/5;}
+    .ig-5d{grid-template-columns:repeat(6,1fr);max-width:1100px;margin-left:auto;margin-right:auto;}
+    .ig-5d .t{grid-column:span 2;aspect-ratio:2/3;}
+    .ig-5d .w{grid-column:span 3;aspect-ratio:1.2;}
+    @media(max-width:760px){.ig-5d{grid-template-columns:1fr 1fr;}.ig-5d .t,.ig-5d .w{grid-column:auto;aspect-ratio:4/5;}}
+    .ig-4e{grid-template-columns:1fr 1fr;height:auto;max-width:900px;margin-left:auto;margin-right:auto;}
+    .ig-4e .ig-tile{aspect-ratio:1/1;}
+    .ig-4r{grid-template-columns:1fr 1fr 1fr 1.5fr;height:58vh;}
+    .ig-8b{grid-template-columns:repeat(5,1fr);grid-auto-rows:32vh;opacity:.92;}
+    .ig-jrow{display:flex;gap:14px;margin-top:14px;}
+    .b-thesis{width:100%;aspect-ratio:1.78;margin-top:calc(14px + .5in);}
+    .b-thesis img{position:absolute;inset:0;}
+    .arr-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:43fr 57fr;gap:14px;max-width:1100px;aspect-ratio:2/1;margin:40px auto 0;}
+    .arr-small{display:grid;grid-template-columns:1fr 1fr 1fr;grid-auto-rows:auto;gap:14px;max-width:1100px;margin:14px auto 0;}
+    .arr-small .ig-tile{aspect-ratio:4/5;}
+    .arr-small .ig-tile.wide{grid-column:span 2;aspect-ratio:auto;}
+    @media(max-width:760px){.arr-small{grid-template-columns:1fr 1fr;}}
+    .arr-a{grid-column:1;grid-row:1/3;}.arr-b{grid-column:2;grid-row:1/3;}.arr-c{grid-column:3;grid-row:1;}.arr-d{grid-column:3;grid-row:2;}
+    .arr-grid .ig-tile{min-height:0;}
+    .arr-grid .ig-tile img{position:absolute;inset:0;}
+    @media(max-width:760px){.arr-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;aspect-ratio:auto;}.arr-a,.arr-b,.arr-c,.arr-d{grid-column:auto;grid-row:auto;aspect-ratio:3/4;}}
+    .ig-jrow .ig-tile{min-width:0;}
+    @media(max-width:760px){.ig-jrow{flex-direction:column;}.ig-jrow .ig-tile{flex:none!important;width:100%;}}
+    .ig-2{grid-template-columns:1fr 1fr;height:auto;max-width:980px;margin-left:auto;margin-right:auto;}
+    .ig-2 .ig-tile{aspect-ratio:3/4;}
+    .ig-2 .ig-tile.rv-wide{grid-column:span 2;aspect-ratio:auto;}
+    .ig-2 .ig-tile img{position:absolute;inset:0;}
     .ig-8{grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr;height:66vh;}
     .ig-8 .ig-tile.big{grid-column:1/3;grid-row:1/3;}
     .ig-3{grid-template-columns:repeat(3,1fr);height:58vh;}
@@ -705,9 +776,9 @@
       </div>
       <p class="pd-portrait">This is the willing grind, ambition-filled and locked in, making and living the future. What surprises people isn't the pace of work but the quiet after: home at nine, laptop closed by ten, almost ceremonially. Seeking a reset not a party. One excellent conversation over six adequate ones. One special place over a dozen fake ones. Design-led and forward-looking.</p>
       <div class="pd-grid">
-        <div class="pd-col want"><h4>What they're really after</h4><p>A home that switches them from <em>on</em> to <em>off</em>. The counterbalance. Calm, quiet, organics, respite, no parties, a recovery taken as seriously as work, connections that are curated and edited.</p></div>
-        <div class="pd-col why"><h4>Why here, not a house up the hill</h4><p>A house is a second job and a long drive to anything alive. Another building is another building, uninspired and fabricated. This is — a village at the door, a train that makes the car optional, a home that is seamless.</p></div>
-        <div class="pd-col new"><h4>What they didn't know they wanted</h4><p>A building that offers a reset and matches inspiration with discipline: the sauna-and-plunge circuit, a bedroom built for sleep, a bar at eleven where they can read alone.</p></div>
+        <div class="pd-col want"><h4>The Want</h4><p>A home that switches them from <em>on</em> to <em>off</em>. The counterbalance. Calm, quiet, organics, respite, no parties, a recovery taken as seriously as work, connections that are curated and edited.</p></div>
+        <div class="pd-col why"><h4>Why Here</h4><p>A house is a second job and a long drive to anything alive. Another building is another building, uninspired and fabricated. This is — a village at the door, a train that makes the car optional, a home that is seamless.</p></div>
+        <div class="pd-col new"><h4>What Else</h4><p>A building that offers a reset and matches inspiration with discipline: the sauna-and-plunge circuit, a bedroom built for sleep, a bar at eleven where they can read alone.</p></div>
       </div>
       <div class="pd-portraits">
         <div class="pd-shot"><img src="assets/builder-1.jpg" alt=""><div class="brief">The Builder · portrait 1</div></div>
@@ -731,9 +802,9 @@
       </div>
       <p class="pd-portrait">The bag by the door is always packed. They work wherever the laptop opens — a startup they half-belong to, a freelance practice, an exit that made an office optional. New money, lightly worn. Six weeks on, three weeks off: Baja, Hokkaido, a friend's place in Lisbon. They've never wanted a traditional home and don't have time to run one. Convenience isn't laziness to them; it's the whole design.</p>
       <div class="pd-grid">
-        <div class="pd-col want"><h4>What they're really after</h4><p>A base, not a house. Turnkey enough to leave on a Tuesday and come back to on a Sunday with nothing undone. Neighbours you can skip for a month and pick up with where you left off.</p></div>
-        <div class="pd-col why"><h4>Why here, not a house or an Airbnb</h4><p>A house is an anchor they didn't ask for. An Airbnb is nobody's. This is the base camp they've been improvising in hotels for years: mail held, dog walked, a house car to SFO, and a bar downstairs where the first night back is a welcome.</p></div>
-        <div class="pd-col new"><h4>What they didn't know they wanted</h4><p>That you can live light without living thin. A staff that notices when you're gone and when you're back; a guest suite for the friend passing through; a Thursday table so they never have to plan a dinner to see people.</p></div>
+        <div class="pd-col want"><h4>The Want</h4><p>A base, not a house. Turnkey enough to leave on a Tuesday and come back to on a Sunday with nothing undone. Neighbours you can skip for a month and pick up with where you left off.</p></div>
+        <div class="pd-col why"><h4>Why Here</h4><p>A house is an anchor they didn't ask for. An Airbnb is nobody's. This is the base camp they've been looking for: no demands, mail held, dog walked, workouts whenever, a house car to SFO, and a work table downstairs when they want to connect or collab.</p></div>
+        <div class="pd-col new"><h4>What Else</h4><p>That you can live light without living thin. A staff that notices when you're gone and when you're back; a guest suite for the friend passing through; a Thursday table so they never have to plan a dinner to see people.</p></div>
       </div>
       <div class="pd-portraits">
         <div class="pd-shot"><img src="assets/navigator-1.jpg" alt=""><div class="brief">The Navigator · portrait 1</div></div>
@@ -757,9 +828,9 @@
       </div>
       <p class="pd-portrait">The 8:02 with a bicycle and a paper they're meant to be reviewing. A postdoc from Seoul, a resident off a thirty-hour shift, a professor who still bikes to the lab at sixty. Grinding and focused: the work is the point, and everything else has to be near it. Home is a reset. After hours are for recharging, not performing — the trail, the garden, the run before the train. Underneath the discipline, a youthful streak that still wants a new place, a new argument, a new person at the table.</p>
       <div class="pd-grid">
-        <div class="pd-col want"><h4>What they're really after</h4><p>Proximity, calm and the day given back. A home that works without thought — light, quiet, a desk that isn't the kitchen table — and a reason to look up just outside the door.</p></div>
-        <div class="pd-col why"><h4>Why here, not a house or another building</h4><p>Faculty housing has a waiting list and a feeling of being assigned. A house is a mortgage tied to a job. This is the common room they had on sabbatical and assumed they'd left behind — plus the most persuasive sentence in Peninsula real estate: <em>one stop to Stanford.</em></p></div>
-        <div class="pd-col new"><h4>What they didn't know they wanted</h4><p>A place that feeds the part of them the lab doesn't: a salon with someone from a different field, a run club from the lobby, a glasshouse to tend, a building full of people from everywhere.</p></div>
+        <div class="pd-col want"><h4>The Want</h4><p>Proximity, calm and the day given back. A home that works without thought — light, quiet, a desk that isn't the kitchen table — and a reason to look up just outside the door.</p></div>
+        <div class="pd-col why"><h4>Why Here</h4><p>Faculty housing has a waiting list and a feeling of being assigned. A house is a mortgage tied to a job. This is the common room they had on sabbatical and assumed they'd left behind — plus the most persuasive sentence in Peninsula real estate: <em>one stop to Stanford.</em></p></div>
+        <div class="pd-col new"><h4>What Else</h4><p>A place that feeds the part of them the lab doesn't: an encounter with someone from a different field, a run club from the lobby, a shared book, a building full of stories from everywhere.</p></div>
       </div>
       <div class="pd-portraits">
         <div class="pd-shot"><img src="assets/academic-1.jpg" alt="" style="object-position:62% center"><div class="brief">The Academic · portrait 1</div></div>
@@ -783,9 +854,9 @@
       </div>
       <p class="pd-portrait">Fresh from signing the papers on a five-bedroom they stopped needing a decade ago. Empty-nesters from Sharon Heights, the newly single, the biotech director landing from Boston with two suitcases and a dog — different editions, one mindset: owning less and living more are the same decision. Culturally savvy and well-travelled; they know the difference between a good hotel and a great one and expect the same of a home. No patience for anything that arrives in a flat box.</p>
       <div class="pd-grid">
-        <div class="pd-col want"><h4>What they're really after</h4><p>An upgrade in ease that never feels like a downgrade in life. Service that is real and human. Space that still feels like a home. Belonging without having to work at it.</p></div>
-        <div class="pd-col why"><h4>Why here, not another house or a condo</h4><p>Another house is the same job with a smaller lawn. A condo is a mailbox with an HOA. This is how their friends live in Madrid and Paris: boxes unpacked for them, known by name on day one, a guest suite for the kids, lock-and-leave for three months in Europe, a village to walk to for dinner.</p></div>
-        <div class="pd-col new"><h4>What they didn't know they wanted</h4><p>That lock-and-leave could feel like freedom rather than loss — and that a wine room, a potting shed and a Tuesday supper club add up to a fuller life than the big house ever managed.</p></div>
+        <div class="pd-col want"><h4>The Want</h4><p>An upgrade in ease that never feels like a downgrade in life. Service that is real and human. Space that still feels like a home. Belonging without having to work at it.</p></div>
+        <div class="pd-col why"><h4>Why Here</h4><p>Another house is the same job with a smaller lawn. A condo is a mailbox with an HOA. This is how their friends live in Madrid and Paris: boxes unpacked for them, known by name on day one, a guest suite for the kids, lock-and-leave for three months in Europe, a village to walk to for dinner.</p></div>
+        <div class="pd-col new"><h4>What Else</h4><p>That lock-and-leave could feel like freedom rather than loss — and that a wine room, a potting shed and a Tuesday supper club add up to a fuller life than the big house ever managed.</p></div>
       </div>
       <div class="pd-portraits">
         <div class="pd-shot"><img src="assets/settler-1.jpg" alt=""><div class="brief">The Settler · portrait 1</div></div>
@@ -810,9 +881,9 @@
       </div>
       <p class="pd-portrait">Building the company, or the one after it. They know Soho House and The Battery and have quietly concluded they'd rather live in one than visit. Not the party kind of social — the curtain kind: six people, a closed door, the right introduction made without anyone noticing. A place that impresses by not trying; a corner that's theirs when the talking is done. Loro Piana, not logos. The apartment is an accessory, beautifully done. The house is the point.</p>
       <div class="pd-grid">
-        <div class="pd-col want"><h4>What they're really after</h4><p>A private club they happen to live above. Rooms built to connect, entertain and subtly impress — behind the curtain, never on a stage — and a quiet corner of their own.</p></div>
-        <div class="pd-col why"><h4>Why here, not a membership and an apartment anywhere</h4><p>A membership is a room across town with a queue. A nice apartment is a nice apartment. This is both in one address: a Director of Residences who knows who's coming, a private dining room upstairs, a bar where the regulars are the people they'd want to meet anyway.</p></div>
-        <div class="pd-col new"><h4>What they didn't know they wanted</h4><p>That the building could be the network. A Thursday salon, a guest suite for the visiting partner, a closed-door chef's table, a terrace that works for a first meeting and a last drink.</p></div>
+        <div class="pd-col want"><h4>The Want</h4><p>A private club they happen to live above. Rooms built to connect, entertain and subtly impress — behind the curtain, never on a stage — and a quiet corner of their own.</p></div>
+        <div class="pd-col why"><h4>Why Here</h4><p>A membership is a room across town with a queue. A nice apartment is a nice apartment. This is both in one address: a Director of Residences who knows who's coming, a private dining room upstairs, a bar where the regulars are the people they'd want to meet anyway.</p></div>
+        <div class="pd-col new"><h4>What Else</h4><p>That the building could be the network. A Thursday salon, a guest suite for the visiting partner, a closed-door chef's table, a terrace that works for a first meeting and a last drink.</p></div>
       </div>
       <div class="pd-portraits">
         <div class="pd-shot"><img src="assets/pioneer-1.jpg" alt=""><div class="brief">The Pioneer · portrait 1</div></div>
@@ -830,16 +901,16 @@
           <div class="build-head">
             <p class="eyebrow">Sentiment &amp; Fulfillment</p>
             <h2 class="section-title" style="max-width:none">Calm. Connected.<br>Life handled. Time returned.<br>Everything here. Nothing demanded.</h2>
-            <p class="lede">The core life-home desires that we need to build around.</p>
+            <p class="lede" style="font-size:clamp(11px,1.09vw,13.6px)">The core life-home desires that we need to build around.</p>
           </div>
-          <div class="block-grid">
+          <div class="block-grid" style="margin-top:clamp(110px,14vw,190px)">
             <div class="block build-item">
               <div class="pn">01</div>
               <h3>Seamless living, with an off switch</h3>
               <ul class="pl-list">
-                <li>Tailored and serviced; tech that works and then disappears</li>
+                <li>Tailored and serviced; tech-adjacent and on demand, but with an organic touch where the screen disappears. Sometimes a hello and a custom flat white wins over an app</li>
                 <li>Flow, thoughtful touches, the details done right</li>
-                <li>All wrapped in slow, calm, retreat and respite</li>
+                <li>All wrapped in slow, calm, retreat and respite, the analog escape from the daily tech office</li>
                 <li>Wellness, unplugging, resetting; a private, slightly secluded sensibility</li>
               </ul>
             </div>
@@ -847,10 +918,10 @@
               <div class="pn">02</div>
               <h3>Unspoken style, for the savvy few</h3>
               <ul class="pl-list">
-                <li>Understated luxury: smart, styled but discreet</li>
-                <li>Fewer but exceptional pieces</li>
-                <li>Fractured, not monumental: micro spaces and personal moments over the twelve-person island and the eight-screen game-day lounge</li>
-                <li>The private-club sense of belonging: small circle, behind the curtain</li>
+                <li>Understated luxury: sophisticated, smart, styled but discreet</li>
+                <li>Fewer but exceptional pieces: one intentional piece or space over a bullet list of universal box-ticks</li>
+                <li>Personal, not monumental: multiple small spaces over grand presentations, one-off moments over the twelve-person island and the eight-screen game-day lounge</li>
+                <li>Private-club sense of belonging: small circle, behind the curtain</li>
               </ul>
             </div>
           </div>
@@ -867,7 +938,7 @@
     <div class="container">
       <p class="eyebrow">Section 3.0</p>
       <h2 class="divider-text">The Expression</h2>
-      <p class="lede" style="margin-top:18px">Moving from <em>who they are</em> to how we design for them.</p>
+      <p class="lede" style="margin-top:18px;font-size:clamp(12.8px,1.28vw,16px)">Building a space and experience around their aspiration and intent.</p>
     </div>
   </section>
 
@@ -875,37 +946,24 @@
   <section class="pin-wrap" id="mindful-pin">
     <div class="pin-inner statement section-black" id="mindful">
       <div class="container">
-        <p class="eyebrow">The property-defining statement</p>
+        <p class="eyebrow">Our Guiding Statement</p>
         <h2 class="statement-text">Mindful Luxury</h2>
-        <p class="mindful-intro">Quiet luxury was about what you leave out. Mindful luxury is about what you pay attention to.</p>
+        <p class="mindful-intro">Quiet luxury was about what you leave out.<br>Mindful luxury is about what you pay attention to.<br><br>Intentional, not minimal. Fulfilling, not extravagant.</p>
         <p class="statement-sub" style="margin-top:22px">Not luxury for the sake of luxury. Elite, top of market, no expense spared — but with a personal touch and an ethos that respects time, invites calm, encourages wellness, and resets the idea of connection from outwardly social and loud to inward, reflective and intentional. It guides the programming, the design, and eventually the brand.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============================ LAYER 01 — ETHOS ============================ -->
+  <!-- ============================ LAYER 01 — THE ETHOS ============================ -->
   <section class="persona-detail section-white layer-portrait" id="layer-1">
     <div class="container">
-      <p class="eyebrow">The idea, in layers · 01 of 04</p>
-      <div class="pd-head"><h2>Ethos</h2></div>
-      <p class="pd-portrait">Mindful luxury. Luxury you notice, never luxury that announces itself. It is calm, seamless and tailored, every detail attended to, so that living well takes no effort at all. And with nothing left to manage, there is finally room to be present: an unhurried pace, time that is truly your own, and a home that lets you reset.</p>
-      <div class="pd-portraits">
+      <p class="eyebrow">In One Statement : The Home Page</p>
+      <div class="pd-head"><h2>The Ethos</h2></div>
+      <p class="pd-portrait">Mindful. Present. Personal. High touch. Low noise. Luxury that doesn't announce itself. It is calm, seamless and tailored, every detail attended to, so that living well takes no effort at all. And with nothing left to manage, there is finally room to be present: an unhurried pace, time that is truly your own, and a home that lets you reset.</p>
+      <div class="pd-portraits pd-six">
         <div class="pd-shot"><img src="assets/layer1-1.jpg" alt=""><div class="brief">Calm, seamless, tailored</div></div>
         <div class="pd-shot"><img src="assets/layer1-2.jpg" alt=""><div class="brief">Room to be present</div></div>
         <div class="pd-shot"><img src="assets/layer1-3.jpg" alt=""><div class="brief">A home that lets you reset</div></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="gold-rule light" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
-
-  <!-- ============================ LAYER 02 — ENCOUNTER ============================ -->
-  <section class="persona-detail section-white layer-portrait" id="layer-2">
-    <div class="container">
-      <p class="eyebrow">The idea, in layers · 02 of 04</p>
-      <div class="pd-head"><h2>Encounter</h2></div>
-      <p class="pd-portrait">Mindful luxury can't be imported. Attention needs something real to land on: the light, the materials and the habits of a place. So the feeling has to be built from where we are, out of what this place already does best.</p>
-      <div class="pd-portraits">
         <div class="pd-shot"><img src="assets/layer2-1.jpg" alt=""><div class="brief">The light of this place</div></div>
         <div class="pd-shot"><img src="assets/layer2-2.jpg" alt=""><div class="brief">The materials of this place</div></div>
         <div class="pd-shot"><img src="assets/layer2-3.jpg" alt=""><div class="brief">The habits of this place</div></div>
@@ -915,13 +973,13 @@
 
   <div class="gold-rule light" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
 
-  <!-- ============================ LAYER 03 — CHARACTER ============================ -->
+  <!-- ============================ LAYER 02 — THE THREAD ============================ -->
   <section class="persona-detail section-white layer-portrait" id="layer-3">
     <div class="container">
-      <p class="eyebrow">The idea, in layers · 03 of 04</p>
-      <div class="pd-head"><h2>Character</h2></div>
+      <p class="eyebrow">The Expression : How To Bring It To Life</p>
+      <div class="pd-head"><h2>The Thread</h2></div>
       <p class="pd-portrait"><b style="font-weight:500;text-decoration:underline;text-underline-offset:.14em;text-decoration-thickness:1px;text-decoration-color:var(--accent)">Californian.</b> A spirit that goes looking and a hand that makes things well. California has always belonged to the pioneers, people drawn by discovery and the question of what lies around the next corner. And it has always built from the land itself, from the Spanish revival courtyard to the craftsman bungalow to the mid-century house. Local oak and clay, leather and plaster, shaped to the light and opened to the outdoors, so that the home and its landscape feel like one thing.</p>
-      <p class="pd-portrait">The spirit becomes discovery. The hand becomes material. Small rooms reveal themselves one at a time, and every surface, from plaster to oak to clay, is made to be touched and to grow better with age.</p>
+      <p class="pd-portrait">The sense of discovery, expressed through place. What's around the corner? Behind the curtain? Beyond the hedge? Novel touches. New twists. Small rooms reveal themselves one at a time. Personal encounters. Moments are yours, not the group's. Tailored, not en masse.</p>
       <div class="pd-portraits pd-six">
         <div class="pd-shot"><img src="assets/layer3-1.jpg" alt=""><div class="brief">Spanish revival courtyard</div></div>
         <div class="pd-shot"><img src="assets/layer3-2.jpg" alt=""><div class="brief">Craftsman bungalow · mid-century house</div></div>
@@ -935,20 +993,6 @@
 
   <div class="gold-rule light" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
 
-  <!-- ============================ LAYER 05 — EXPERIENCE ============================ -->
-  <section class="persona-detail section-white layer-portrait" id="layer-5">
-    <div class="container">
-      <p class="eyebrow">The idea, in layers · 04 of 04</p>
-      <div class="pd-head"><h2>Experience</h2></div>
-      <p class="pd-portrait">Daily rituals where both come alive. A salon, a supper, a morning run into the hills: moments that feel attended to, never programmed.</p>
-      <div class="pd-portraits">
-        <div class="pd-shot"><img src="assets/layer5-1.jpg" alt=""><div class="brief">A salon</div></div>
-        <div class="pd-shot"><img src="assets/layer5-2.jpg" alt=""><div class="brief">A supper</div></div>
-        <div class="pd-shot"><img src="assets/layer5-3.jpg" alt=""><div class="brief">A morning run into the hills</div></div>
-      </div>
-      <p class="layer-foot" style="text-align:center;margin-top:48px">Each layer answers the one above it. Nothing here is decoration for its own sake.</p>
-    </div>
-  </section>
 
 
   <!-- ============================ SECTION 04 — MOMENTS & EXPRESSIONS ============================ -->
@@ -959,17 +1003,498 @@
     </div>
   </section>
 
-  <section class="pin-wrap" id="pillars-pin">
-    <div class="pin-inner statement section-white" id="pillars-page">
-      <div class="container" style="text-align:center">
-        <p class="eyebrow">Brand DNA · the idea, in three words</p>
-        <h2 class="section-title" style="max-width:none;margin:0 auto 24px;font-size:clamp(40px,6vw,88px)">Aspiration. Presence. Discovery.</h2>
-        <p class="lede" style="margin:0 auto">Everything we design, program and say should sit under one of these.</p>
+
+
+
+
+
+  <!-- ============================ INSTIGATION 01 — THE BUILDING ============================ -->
+  <section class="section-black info instig" id="instig-building">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 01 : The Building</p><h2 class="section-title">The Building</h2></div>
+        <p class="lede">Setting the tone. An immediate sense of place and air of authenticity. Distinctly Californian. Design-led. Textural and organic. The analog to the hollow tech gloss and predictable interpretations of other buildings.</p>
+      </div>
+      <div class="ig-grid ig-8b">
+        <div class="ig-tile"><img src="assets/building-local-3.jpg" alt=""><div class="brief">Menlo Park · the glass box</div></div>
+        <div class="ig-tile"><img src="assets/building-local-1.jpg" alt=""><div class="brief">Menlo Park · Spanish revival, the rotunda</div></div>
+        <div class="ig-tile"><img src="assets/building-local-2.jpg" alt=""><div class="brief">Menlo Park · craftsman-modern balcony</div></div>
+        <div class="ig-tile"><img src="assets/building-local-5.jpg" alt=""><div class="brief">Menlo Park · the standard courtyard</div></div>
+        <div class="ig-tile"><img src="assets/building-local-6.jpg" alt=""><div class="brief">Menlo Park · stucco, stock railings</div></div>
+      </div>
+      <div class="ig-jrow" style="margin-top:calc(14px + .5in)">
+          <div class="ig-tile" style="flex:1.515 1 0;aspect-ratio:1.515"><img src="assets/building-ref-1.jpg" alt=""><div class="brief">Spanish revival tower, dusk</div></div>
+          <div class="ig-tile" style="flex:0.934 1 0;aspect-ratio:0.934"><img src="assets/building-ref-2.jpg" alt=""><div class="brief">Santa Barbara · street front</div></div>
+          <div class="ig-tile" style="flex:0.667 1 0;aspect-ratio:0.667"><img src="assets/building-ref-3.jpg" alt=""><div class="brief">Courtyard, arcades, palms</div></div>
+      </div>
+      <div class="ig-jrow">
+          <div class="ig-tile" style="flex:1.033 1 0;aspect-ratio:1.033"><img src="assets/building-ref-6.jpg" alt=""><div class="brief">White village, terracotta roofs, gardens</div></div>
+          <div class="ig-tile" style="flex:1.746 1 0;aspect-ratio:1.746"><img src="assets/building-ref-5.jpg" alt=""><div class="brief">White walls, tile roofs, stepped stairs</div></div>
+      </div>
+      <div class="ig-tile b-thesis"><img src="assets/building-thesis.jpg" alt=""><div class="brief">The thesis · arch, planting, life at the threshold</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 02 — THE ARRIVAL ============================ -->
+  <section class="section-black info instig" id="instig-arrival">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 02 : The Arrival</p><h2 class="section-title">The Arrival</h2></div>
+        <p class="lede">Draft: What does it feel like to come home? A threshold, not a lobby. Someone who knows your name, a scent that's yours, the noise of the day left at the door. The first room is the calmest one.</p>
+      </div>
+      <div class="arr-grid">
+        <div class="ig-tile arr-a"><img src="assets/arrival-3.jpg" alt=""><div class="brief">Proper · bikes at the door</div></div>
+        <div class="ig-tile arr-b"><img src="assets/arrival-4.jpg" alt=""><div class="brief">Proper · the bell cart, the first room</div></div>
+        <div class="ig-tile arr-c"><img src="assets/arrival-1.jpg" alt=""><div class="brief">Baja Club · the open door</div></div>
+        <div class="ig-tile arr-d"><img src="assets/arrival-2.jpg" alt=""><div class="brief">The gate, a view straight through</div></div>
+      </div>
+      <div class="arr-small">
+        <div class="ig-tile"><img src="assets/arrival-9.jpg" alt=""><div class="brief">Soho House Barcelona · the door, dressed</div></div>
+        <div class="ig-tile wide"><img src="assets/arrival-7.jpg" alt=""><div class="brief">Stone planters, olive trees, the threshold</div></div>
+        <div class="ig-tile"><img src="assets/arrival-10.jpg" alt=""><div class="brief">St Pancras · terracotta pots, the arch</div></div>
+        <div class="ig-tile"><img src="assets/arrival-11.jpg" alt=""><div class="brief">Pebble and terracotta underfoot</div></div>
+        <div class="ig-tile"><img src="assets/arrival-12.jpg" alt=""><div class="brief">Earl.st · a door behind the garden</div></div>
+        <div class="ig-tile"><img src="assets/arrival-5.jpg" alt=""><div class="brief">L'Ombelico · bronze sign on stone</div></div>
+        <div class="ig-tile"><img src="assets/arrival-6.jpg" alt=""><div class="brief">Aesop · letters on fluted stone</div></div>
+        <div class="ig-tile"><img src="assets/arrival-8.jpg" alt=""><div class="brief">Soho House Barcelona · the plaque</div></div>
       </div>
     </div>
   </section>
 
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
 
+  <!-- ============================ INSTIGATION 03 — THE ENTRY ============================ -->
+  <section class="section-black info instig" id="instig-entrance">
+    <div class="tbd" aria-hidden="true">FPO</div>
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 03 : The Entry</p><h2 class="section-title">The Entry</h2></div>
+        <p class="lede">FPO · Ideas needed. The first few minutes inside: scent, candles, mood and light, music, a concierge who is also the barista — the hello, the coffee, the name remembered.</p>
+      </div>
+      <div class="ig-grid ig-4e" style="grid-template-columns:repeat(4,1fr);max-width:1100px">
+        <div class="ig-tile"><img src="assets/entry-1.jpg" alt=""><div class="brief">FPO · Scent, candles</div></div>
+        <div class="ig-tile"><img src="assets/entry-2.jpg" alt=""><div class="brief">FPO · Mood, light</div></div>
+        <div class="ig-tile"><img src="assets/entry-3.jpg" alt=""><div class="brief">FPO · Music, the soundtrack</div></div>
+        <div class="ig-tile"><img src="assets/entry-4.jpg" alt=""><div class="brief">FPO · Concierge / barista, the hello</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 04 — THE REVEAL ============================ -->
+  <section class="section-black info instig" id="instig-reveal">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 04 : The Reveal</p><h2 class="section-title">The Reveal</h2></div>
+        <p class="lede">What's around the corner? Nothing given away at the door. A stair that turns out of sight, a doorway that frames the next room, a bar you only find once you're already inside. The building unfolds one room at a time, so there is always something left to find.</p>
+      </div>
+      <div class="ig-grid ig-2" style="grid-template-columns:repeat(3,1fr);max-width:1100px">
+        <div class="ig-tile"><img src="assets/reveal-1.jpg" alt=""><div class="brief">A stair that turns out of sight</div></div>
+        <div class="ig-tile"><img src="assets/reveal-2.jpg" alt=""><div class="brief">The room beyond the doorway</div></div>
+        <div class="ig-tile"><img src="assets/reveal-3.jpg" alt=""><div class="brief">A stair rising out of view, oak fins, glass</div></div>
+        <div class="ig-tile"><img src="assets/reveal-4.jpg" alt=""><div class="brief">The Twenty Two · lanterns at the door</div></div>
+        <div class="ig-tile"><img src="assets/reveal-7.jpg" alt=""><div class="brief">The lounge, lamps lit</div></div>
+        <div class="ig-tile"><img src="assets/reveal-8.jpg" alt=""><div class="brief">Soho House Barcelona · the door, half open</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 05 — THE DISCOVERY ============================ -->
+  <section class="section-black info instig" id="instig-discovery">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 05 : The Discovery</p><h2 class="section-title">The Discovery</h2></div>
+        <p class="lede">Small spaces, personal moments, tailored touches. The feel is a tight circle, semi-private: multiple nooks and nuances rather than large gatherings and statement rooms. A window seat, a corner booth, a reading alcove, a room for four. Each one found rather than presented, and each one yours for the moment.</p>
+      </div>
+      <div class="ig-grid ig-8">
+        <div class="ig-tile big"><div class="brief">Key image · a small room revealed, intimate scale</div></div>
+        <div class="ig-tile"><div class="brief">The nook · window seat or alcove</div></div>
+        <div class="ig-tile"><div class="brief">Corner booth · a table for two</div></div>
+        <div class="ig-tile"><div class="brief">Room for four · semi-private lounge</div></div>
+        <div class="ig-tile"><div class="brief">Tailored touch · the detail left for you</div></div>
+        <div class="ig-tile"><div class="brief">Behind the curtain · a threshold</div></div>
+        <div class="ig-tile"><div class="brief">Reading alcove · lamp, chair, quiet</div></div>
+      </div>
+      <p class="ig-ref">Reference: TBD · nooks and nuances over statement rooms</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 06 — THE TEXTURE ============================ -->
+  <section class="section-black info instig" id="instig-05">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 06 : The Texture</p><h2 class="section-title">The Texture</h2></div>
+        <p class="lede">Tile and ceramics as the building's signature material — Californian but worldly, made by hand and meant to be touched. Terracotta, clay and glaze in earth tones; breeze-block screens, curved tiled columns and checkerboard floors. The surface that carries the whole idea: rooted in the land, warmed by the light, better with age.</p>
+      </div>
+      <div class="ig-grid ig-8">
+        <div class="ig-tile big"><img src="assets/instig05-1.jpg" alt=""><div class="brief">Tiled room, drawn curtain, warm light</div></div>
+        <div class="ig-tile"><img src="assets/instig05-2.jpg" alt=""><div class="brief">Terra · clay in earth tones</div></div>
+        <div class="ig-tile"><img src="assets/instig05-3.jpg" alt=""><div class="brief">Glazed by hand · oxblood</div></div>
+        <div class="ig-tile"><img src="assets/instig05-4.jpg" alt=""><div class="brief">Breeze-block screen · wisteria</div></div>
+        <div class="ig-tile"><img src="assets/instig05-5.jpg" alt=""><div class="brief">Stoneware · the maker's mark</div></div>
+        <div class="ig-tile"><img src="assets/instig05-6.jpg" alt=""><div class="brief">Tiled ledge · plaster and wood</div></div>
+        <div class="ig-tile"><img src="assets/instig05-7.jpg" alt=""><div class="brief">Terracotta bar · curved and ribbed</div></div>
+      </div>
+      <p class="ig-ref">Reference: Tile and ceramics as Californian but worldly — handmade, tactile, warm</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 07 — THE LIGHT ============================ -->
+  <section class="section-black info instig" id="instig-light">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 07 : The Light</p><h2 class="section-title">The Light</h2></div>
+        <p class="lede">Draft: Light as a material. Low, warm and layered — a glow under the cabinets, daylight pulled deep into the plan, pendants over the table, sconces over downlights. Nothing harsh, nothing overhead for its own sake.</p>
+      </div>
+      <div class="lt-grid">
+        <div class="ig-tile p"><img src="assets/light-7.jpg" alt=""><div class="brief">Pendants over the long table</div></div>
+        <div class="ig-tile p"><img src="assets/light-8.jpg" alt=""><div class="brief">Sconces, a lamp, the fire</div></div>
+        <div class="ig-tile"><img src="assets/light-3.jpg" alt=""><div class="brief">Living, dining, kitchen in one warm light</div></div>
+        <div class="ig-tile"><img src="assets/light-4.jpg" alt=""><div class="brief">Morning sun across the counter</div></div>
+        <div class="ig-tile"><img src="assets/light-5.jpg" alt=""><div class="brief">Daylight deep into the plan</div></div>
+        <div class="ig-tile"><img src="assets/light-6.jpg" alt=""><div class="brief">Sauna · light along the slats</div></div>
+        <div class="ig-tile"><img src="assets/light-1.jpg" alt=""><div class="brief">Warm wood, a glow beneath the cabinets</div></div>
+        <div class="ig-tile"><img src="assets/light-2.jpg" alt=""><div class="brief">Arched windows, pendants over the island</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 08 — FPO ============================ -->
+  <section class="section-black info instig" id="instig-02">
+    <div class="tbd" aria-hidden="true">FPO</div>
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 08 : The Scent</p><h2 class="section-title">The Scent</h2></div>
+        <p class="lede">The building should smell like somewhere. One scent for the lobby, the club and the corridors, changing with the season — D.S. &amp; Durga or Loewe, never a plug-in — so that coming home has a signature before you've seen a thing.</p>
+      </div>
+      <div class="ig-grid ig-1">
+        <div class="ig-tile"><img src="assets/instig02-1.jpg" alt=""><div class="brief">Single key image · the lobby at dusk, a candle, the oaks outside</div></div>
+      </div>
+      <p class="ig-ref">Reference: D.S. &amp; Durga · Loewe Home Scents</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 09 — FPO ============================ -->
+  <section class="section-black info instig" id="instig-03">
+    <div class="tbd" aria-hidden="true">FPO</div>
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 09 : Installations, not murals</p><h2 class="section-title">Installations, not murals</h2></div>
+        <p class="lede">Art you can walk around, not paint on a wall. Physical, sculptural, made by hand — a few serious pieces placed where people actually pass, so the building collects rather than decorates.</p>
+      </div>
+      <div class="ig-grid ig-3">
+        <div class="ig-tile"><img src="assets/instig03-1.jpg" alt=""><div class="brief">Courtyard sculpture · stone or bronze under the oaks</div></div>
+        <div class="ig-tile"><img src="assets/instig03-2.jpg" alt=""><div class="brief">Suspended piece · the stair or the double-height lobby</div></div>
+        <div class="ig-tile"><img src="assets/instig03-3.jpg" alt=""><div class="brief">Ceramic / textile wall work · the club corridor</div></div>
+      </div>
+      <p class="ig-ref">Reference: TBD — Bay Area makers, Noguchi-scale, not gallery-scale</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 10 — CERAMIC AS ART ============================ -->
+  <section class="section-black info instig" id="instig-ceramic">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 10 : Ceramic as Art</p><h2 class="section-title">Ceramic as Art</h2></div>
+        <p class="lede">Draft: A white tile facade, or something like it, made to be touched. Articulated, dimensional ceramic that catches the light and changes through the day, so the building's skin becomes the art piece. Craft you can put your hand on, not cladding you drive past.</p>
+      </div>
+      <div class="ig-jrow" style="margin-top:72px">
+          <div class="ig-tile" style="flex:1.346 1 0;aspect-ratio:1.346"><img src="assets/ceramic-1.jpg" alt=""><div class="brief">Courtyard · dimensional teal tile band</div></div>
+          <div class="ig-tile" style="flex:0.776 1 0;aspect-ratio:0.776"><img src="assets/ceramic-2.jpg" alt=""><div class="brief">Stair · faceted glaze, light to dark</div></div>
+          <div class="ig-tile" style="flex:0.779 1 0;aspect-ratio:0.779"><img src="assets/ceramic-3.jpg" alt=""><div class="brief">Folded tile · crackle glaze</div></div>
+      </div>
+      <div class="ig-jrow">
+          <div class="ig-tile" style="flex:1.0 1 0;aspect-ratio:1.0"><img src="assets/ceramic-4.jpg" alt=""><div class="brief">Diamond relief wall · metallic glaze</div></div>
+          <div class="ig-tile" style="flex:0.824 1 0;aspect-ratio:0.824"><img src="assets/ceramic-5.jpg" alt=""><div class="brief">Fluted ceramic · raking light</div></div>
+          <div class="ig-tile" style="flex:0.8 1 0;aspect-ratio:0.8"><img src="assets/ceramic-6.jpg" alt=""><div class="brief">Scale screen · open and closed</div></div>
+          <div class="ig-tile" style="flex:0.8 1 0;aspect-ratio:0.8"><img src="assets/ceramic-7.jpg" alt=""><div class="brief">Scale facade · turning the corner</div></div>
+      </div>
+      <p class="ig-ref">Reference: Hotel Hotel, Lisbon (Maria Ana Vasco Costa) · MAAT, Lisbon · Ceràmica Cumella</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 11 — OUTDOORS IN ============================ -->
+  <section class="section-black info instig" id="instig-organic">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 11 : Outdoors In</p><h2 class="section-title">Outdoors In</h2></div>
+        <p class="lede">Draft: Living things, real materials, warm light. Palms in stone pots, woven texture in dappled shade, leather and wood glowing at night. The building should feel grown, not installed.</p>
+      </div>
+      <div class="ig-grid ig-3o">
+        <div class="ig-tile"><img src="assets/organic-1.jpg" alt=""><div class="brief">Palms in stone pots, timber screen</div></div>
+        <div class="ig-tile"><img src="assets/organic-2.jpg" alt=""><div class="brief">Woven texture, dappled shade</div></div>
+        <div class="ig-tile"><img src="assets/organic-3.jpg" alt=""><div class="brief">Leather, wood, palms, candlelight</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 12 — ORGANIC DISCOVERY ============================ -->
+  <section class="section-black info instig" id="instig-discovery">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 12 : Organic Discovery</p><h2 class="section-title">Organic Discovery</h2></div>
+        <p class="lede">Draft: A garden you wander rather than cross. Paths that curve out of sight, benches tucked into planting, a table under the trees. The landscape does the revealing.</p>
+      </div>
+      <div class="ig-grid ig-5d">
+        <div class="ig-tile t"><img src="assets/discovery-2.jpg" alt=""><div class="brief">Tables under the trees</div></div>
+        <div class="ig-tile t"><img src="assets/discovery-3.jpg" alt=""><div class="brief">A path that curves out of sight</div></div>
+        <div class="ig-tile t"><img src="assets/discovery-4.jpg" alt=""><div class="brief">Benches tucked into planting</div></div>
+        <div class="ig-tile w"><img src="assets/discovery-1.jpg" alt=""><div class="brief">Sculpted seating, cork and terrazzo</div></div>
+        <div class="ig-tile w"><img src="assets/discovery-5.jpg" alt=""><div class="brief">A curved bench in the grove</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 13 — NATURAL FITNESS ============================ -->
+  <section class="section-black info instig" id="instig-fitness">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 13 : Natural Fitness</p><h2 class="section-title">Natural Fitness</h2></div>
+        <p class="lede">Draft: A gym that feels like a private club, not a basement. Warm oak, brass and leather, soft light, equipment you'd want to look at — weights in wood and steel, towels rolled on open shelves, a locker room that feels like a spa. Strength training as a ritual, not a chore.</p>
+      </div>
+      <div class="ig-grid ig-5d">
+        <div class="ig-tile t"><img src="assets/fitness-1.jpg" alt=""><div class="brief">The locker room · oak, bronze sconces</div></div>
+        <div class="ig-tile t"><img src="assets/fitness-2.jpg" alt=""><div class="brief">The training hall · vaulted, warm</div></div>
+        <div class="ig-tile t"><img src="assets/fitness-3.jpg" alt=""><div class="brief">Oak and steel weights on the wall</div></div>
+        <div class="ig-tile w" style="aspect-ratio:.95"><img src="assets/fitness-4.jpg" alt=""><div class="brief">Rolled towels, walnut shelving</div></div>
+        <div class="ig-tile w" style="aspect-ratio:.95"><img src="assets/fitness-5.jpg" alt=""><div class="brief">Marble, leather, light</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 14 — BATH HOUSE ============================ -->
+  <section class="section-black info instig" id="instig-04">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 14 : Bath House</p><h2 class="section-title">Bath House</h2></div>
+        <p class="lede">A proper bath house, run as a ritual rather than a gym pool — the hot-and-cold circuit of sauna, steam, cold plunge and warm soak, in dim light and near silence. Organic materials, arched rooms and a Californian calm, considered for the climate as a winter retreat — wellness as the amenity people plan their week around.</p>
+      </div>
+      <div class="bh-grid">
+        <div class="ig-tile big"><img src="assets/instig04-9.jpg" alt=""><div class="brief">The plunge · onyx, stone and walnut, lit from within</div></div>
+        <div class="ig-tile"><img src="assets/instig04-2.jpg" alt=""><div class="brief">Sauna · warm cedar, backlit</div></div>
+        <div class="ig-tile"><img src="assets/instig04-3.jpg" alt=""><div class="brief">Cold plunge · rain shower</div></div>
+        <div class="ig-tile"><img src="assets/instig04-4.jpg" alt=""><div class="brief">The pool, through the arch</div></div>
+        <div class="ig-tile"><img src="assets/instig04-5.jpg" alt=""><div class="brief">Warm-water loungers</div></div>
+        <div class="ig-tile"><img src="assets/instig04-11.jpg" alt=""><div class="brief">Plaster, tile and an arched door</div></div>
+        <div class="ig-tile"><img src="assets/instig04-8.jpg" alt=""><div class="brief">The hammam · zellige, arches, brass and warm light</div></div>
+        <div class="ig-tile"><img src="assets/instig04-13.jpg" alt=""><div class="brief">Black mosaic hammam</div></div>
+        <div class="ig-tile"><img src="assets/instig04-7.jpg" alt=""><div class="brief">Changing rooms · stone and oak</div></div>
+        <div class="ig-tile wide"><img src="assets/instig04-10.jpg" alt=""><div class="brief">Arches, globe lights, the long pool</div></div>
+        <div class="ig-tile wide"><img src="assets/instig04-12.jpg" alt=""><div class="brief">PERS · treatments on a silver tray</div></div>
+        <div class="ig-tile full"><img src="assets/instig04-14.jpg" alt=""><div class="brief">Stone baths, timber ceiling, arched light</div></div>
+      </div>
+      <p class="ig-ref">Reference: Rebello · 6th Palm — the hot-cold bathing circuit, a full spa not a gym pool</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 15 — SOUND SUITE ============================ -->
+  <section class="section-black info instig" id="instig-sound">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 15 : Sound Suite</p><h2 class="section-title">Sound Suite</h2></div>
+        <p class="lede">Draft: A room built purely to listen. Acoustically tuned, warm wood, a wall of vinyl, sculptural speakers, somewhere to lie back. Part members' lounge, part sound café — in the spirit of Bang &amp; Olufsen's Vinyl Room and Japanese kissa culture. No screens, no distractions. Just sound, atmosphere and intention.</p>
+      </div>
+      <div class="ig-grid ig-snd">
+        <div class="ig-tile a"><img src="assets/sound-1.jpg" alt=""><div class="brief">The listening room · sculptural speakers, low sofa</div></div>
+        <div class="ig-tile b"><img src="assets/sound-2.jpg" alt=""><div class="brief">B&amp;O Vinyl Room · a wall of records</div></div>
+        <div class="ig-tile b"><img src="assets/sound-3.jpg" alt=""><div class="brief">Lie back, read, listen</div></div>
+      </div>
+      <p class="ig-ref">Reference: Bang &amp; Olufsen · The Vinyl Room, Copenhagen · Japanese kissa culture</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 16 — THE TEA ROOM ============================ -->
+  <section class="section-black info instig" id="instig-tea">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 16 : The Tea Room</p><h2 class="section-title">The Tea Room</h2></div>
+        <p class="lede">Draft: A slower kind of café. Loose-leaf jars lit on open shelves, a long timber counter, steam and stoneware, a garden beyond the glass. Somewhere to sit with a pot rather than grab a cup — the calm counterpoint to the espresso bar.</p>
+      </div>
+      <div class="ig-grid ig-tea">
+        <div class="ig-tile"><img src="assets/tea-1.jpg" alt=""><div class="brief">Masquespacio · tea house, carved wood arch</div></div>
+        <div class="ig-tile"><img src="assets/tea-2.jpg" alt=""><div class="brief">Loose-leaf wall, timber counter, garden light</div></div>
+      </div>
+      <p class="ig-ref">Reference: Masquespacio Tea House</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 17 — BARISTA BAR ============================ -->
+  <section class="section-black info instig" id="instig-barista">
+    <div class="tbd" aria-hidden="true">FPO</div>
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 17 : Barista Bar</p><h2 class="section-title">Barista Bar</h2></div>
+        <p class="lede">FPO · Ideas needed. A real coffee bar in the lobby, staffed by someone who is part barista, part concierge — the hello, the flat white, the name remembered, the package held.</p>
+      </div>
+      <div class="ig-grid ig-4e" style="grid-template-columns:repeat(4,1fr);max-width:1100px">
+        <div class="ig-tile"><img src="assets/barista-1.jpg" alt=""><div class="brief">FPO · The bar, the machine</div></div>
+        <div class="ig-tile"><img src="assets/barista-2.jpg" alt=""><div class="brief">FPO · The barista-concierge</div></div>
+        <div class="ig-tile"><img src="assets/barista-3.jpg" alt=""><div class="brief">FPO · Lobby seating, morning light</div></div>
+        <div class="ig-tile"><img src="assets/barista-4.jpg" alt=""><div class="brief">FPO · Cups, beans, the detail</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 18 — PADEL CLUB ============================ -->
+  <section class="section-black info instig" id="instig-01">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 18 : Padel Club</p><h2 class="section-title">Padel Club</h2></div>
+        <p class="lede">An elite padel court, run like a posh tennis club rather than a public pickleball slab. Padel is European, social and on the rise; pickleball is stale, corny and everywhere. We want the Re:serve and Padel 9 version — glass walls, good lighting, a bar nearby, and a members' feel — the amenity nobody else in Menlo Park has thought to build.</p>
+      </div>
+      <div class="ig-grid ig-8">
+        <div class="ig-tile big"><img src="assets/instig01-1.jpg" alt=""><div class="brief">Re:serve · the court as the party</div></div>
+        <div class="ig-tile"><img src="assets/instig01-2.jpg" alt=""><div class="brief">Re:serve × AMI · court</div></div>
+        <div class="ig-tile"><img src="assets/instig01-3.jpg" alt=""><div class="brief">The kit, the bench, the after</div></div>
+        <div class="ig-tile"><img src="assets/instig01-4.jpg" alt=""><div class="brief">Indoor club · green, glass, marble tables</div></div>
+        <div class="ig-tile"><img src="assets/instig01-5.jpg" alt=""><div class="brief">Padel 9 · San Diego courts</div></div>
+        <div class="ig-tile"><img src="assets/instig01-6.jpg" alt=""><div class="brief">Re:serve · bench detail</div></div>
+        <div class="ig-tile"><img src="assets/instig01-7.jpg" alt=""><div class="brief">Padel Haus · lobby</div></div>
+      </div>
+      <p class="ig-ref">Reference: Re:serve (New York / Miami) · Padel 9 (San Diego)</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 19 — GOLF SIMULATOR ============================ -->
+  <section class="section-black info instig" id="instig-06">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 19 : Golf Simulator</p><h2 class="section-title">Golf Simulator</h2></div>
+        <p class="lede">A golf simulator done as a members' room, not a garage toy — a Malbon-grade lounge where you can play Pebble or Cypress before dinner, with a proper bar, good light and a wall of clubs. Social and a little clubby, Californian at heart: the amenity that turns a rainy Tuesday into a standing invitation.</p>
+      </div>
+      <div class="ig-grid ig-8">
+        <div class="ig-tile big"><img src="assets/instig06-1.jpg" alt=""><div class="brief">The room · green velvet, vintage golf</div></div>
+        <div class="ig-tile"><img src="assets/instig06-7.jpg" alt=""><div class="brief">Malbon · the signature</div></div>
+        <div class="ig-tile"><img src="assets/instig06-3.jpg" alt=""><div class="brief">Play Pebble before dinner</div></div>
+        <div class="ig-tile"><img src="assets/instig06-4.jpg" alt=""><div class="brief">Tartan, brass, black-and-white</div></div>
+        <div class="ig-tile"><img src="assets/instig06-5.jpg" alt=""><div class="brief">A lesson, a fitting</div></div>
+        <div class="ig-tile"><img src="assets/instig06-6.jpg" alt=""><div class="brief">The wall of balls and clubs</div></div>
+        <div class="ig-tile"><img src="assets/instig06-2.jpg" alt=""><div class="brief">Sim bar · a round on the screen</div></div>
+      </div>
+      <p class="ig-ref">Reference: Malbon — the simulator as a members' lounge, not a garage</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 20 — CYCLING AND RUN CLUB ============================ -->
+  <section class="section-black info instig" id="instig-club">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 20 : Cycling and Run Club</p><h2 class="section-title">Cycling and Run Club</h2></div>
+        <p class="lede">Draft: Road cycling and running are big here. A club that starts at the front door — Saturday rides into the hills, a Tuesday-night run, coffee and a bike wall when you get back. Rapha and Soho House have shown how: the ride is the reason, the community is the point.</p>
+      </div>
+      <div class="club-grid">
+        <div class="ig-tile c1"><img src="assets/club-2.jpg" alt=""><div class="brief">Rapha London · the morning ride out</div></div>
+        <div class="ig-tile c2"><img src="assets/club-1.jpg" alt=""><div class="brief">Run club at the front door</div></div>
+        <div class="ig-tile c3"><img src="assets/club-6.jpg" alt=""><div class="brief">Soho House × Cadence · Tuesday run club</div></div>
+        <div class="ig-tile c4"><img src="assets/club-4.jpg" alt=""><div class="brief">Café · events · group rides</div></div>
+        <div class="ig-tile c5"><img src="assets/club-3.jpg" alt=""><div class="brief">The circle before the run</div></div>
+        <div class="ig-tile c6"><img src="assets/club-5.jpg" alt=""><div class="brief">Rapha clubhouse · bike wall, kit, coffee</div></div>
+      </div>
+      <p class="ig-ref">Reference: Rapha Clubhouses · Soho House × Cadence Run Club</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 21 — AMBLE VALET ============================ -->
+  <section class="section-black info instig" id="instig-amble">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 21 : Amble Valet</p><h2 class="section-title">Amble Valet</h2></div>
+        <p class="lede">Draft: A house car that isn't a car. A fleet of Amble electric carts — leather, cork and canvas, built to wander — to run you to Caltrain, the village, the courts or the farmers market. Part valet, part joyride, all the charm of a beach town in the middle of Menlo Park.</p>
+      </div>
+      <div class="amb-grid">
+        <div class="ig-tile x1"><img src="assets/amble-1.jpg" alt=""><div class="brief">Amble · a ride through the meadow</div></div>
+        <div class="ig-tile x2"><img src="assets/amble-2.jpg" alt=""><div class="brief">Amble · street-legal, California plates</div></div>
+        <div class="ig-tile x3"><img src="assets/amble-3.jpg" alt=""><div class="brief">The cork wheel</div></div>
+        <div class="ig-tile x4"><img src="assets/amble-4.jpg" alt=""><div class="brief">Leather seats, canvas top, front rack</div></div>
+        <div class="ig-tile x4"><img src="assets/amble-5.jpg" alt=""><div class="brief">Seat-back pockets, cork details</div></div>
+      </div>
+      <p class="ig-ref">Reference: Amble</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 22 — PARKHOUSE ============================ -->
+  <section class="section-black info instig" id="instig-phase">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 22 : Parkhouse</p><h2 class="section-title">Parkhouse</h2></div>
+        <p class="lede">Draft: Phase the building, the brand and the mark intentionally, never as separate projects. One name, one identity, built in sequence. The second phase isn't a new building with its own logo. It's the next chapter of the same house.</p>
+      </div>
+      <div class="phase-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,48px);margin-top:clamp(48px,6vw,96px);border-top:1px solid rgba(201,169,110,.35);padding-top:clamp(24px,2.4vw,36px)">
+        <div><p class="eyebrow" style="margin-bottom:14px">01 : Intentional, not separate</p><p class="lede" style="max-width:none">Building, brand and logo phase together. No Parkline East and Parkline West, no second wordmark. One house, one voice.</p></div>
+        <div><p class="eyebrow" style="margin-bottom:14px">02 : Success</p><p class="lede" style="max-width:none">The second phase is proof, not inventory. The story is demand: the first one worked.</p></div>
+        <div><p class="eyebrow" style="margin-bottom:14px">03 : Sequence</p><p class="lede" style="max-width:none">Release it as the next chapter. <em>&ldquo;We're opening a second to meet demand.&rdquo;</em></p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 23 — LIVING IMAGES ============================ -->
+  <section class="section-black info instig" id="instig-living">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Instigation 23 : Living Images</p><h2 class="section-title">Living Images</h2></div>
+        <p class="lede">A new suite of AI-driven imagery that brings the traditional rendering suite to life. Every rendering becomes a visual storybook, adaptable on the fly and updatable weekly for campaign refreshes, changing seasons, day to night, new moods, shifting demo, construction progress and single-viewer tailoring. One image, infinite perspectives, without the cost and timelines of traditional production.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(20px,2.4vw,40px);margin-top:clamp(48px,6vw,96px);border-top:1px solid rgba(201,169,110,.35);padding-top:clamp(24px,2.4vw,36px)">
+        <div><p class="eyebrow" style="margin-bottom:12px">01 : Reframes</p><p style="font-family:inherit;font-size:clamp(17px,1.5vw,22px);margin:0 0 10px">One image. Infinite perspectives.</p><p class="lede" style="max-width:none;font-size:clamp(11px,.95vw,13.5px)">From a single render, existing or newly commissioned, a series of visual stories: new camera angles, moods, times of day and scales. Each one a different chapter of the same project.</p></div>
+        <div><p class="eyebrow" style="margin-bottom:12px">02 : In Motion</p><p style="font-family:inherit;font-size:clamp(17px,1.5vw,22px);margin:0 0 10px">Renders brought to life.</p><p class="lede" style="max-width:none;font-size:clamp(11px,.95vw,13.5px)">Single shots, multi-shot reels and one-minute films, storyboarded and executed from one image or many.</p></div>
+        <div><p class="eyebrow" style="margin-bottom:12px">03 : Mood Board</p><p style="font-family:inherit;font-size:clamp(17px,1.5vw,22px);margin:0 0 10px">Materials, composed and curated.</p><p class="lede" style="max-width:none;font-size:clamp(11px,.95vw,13.5px)">A photographic mood board drawn from the render: the exact materials, textures, colors and finishes, from developer approval to marketing to upgrade specs.</p></div>
+        <div><p class="eyebrow" style="margin-bottom:12px">04 : Maquette</p><p style="font-family:inherit;font-size:clamp(17px,1.5vw,22px);margin:0 0 10px">The physical model, without the physical.</p><p class="lede" style="max-width:none;font-size:clamp(11px,.95vw,13.5px)">A photoreal architectural scale model, balsa or white plaster, with a rotating fly-through.</p></div>
+        <div><p class="eyebrow" style="margin-bottom:12px">05 : Ground Up</p><p style="font-family:inherit;font-size:clamp(17px,1.5vw,22px);margin:0 0 10px">From the render, back to the beginning.</p><p class="lede" style="max-width:none;font-size:clamp(11px,.95vw,13.5px)">An AI construction timelapse, from empty ground to finished building, for pre-leasing and developer storytelling.</p></div>
+      </div>
+      <p class="ig-ref">Reference: <a href="https://livingimages.studiofabric.com" target="_blank" rel="noopener" style="color:inherit">livingimages.studiofabric.com</a> · Studio Fabric</p>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ MARKER — PARKING LOT ============================ -->
+  <section class="divider section-black" id="parking-marker">
+    <div class="container">
+      <p class="eyebrow">Everything past this point is parked</p>
+      <h2 class="divider-text" style="font-size:clamp(56px,11vw,180px)">Parking Lot</h2>
+    </div>
+  </section>
 
   <!-- ============================ NOTES (RAW) ============================ -->
   <section class="section-white info" id="notes">
@@ -1003,181 +1528,6 @@
         <li>Podcast from Richard Meyer and unbound hospitality where employees had allowance to surprise guests with … empower concierge and staff</li>
         <li>Something to play up trees and grove and natural accents</li>
       </ul>
-    </div>
-  </section>
-
-  <!-- ============================ RULE — before instigations ============================ -->
-  <section class="section-white rule-band" style="min-height:0;padding:112px 0">
-    <div class="container"><hr class="hr-rule"></div>
-  </section>
-
-  <!-- ============================ INSTIGATION 01 — PADEL CLUB ============================ -->
-  <section class="section-black info instig" id="instig-01">
-    <div class="container">
-      <div class="info-head">
-        <div><p class="eyebrow">Instigation 01 : Padel Club</p><h2 class="section-title">Padel Club</h2></div>
-        <p class="lede">An elite padel court, run like a posh tennis club rather than a public pickleball slab. Padel is European, social and on the rise; pickleball is stale, corny and everywhere. We want the Re:serve and Padel 9 version — glass walls, good lighting, a bar nearby, and a members' feel — the amenity nobody else in Menlo Park has thought to build.</p>
-      </div>
-      <div class="ig-grid ig-8">
-        <div class="ig-tile big"><img src="assets/instig01-1.jpg" alt=""><div class="brief">Re:serve · the court as the party</div></div>
-        <div class="ig-tile"><img src="assets/instig01-2.jpg" alt=""><div class="brief">Re:serve × AMI · court</div></div>
-        <div class="ig-tile"><img src="assets/instig01-3.jpg" alt=""><div class="brief">The kit, the bench, the after</div></div>
-        <div class="ig-tile"><img src="assets/instig01-4.jpg" alt=""><div class="brief">Indoor club · green, glass, marble tables</div></div>
-        <div class="ig-tile"><img src="assets/instig01-5.jpg" alt=""><div class="brief">Padel 9 · San Diego courts</div></div>
-        <div class="ig-tile"><img src="assets/instig01-6.jpg" alt=""><div class="brief">Re:serve · bench detail</div></div>
-        <div class="ig-tile"><img src="assets/instig01-7.jpg" alt=""><div class="brief">Padel Haus · lobby</div></div>
-      </div>
-      <p class="ig-ref">Reference: Re:serve (New York / Miami) · Padel 9 (San Diego)</p>
-    </div>
-  </section>
-
-  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
-
-  <!-- ============================ INSTIGATION 02 — FPO ============================ -->
-  <section class="section-black info instig" id="instig-02">
-    <div class="tbd" aria-hidden="true">FPO</div>
-    <div class="container">
-      <div class="info-head">
-        <div><p class="eyebrow">Instigation 02 : Scent, by season</p><h2 class="section-title">Scent, by season</h2></div>
-        <p class="lede">The building should smell like somewhere. One scent for the lobby, the club and the corridors, changing with the season — D.S. &amp; Durga or Loewe, never a plug-in — so that coming home has a signature before you've seen a thing.</p>
-      </div>
-      <div class="ig-grid ig-1">
-        <div class="ig-tile"><img src="assets/instig02-1.jpg" alt=""><div class="brief">Single key image · the lobby at dusk, a candle, the oaks outside</div></div>
-      </div>
-      <p class="ig-ref">Reference: D.S. &amp; Durga · Loewe Home Scents</p>
-    </div>
-  </section>
-
-  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
-
-  <!-- ============================ INSTIGATION 03 — FPO ============================ -->
-  <section class="section-black info instig" id="instig-03">
-    <div class="tbd" aria-hidden="true">FPO</div>
-    <div class="container">
-      <div class="info-head">
-        <div><p class="eyebrow">Instigation 03 : Installations, not murals</p><h2 class="section-title">Installations, not murals</h2></div>
-        <p class="lede">Art you can walk around, not paint on a wall. Physical, sculptural, made by hand — a few serious pieces placed where people actually pass, so the building collects rather than decorates.</p>
-      </div>
-      <div class="ig-grid ig-3">
-        <div class="ig-tile"><img src="assets/instig03-1.jpg" alt=""><div class="brief">Courtyard sculpture · stone or bronze under the oaks</div></div>
-        <div class="ig-tile"><img src="assets/instig03-2.jpg" alt=""><div class="brief">Suspended piece · the stair or the double-height lobby</div></div>
-        <div class="ig-tile"><img src="assets/instig03-3.jpg" alt=""><div class="brief">Ceramic / textile wall work · the club corridor</div></div>
-      </div>
-      <p class="ig-ref">Reference: TBD — Bay Area makers, Noguchi-scale, not gallery-scale</p>
-    </div>
-  </section>
-
-  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
-
-  <!-- ============================ INSTIGATION 04 — BATH HOUSE ============================ -->
-  <section class="section-black info instig" id="instig-04">
-    <div class="container">
-      <div class="info-head">
-        <div><p class="eyebrow">Instigation 04 : Bath House</p><h2 class="section-title">Bath House</h2></div>
-        <p class="lede">A proper bath house, run as a ritual rather than a gym pool — the hot-and-cold circuit of sauna, steam, cold plunge and warm soak, in dim light and near silence. Organic materials, arched rooms and a Californian calm, considered for the climate as a winter retreat — wellness as the amenity people plan their week around.</p>
-      </div>
-      <div class="ig-grid ig-8">
-        <div class="ig-tile big"><img src="assets/instig04-1.jpg" alt=""><div class="brief">The bath · green water, globe light, arched calm</div></div>
-        <div class="ig-tile"><img src="assets/instig04-2.jpg" alt=""><div class="brief">Sauna · warm cedar, backlit</div></div>
-        <div class="ig-tile"><img src="assets/instig04-3.jpg" alt=""><div class="brief">Cold plunge · rain shower</div></div>
-        <div class="ig-tile"><img src="assets/instig04-4.jpg" alt=""><div class="brief">The pool, through the arch</div></div>
-        <div class="ig-tile"><img src="assets/instig04-5.jpg" alt=""><div class="brief">Warm-water loungers</div></div>
-        <div class="ig-tile"><img src="assets/instig04-6.jpg" alt=""><div class="brief">Treatment room</div></div>
-        <div class="ig-tile"><img src="assets/instig04-7.jpg" alt=""><div class="brief">Changing rooms · stone and oak</div></div>
-      </div>
-      <p class="ig-ref">Reference: Rebello · 6th Palm — the hot-cold bathing circuit, a full spa not a gym pool</p>
-    </div>
-  </section>
-
-  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
-
-  <!-- ============================ INSTIGATION 05 — CALIFORNIAN TILE ============================ -->
-  <section class="section-black info instig" id="instig-05">
-    <div class="container">
-      <div class="info-head">
-        <div><p class="eyebrow">Instigation 05 : Californian Tile</p><h2 class="section-title">Californian Tile</h2></div>
-        <p class="lede">Tile and ceramics as the building's signature material — Californian but worldly, made by hand and meant to be touched. Terracotta, clay and glaze in earth tones; breeze-block screens, curved tiled columns and checkerboard floors. The surface that carries the whole idea: rooted in the land, warmed by the light, better with age.</p>
-      </div>
-      <div class="ig-grid ig-8">
-        <div class="ig-tile big"><img src="assets/instig05-1.jpg" alt=""><div class="brief">Tiled room, drawn curtain, warm light</div></div>
-        <div class="ig-tile"><img src="assets/instig05-2.jpg" alt=""><div class="brief">Terra · clay in earth tones</div></div>
-        <div class="ig-tile"><img src="assets/instig05-3.jpg" alt=""><div class="brief">Glazed by hand · oxblood</div></div>
-        <div class="ig-tile"><img src="assets/instig05-4.jpg" alt=""><div class="brief">Breeze-block screen · wisteria</div></div>
-        <div class="ig-tile"><img src="assets/instig05-5.jpg" alt=""><div class="brief">Stoneware · the maker's mark</div></div>
-        <div class="ig-tile"><img src="assets/instig05-6.jpg" alt=""><div class="brief">Tiled ledge · plaster and wood</div></div>
-        <div class="ig-tile"><img src="assets/instig05-7.jpg" alt=""><div class="brief">Terracotta bar · curved and ribbed</div></div>
-      </div>
-      <p class="ig-ref">Reference: Tile and ceramics as Californian but worldly — handmade, tactile, warm</p>
-    </div>
-  </section>
-
-  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
-
-  <!-- ============================ INSTIGATION 06 — GOLF SIMULATOR ============================ -->
-  <section class="section-black info instig" id="instig-06">
-    <div class="container">
-      <div class="info-head">
-        <div><p class="eyebrow">Instigation 06 : Golf Simulator</p><h2 class="section-title">Golf Simulator</h2></div>
-        <p class="lede">A golf simulator done as a members' room, not a garage toy — a Malbon-grade lounge where you can play Pebble or Cypress before dinner, with a proper bar, good light and a wall of clubs. Social and a little clubby, Californian at heart: the amenity that turns a rainy Tuesday into a standing invitation.</p>
-      </div>
-      <div class="ig-grid ig-8">
-        <div class="ig-tile big"><img src="assets/instig06-1.jpg" alt=""><div class="brief">The room · green velvet, vintage golf</div></div>
-        <div class="ig-tile"><img src="assets/instig06-7.jpg" alt=""><div class="brief">Malbon · the signature</div></div>
-        <div class="ig-tile"><img src="assets/instig06-3.jpg" alt=""><div class="brief">Play Pebble before dinner</div></div>
-        <div class="ig-tile"><img src="assets/instig06-4.jpg" alt=""><div class="brief">Tartan, brass, black-and-white</div></div>
-        <div class="ig-tile"><img src="assets/instig06-5.jpg" alt=""><div class="brief">A lesson, a fitting</div></div>
-        <div class="ig-tile"><img src="assets/instig06-6.jpg" alt=""><div class="brief">The wall of balls and clubs</div></div>
-        <div class="ig-tile"><img src="assets/instig06-2.jpg" alt=""><div class="brief">Sim bar · a round on the screen</div></div>
-      </div>
-      <p class="ig-ref">Reference: Malbon — the simulator as a members' lounge, not a garage</p>
-    </div>
-  </section>
-
-  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
-
-  <!-- ============================ INSTIGATION 07 — ORGANIC EVERYWHERE ============================ -->
-  <section class="section-black info instig" id="instig-07">
-    <div class="container">
-      <div class="info-head">
-        <div><p class="eyebrow">Instigation 07 : Organic Everywhere</p><h2 class="section-title">Organic Everywhere</h2></div>
-        <p class="lede">Plants and natural texture everywhere — not decoration but the air of the place. Palms and groves in the lobby, vines on the screens, gardens you sit inside. Organic materials and living green carried through every room, indoors and out, so the building feels grown rather than built. Second-home ease with hotel polish.</p>
-      </div>
-      <div class="ig-grid ig-3">
-        <div class="ig-tile"><img src="assets/instig07-1.jpg" alt=""><div class="brief">Palms and planters in the lobby</div></div>
-        <div class="ig-tile"><img src="assets/instig07-2.jpg" alt=""><div class="brief">A garden you sit inside</div></div>
-        <div class="ig-tile"><img src="assets/instig07-3.jpg" alt=""><div class="brief">Green at the door · the way in</div></div>
-      </div>
-      <p class="ig-ref">Reference: greenery as architecture — trees, groves and natural accents throughout</p>
-    </div>
-  </section>
-
-  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
-
-  <!-- ============================ INSTIGATION 08 — PARKLET ============================ -->
-  <section class="section-black info instig" id="instig-08">
-    <div class="container">
-      <div class="info-head">
-        <div><p class="eyebrow">Instigation 08 : Parklet</p><h2 class="section-title">Parklet</h2></div>
-        <p class="lede">A parklet at the front door — a small garden the building gives back to the street. One great tree with a ring of seating, gravel and grasses, benches under a canopy, lit softly at night. Not a lobby amenity but a neighborhood gesture: shade, a place to sit, a grove where there was pavement.</p>
-      </div>
-      <div class="ig-grid ig-8">
-        <div class="ig-tile big"><img src="assets/instig08-1.jpg" alt=""><div class="brief">One great tree, a ring of seating</div></div>
-        <div class="ig-tile"><img src="assets/instig08-4.jpg" alt=""><div class="brief">Sculpted benches, planted islands</div></div>
-        <div class="ig-tile"><img src="assets/instig08-3.jpg" alt=""><div class="brief">Terraced seating in the green</div></div>
-        <div class="ig-tile"><img src="assets/instig08-2.jpg" alt=""><div class="brief">Benches under a young canopy</div></div>
-        <div class="ig-tile"><img src="assets/instig08-6.jpg" alt=""><div class="brief">Gravel, grasses, a place to sit</div></div>
-        <div class="ig-tile"><img src="assets/instig08-5.jpg" alt=""><div class="brief">Lit softly after dark</div></div>
-        <div class="ig-tile"><img src="assets/instig08-7.jpg" alt=""><div class="brief">The mark · a tree, rooted</div></div>
-      </div>
-      <p class="ig-ref">Reference: a single specimen tree, a ring of seating, native grasses — a grove, not a planter</p>
-    </div>
-  </section>
-
-  <!-- ============================ MARKER — PARKING LOT ============================ -->
-  <section class="divider section-black" id="parking-marker">
-    <div class="container">
-      <p class="eyebrow">Everything past this point is parked</p>
-      <h2 class="divider-text" style="font-size:clamp(56px,11vw,180px)">Parking Lot</h2>
     </div>
   </section>
 
