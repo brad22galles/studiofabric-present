@@ -493,6 +493,10 @@
     /* fixed backgrounds are unreliable on touch devices — fall back to a normal cover */
     @media(max-width:860px){
       .divider.has-photo{background-attachment:scroll,scroll;}
+      /* #setting shares the intro's aerial; with no fixed attachment on mobile a
+         scrolling copy would slide up over the fixed landscape-bg. Instead let the
+         fixed landscape-bg show through so only the text scrolls, as on desktop. */
+      #setting{background:transparent;}
     }
     /* hairline rule between Quick Take and Core Comps, with generous breathing room */
     .rule-band{padding:112px 0;}
