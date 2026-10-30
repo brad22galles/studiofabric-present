@@ -424,6 +424,7 @@
     .ig-tile{position:relative;overflow:hidden;background:#161616;}
     .section-white .ig-tile{background:#e6e3dd;}
     .ig-tile img{width:100%;height:100%;object-fit:cover;display:block;}
+    .ig-tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
     .ig-tile .brief{position:absolute;inset:0;display:flex;align-items:flex-end;padding:12px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
     .ig-tile.has-img .brief{display:none;}
     .ig-ref{margin-top:18px;font-size:12px;letter-spacing:.06em;color:var(--muted);}
@@ -1471,7 +1472,7 @@
       </div>
       <p class="b-label" style="margin-top:clamp(40px,5vw,72px)">Case study : Maquette · Seven Broadway, Miami</p>
       <div class="ig-jrow" style="margin-top:0">
-          <div class="ig-tile" style="flex:1.789 1 0;aspect-ratio:1.789"><img src="assets/living-render.jpg" alt=""><div class="brief">Base render</div></div>
+          <div class="ig-tile" style="flex:1.789 1 0;aspect-ratio:1.789"><video src="assets/living-blueprint.mp4" autoplay loop muted playsinline preload="auto" poster="assets/living-render.jpg"></video></div>
           <div class="ig-tile" style="flex:1.789 1 0;aspect-ratio:1.789"><img src="assets/living-maquette.jpg" alt=""><div class="brief">Generated maquette</div></div>
       </div>
       <p class="ig-ref">Reference: <a href="https://livingimages.studiofabric.com" target="_blank" rel="noopener" style="color:inherit">livingimages.studiofabric.com</a> · Studio Fabric</p>
