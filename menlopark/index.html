@@ -570,9 +570,13 @@
     #core-comps{padding-top:96px;}
     .gold-rule .gr-line{display:block;height:1px;background:var(--accent);width:100%;transform:scaleX(1);transform-origin:left center;}
     .anim .gold-rule .gr-line{transform:scaleX(0);transition:transform .12s ease-out;}
+    .ph-ul{position:relative;display:inline-block;}
+    .ph-ul .ph-ul-line{position:absolute;left:0;right:0;bottom:-2px;height:1px;background:#c9a96e;transform-origin:left center;transform:scaleX(1);}
+    .anim .ph-ul .ph-ul-line{transform:scaleX(0);transition:transform .12s ease-out;}
     @media(prefers-reduced-motion:reduce){
       .anim .ov-row,.anim .ov-num,.anim .photo-grid .pg-tile,.anim .pd-col,.anim .pd-shot,.anim .cc-comp{opacity:1!important;transform:none!important;transition:none!important;}
       .anim .gold-rule .gr-line{transform:scaleX(1)!important;transition:none!important;}
+      .anim .ph-ul .ph-ul-line{transform:scaleX(1)!important;transition:none!important;}
       .anim #who-pin{height:auto;}
       .anim #who-pin .pin-inner{position:static;height:auto;}
       .anim #who-parked .who-slide{position:static;opacity:1!important;}
@@ -1448,12 +1452,7 @@
       <div class="info-head">
         <div><p class="eyebrow">Instigation 21</p><h2 class="section-title">Parkhouse</h2></div>
         <p class="lede">Intentional, not separate. A second phase to meet demand from the first. We think that combining the buildings by phase, name and identity will unify the experience, feel and impression.<br><br>We are in a mixed-use project with multiple phases, construction sequencing and typologies. Unifying the residential will make us feel like our own destination, with a coherent theme and intent. It also helps reinforce the residential portion against the backdrop of multiple buildings, addresses, uses, masterplan branding, sub-brands, retail brands, office identities and an oft-confusing, campus-like situation.</p>
-        <p class="ph-pull" style="font-family:'Emilio Trial',Georgia,serif;font-weight:200;font-size:clamp(22px,2.3vw,34px);line-height:1.3;color:#f3ede2;max-width:900px;margin:36px auto 0;text-align:center">One name, one identity, built in sequence. The second phase isn't a new building with its own logo. <span style="border-bottom:1px solid #c9a96e;padding-bottom:2px">It's the next chapter of the same house.</span></p>
-      </div>
-      <div class="phase-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,48px);margin-top:clamp(48px,6vw,96px);border-top:1px solid rgba(201,169,110,.35);padding-top:clamp(24px,2.4vw,36px)">
-        <div><p class="eyebrow" style="margin-bottom:14px">01 : Shared Identity</p><p class="lede" style="max-width:none;line-height:1.15">Sequential but shared branding, assets, website and cross-leasing platform.</p></div>
-        <div><p class="eyebrow" style="margin-bottom:14px">02 : Shared Program</p><p class="lede" style="max-width:none;line-height:1.15">Extended offering, optionality, journeys, encounters and connection points.</p></div>
-        <div><p class="eyebrow" style="margin-bottom:14px">03 : Shared Impression</p><p class="lede" style="max-width:none;line-height:1.15">The combined presentation will allude to a larger scale and more en-masse feel, how do we mitigate that?</p></div>
+        <p class="ph-pull" style="font-family:'Emilio Trial',Georgia,serif;font-weight:200;font-size:clamp(22px,2.3vw,34px);line-height:1.3;color:#f3ede2;max-width:900px;margin:36px auto 0;text-align:center">One name, one identity, built in sequence. The second phase isn't a new building with its own logo. <span class="ph-ul">It's the next chapter of the same house.<span class="gr-line ph-ul-line" aria-hidden="true"></span></span></p>
       </div>
     </div>
   </section>
