@@ -493,6 +493,7 @@
     /* fixed backgrounds are unreliable on touch devices — fall back to a normal cover */
     @media(max-width:860px){
       .divider.has-photo{background-attachment:scroll,scroll;}
+      .liv-grid{grid-template-columns:1fr!important;}
       /* #setting shares the intro's aerial; with no fixed attachment on mobile a
          scrolling copy would slide up over the fixed landscape-bg. Instead let the
          fixed landscape-bg show through so only the text scrolls, as on desktop. */
@@ -540,6 +541,7 @@
     .anim .build-item{opacity:0;will-change:opacity,transform;}
     @media(prefers-reduced-motion:reduce),(max-width:860px){
       .anim .build-pin{height:auto;}
+      .anim #sentiment-pin{height:auto;}
       .anim .build-pin .pin-inner{position:static;height:auto;display:block;overflow:visible;padding:96px 0;}
       .anim .build-inner{opacity:1!important;transform:none!important;}
       .anim .build-item{opacity:1!important;transform:none!important;}
@@ -1467,7 +1469,7 @@
         <div><p class="eyebrow">Instigation 22</p><h2 class="section-title">Living Images</h2></div>
         <p class="lede">A new suite of AI-driven imagery that brings the traditional rendering suite to life. Every rendering becomes a visual storybook, adaptable on the fly and updatable weekly for campaign refreshes, changing seasons, day to night, new moods, shifting demo, construction progress and single-viewer tailoring. One image, infinite perspectives, without the cost and timelines of traditional production.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(20px,2.4vw,40px);margin-top:clamp(48px,6vw,96px);border-top:1px solid rgba(201,169,110,.35);padding-top:clamp(24px,2.4vw,36px)">
+      <div class="liv-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(20px,2.4vw,40px);margin-top:clamp(48px,6vw,96px);border-top:1px solid rgba(201,169,110,.35);padding-top:clamp(24px,2.4vw,36px)">
         <div><p class="eyebrow" style="margin-bottom:12px">01 : Reframes</p><p style="font-family:inherit;font-size:clamp(17px,1.5vw,22px);line-height:1.15;margin:0 0 10px">One image. Infinite perspectives.</p><p class="lede" style="max-width:none;font-size:clamp(11px,.95vw,13.5px)">From a single render, existing or newly commissioned, a series of visual stories: new camera angles, moods, times of day and scales. Each one a different chapter of the same project.</p></div>
         <div><p class="eyebrow" style="margin-bottom:12px">02 : In Motion</p><p style="font-family:inherit;font-size:clamp(17px,1.5vw,22px);line-height:1.15;margin:0 0 10px">Renders brought to life.</p><p class="lede" style="max-width:none;font-size:clamp(11px,.95vw,13.5px)">Single shots, multi-shot reels and one-minute films, storyboarded and executed from one image or many.</p></div>
         <div><p class="eyebrow" style="margin-bottom:12px">03 : Mood Board</p><p style="font-family:inherit;font-size:clamp(17px,1.5vw,22px);line-height:1.15;margin:0 0 10px">Materials, composed and curated.</p><p class="lede" style="max-width:none;font-size:clamp(11px,.95vw,13.5px)">A photographic mood board drawn from the render: the exact materials, textures, colors and finishes, from developer approval to marketing to upgrade specs.</p></div>
