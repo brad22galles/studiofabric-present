@@ -2,6 +2,8 @@
    NQS AI PRESENTATION — SCRIPTS
    ============================================= */
 
+const CDN = 'https://studio-fabric-pull-zone.b-cdn.net/living-images';
+
 // ── CUSTOM CURSOR ────────────────────────────
 (function initCursor() {
   // Skip on coarse pointers (touch devices)
@@ -180,9 +182,9 @@ const motionVideo = document.getElementById('motionVideo');
 let activeMotionKey = 'motion-scene';
 
 const videoSources = {
-  'motion-scene': 'assets/videos/motion-scene.mp4',
-  'motion-multishot': 'assets/videos/motion-multishot.mp4',
-  'motion-film': 'assets/videos/motion-film.mp4',
+  'motion-scene': `${CDN}/assets/videos/motion-scene.mp4`,
+  'motion-multishot': `${CDN}/assets/videos/motion-multishot.mp4`,
+  'motion-film': `${CDN}/assets/videos/motion-film.mp4`,
 };
 
 function activateMotionTier(key) {
@@ -286,10 +288,10 @@ let lightboxImages = []; // full-res paths
 let lightboxIndex = 0;
 let lightboxMode = 'stories'; // 'stories' or 'base'
 
-function thumbPath(c, i)    { return `assets/images/stories/${c}/thumbs/story-${i}.jpg`; }
-function fullPath(c, i)     { return `assets/images/stories/${c}/stories/story-${i}.jpg`; }
-function baseThumb(c, i)    { return `assets/images/stories/${c}/base-thumbs/base-${i}.jpg`; }
-function baseFull(c, i)     { return `assets/images/stories/${c}/base/base-${i}.jpg`; }
+function thumbPath(c, i)    { return `${CDN}/assets/images/stories/${c}/thumbs/story-${i}.jpg`; }
+function fullPath(c, i)     { return `${CDN}/assets/images/stories/${c}/stories/story-${i}.jpg`; }
+function baseThumb(c, i)    { return `${CDN}/assets/images/stories/${c}/base-thumbs/base-${i}.jpg`; }
+function baseFull(c, i)     { return `${CDN}/assets/images/stories/${c}/base/base-${i}.jpg`; }
 
 function buildLightboxImages() {
   const c = CASES[currentCase];
