@@ -596,6 +596,26 @@
 </head>
 <body>
 
+  <style>
+    /* Fixed section nav, top-right — serif, fades to gold; flips to dark ink over light bands */
+    .deck-nav{position:fixed;top:0;right:0;z-index:120;display:flex;gap:clamp(16px,2.1vw,34px);
+      padding:26px clamp(22px,4vw,64px);font-family:var(--font-headline);font-weight:200;
+      font-size:clamp(15px,1.15vw,18px);letter-spacing:.015em;line-height:1;}
+    .deck-nav a{color:var(--white);text-decoration:none;opacity:.8;white-space:nowrap;
+      transition:color .4s ease,opacity .4s ease;}
+    .deck-nav a:hover,.deck-nav a.active{color:var(--accent);opacity:1;}
+    .deck-nav.on-light a{color:var(--black);opacity:.78;}
+    .deck-nav.on-light a:hover,.deck-nav.on-light a.active{color:var(--accent-dark);opacity:1;}
+    @media(max-width:860px){ .deck-nav{gap:14px;padding:16px 18px;font-size:13px;} }
+    @media(max-width:460px){ .deck-nav{gap:11px;padding:13px 14px;font-size:12px;letter-spacing:0;} }
+  </style>
+  <nav class="deck-nav" aria-label="Section navigation">
+    <a href="#intro-pin">Intro</a>
+    <a href="#comp-pin">Comps</a>
+    <a href="#moments-divider">Concept</a>
+    <a href="#style-guide">Style Guide</a>
+  </nav>
+
   <!-- Landscape image fixed behind the intro; revealed as the intro fades out -->
   <div class="landscape-bg" aria-hidden="true"></div>
 
@@ -1512,7 +1532,7 @@
   </style>
 
   <!-- Style Guide — divider -->
-  <section class="divider section-black">
+  <section class="divider section-black" id="style-guide">
     <div class="container">
       <h2 class="divider-text">Style <span style="color:var(--accent)">Guide</span></h2>
     </div>
@@ -1754,10 +1774,31 @@
           if(r.top < vh*1.05 && r.bottom > -vh*0.05){ el.classList.add('in'); }
         }
       }
-      function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); updateRules(); tickIntro(); revealVisible(); ticking=false; }); } }
+      // Section nav: highlight the active link and flip to dark text over light bands.
+      var navEl = document.querySelector('.deck-nav');
+      var navLinks = navEl ? [].slice.call(navEl.querySelectorAll('a')) : [];
+      var navTargets = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+      var navBands = [].slice.call(document.body.children).filter(function(el){ return el.matches && el.matches('section,.pin-wrap,footer,#intro-pin'); });
+      function bandIsLight(el){
+        if(el.classList.contains('section-white')) return true;
+        if(el.classList.contains('section-black')) return false;
+        var inner = el.querySelector('.pin-inner,.hero,section');
+        if(inner){ if(inner.classList.contains('section-white')) return true; if(inner.classList.contains('section-black')) return false; }
+        return false;
+      }
+      function navTick(){
+        if(!navEl) return;
+        var navY = 30, vh = window.innerHeight, band = null;
+        for(var i=0;i<navBands.length;i++){ var r=navBands[i].getBoundingClientRect(); if(r.top<=navY && r.bottom>navY){ band=navBands[i]; break; } }
+        if(band) navEl.classList.toggle('on-light', bandIsLight(band));
+        var idx = 0;
+        for(var j=0;j<navTargets.length;j++){ var t=navTargets[j]; if(t && t.getBoundingClientRect().top <= vh*0.45) idx=j; }
+        for(var k=0;k<navLinks.length;k++){ navLinks[k].classList.toggle('active', k===idx); }
+      }
+      function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); navTick(); updateRules(); tickIntro(); revealVisible(); ticking=false; }); } }
       window.addEventListener('scroll', onScroll, {passive:true});
       window.addEventListener('resize', onScroll);
-      tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); updateRules(); tickIntro(); revealVisible();
+      tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); navTick(); updateRules(); tickIntro(); revealVisible();
       window.addEventListener('load', revealVisible); setTimeout(revealVisible, 800);
 
       // 2) Build on scroll: each row and each tile reveals as it enters the viewport.
