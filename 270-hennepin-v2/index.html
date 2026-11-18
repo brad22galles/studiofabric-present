@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>270 Hennepin Brand Narrative 2.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Anton&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       Studio Fabric house format (700 Colorado system), Parkline edit.
+       Photos: drop files into assets/ using the filenames in each
+       <img src>. Until a file exists, the tile shows its shot brief.
+       ============================================================ */
+    :root{
+      --black:#11181f;
+      --white:#f6f5f2;
+      --ink:#111;
+      --muted:#8a8a8a;
+      --line:rgba(255,255,255,.14);
+      --line-dark:rgba(0,0,0,.12);
+      --accent:#b89a6a; /* warm oak — placeholder until brand color */
+      --accent-dark:#8c7247;
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--black);color:var(--white);
+      font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 40px;width:100%;}
+    section{padding:80px 0;min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
+    .section-black{background:var(--black);color:var(--white);}
+    .section-white{background:var(--white);color:var(--ink);}
+
+    .eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--accent);margin-bottom:24px;}
+    .section-white .eyebrow{color:var(--accent-dark);}
+    .section-title{font-size:clamp(28px,4vw,52px);font-weight:200;line-height:1.15;letter-spacing:-.01em;max-width:16ch;margin-bottom:24px;}
+    .lede{font-size:clamp(16px,1.6vw,20px);font-weight:300;max-width:62ch;opacity:.85;}
+
+    /* hero */
+    .hero{min-height:100vh;display:flex;flex-direction:column;border-bottom:1px solid var(--line);padding:0;}
+    .hero .container{max-width:none;margin:0;display:flex;flex-direction:column;min-height:100vh;padding:56px 40px 48px 1in;text-align:left;}
+    .hero-top{flex:1;display:flex;flex-direction:column;justify-content:center;}
+    .hero-logo{width:105px;height:auto;display:block;opacity:.9;}
+    /* Intro reveal: landscape image fixed behind the intro, which pins and fades out on scroll */
+    .landscape-bg{position:fixed;inset:0;z-index:-1;
+      background-image:linear-gradient(0deg,rgba(10,10,10,.18),rgba(10,10,10,.18)),url('assets/location-spread.jpg');
+      background-size:cover,cover;background-position:center center,center 32%;background-repeat:no-repeat,no-repeat;}
+    #intro-pin{position:relative;}
+    .anim #intro-pin{height:200vh;}
+    .anim #intro-pin .hero{position:sticky;top:0;will-change:opacity;}
+    .hero h1{font-size:clamp(44px,9vw,150px);font-weight:200;line-height:0.98;letter-spacing:-.03em;max-width:none;}
+    @media(max-width:860px){.hero .container{padding:48px 24px 36px 24px;}.hero h1{line-height:1.02;}}
+    .hero .lede{margin-top:18px;font-size:clamp(12.8px,1.28vw,16px);}
+    .hero-meta{margin-top:48px;display:flex;gap:48px;flex-wrap:wrap;font-size:13px;letter-spacing:.04em;}
+    .hero-meta div span{display:block;color:var(--muted);text-transform:uppercase;font-size:10px;letter-spacing:.2em;margin-bottom:6px;}
+
+    /* divider + statement */
+    .divider{min-height:100vh;display:flex;align-items:center;background:var(--black);color:var(--white);}
+    .divider-text{font-size:clamp(36px,6vw,84px);font-weight:200;letter-spacing:-.02em;line-height:1.05;}
+    .divider .container{text-align:center;}
+    .divider .lede{margin-left:auto;margin-right:auto;}
+    .statement{min-height:100vh;display:flex;align-items:center;}
+    .statement-text{font-size:clamp(28px,4vw,56px);font-weight:200;line-height:1.18;letter-spacing:-.01em;max-width:22ch;}
+    .statement-sub{margin-top:28px;font-size:clamp(14px,1.4vw,18px);opacity:.7;max-width:60ch;}
+
+    /* the tell — four short pillars */
+    .tell-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px;}
+    .tell{border-top:1px solid var(--line-dark);padding-top:20px;}
+    .tell .tnum{font-family:'Anton',sans-serif;color:var(--accent-dark);font-size:12px;letter-spacing:.14em;}
+    .tell h3{font-weight:300;font-size:21px;margin:8px 0 8px;letter-spacing:-.01em;}
+    .tell p{font-size:14px;opacity:.78;line-height:1.55;}
+    @media(max-width:900px){.tell-grid{grid-template-columns:repeat(2,1fr);}}
+
+    /* persona — page A: collage + name */
+    .persona-hero{min-height:100vh;padding:56px 40px;display:flex;flex-direction:column;justify-content:flex-start;gap:24px;}
+    .persona-cap{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;max-width:1180px;width:100%;margin:0 auto;}
+    .persona-cap h2{font-size:clamp(34px,5vw,68px);font-weight:200;letter-spacing:-.02em;line-height:1;}
+    .persona-cap .sub{font-size:clamp(14px,1.3vw,17px);opacity:.75;max-width:40ch;text-align:right;font-style:italic;}
+    .montage{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,1fr);gap:9px;width:100%;max-width:1180px;height:74vh;margin:0 auto;}
+    .montage .tile{overflow:hidden;background:#161616;position:relative;}
+    .section-white .montage .tile{background:#e6e3dd;}
+    .montage .t1{grid-column:1/4;grid-row:1/4;}
+    .montage .t2{grid-column:4/7;grid-row:1/3;}
+    .montage .t3{grid-column:4/6;grid-row:3/5;}
+    .montage .t4{grid-column:6/7;grid-row:3/6;}
+    .montage .t5{grid-column:1/3;grid-row:4/7;}
+    .montage .t6{grid-column:3/4;grid-row:4/7;}
+    .montage .t7{grid-column:4/6;grid-row:5/7;}
+    .montage .t8{grid-column:6/7;grid-row:6/7;}
+    .montage img{width:100%;height:100%;object-fit:cover;display:block;}
+    .montage .brief{position:absolute;inset:0;display:flex;align-items:flex-end;padding:14px;
+      font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+    .montage .tile.has-img .brief{display:none;}
+    /* full-bleed variant: edge-to-edge with a slim side gutter */
+    .montage-full{max-width:none;width:100%;margin:44px 0 0;padding:0 32px;}
+    /* responsive: drop the fixed-height collage for a simple 2-up grid on small screens */
+    @media(max-width:900px){
+      .montage{grid-template-columns:repeat(2,1fr);grid-template-rows:none;height:auto;gap:8px;}
+      .montage .tile{grid-column:auto!important;grid-row:auto!important;aspect-ratio:4/3;}
+      .montage-full{margin-top:32px;padding:0 20px;}
+    }
+    @media(max-width:480px){
+      .montage{grid-template-columns:1fr;}
+      .montage .tile{aspect-ratio:3/2;}
+      .montage-full{padding:0 16px;}
+    }
+    /* lifestyle photo grid — mixed orientation, two wide tiles */
+    .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:10px;margin:96px 0 0;}
+    .photo-grid-full{max-width:none;width:100%;padding:0 32px;}
+    .pg-tile{position:relative;overflow:hidden;background:#161616;aspect-ratio:4/5;}
+    .section-white .pg-tile{background:#e6e3dd;}
+    .pg-tile img{width:100%;height:100%;object-fit:cover;display:block;}
+    .pg-tile.wide{grid-column:span 2;aspect-ratio:8/5;}
+    .pg-tile .brief{position:absolute;inset:0;display:flex;align-items:flex-end;padding:12px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+    .pg-tile.has-img .brief{display:none;}
+    .pg-tile.pg-fpo{outline:1px dashed rgba(184,154,106,.5);outline-offset:-1px;}
+    @media(max-width:900px){
+      .photo-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
+      .photo-grid-full{margin-top:60px;padding:0 20px;}
+      .pg-tile.wide{grid-column:span 2;}
+    }
+    @media(max-width:480px){
+      .photo-grid{grid-template-columns:1fr;}
+      .pg-tile.wide{grid-column:span 1;aspect-ratio:3/2;}
+      .photo-grid-full{padding:0 16px;}
+    }
+
+    /* persona — page B: detail */
+    .persona-detail{min-height:100vh;justify-content:flex-start;padding-top:176px;padding-bottom:176px;}
+    .pd-head{display:grid;grid-template-columns:1fr;gap:16px;align-items:start;margin-bottom:40px;max-width:60ch;}
+    .pd-head h2{font-size:clamp(40px,5.2vw,76px);font-weight:200;letter-spacing:-.02em;line-height:1.05;}
+    .pd-head .one{font-size:clamp(15px,1.5vw,19px);font-style:italic;opacity:.75;}
+    .pd-portrait{font-size:clamp(15px,1.45vw,18px);line-height:1.65;max-width:70ch;opacity:.92;margin-bottom:44px;}
+    .pd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);padding-top:40px;}
+    .section-white .pd-grid{border-color:var(--line-dark);}
+    .pd-col h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:14px;}
+    .section-white .pd-col h4{color:var(--accent-dark);}
+    .pd-col p{font-size:14.5px;line-height:1.6;opacity:.88;}
+    .pd-col h4::before{display:block;font-size:clamp(40px,5.2vw,76px);line-height:1;letter-spacing:-.02em;margin-bottom:16px;}
+    .pd-col.want h4::before{content:"01";}
+    .pd-col.why h4::before{content:"02";}
+    .pd-col.new h4::before{content:"03";}
+    .pd-col{text-align:center;padding:0 32px;}
+    .pd-col + .pd-col{border-left:1px solid var(--line);}
+    .section-white .pd-col + .pd-col{border-color:var(--line-dark);}
+    /* Portrait text centered */
+    .persona-detail .container{text-align:center;}
+    .persona-detail .pd-head,.persona-detail .pd-portrait{margin-left:auto;margin-right:auto;}
+    /* three portrait image placeholders under each portrait */
+    .pd-portraits{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;border-top:1px solid var(--line);padding-top:80px;}
+    .section-white .pd-portraits{border-color:var(--line-dark);}
+    .pd-portraits.has-note{position:relative;}
+    .fpo-note{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-6deg);z-index:3;padding:14px 22px;border:1.5px solid var(--accent);color:var(--accent);background:rgba(10,10,10,.55);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;text-align:center;max-width:34ch;line-height:1.5;pointer-events:none;}
+    .pd-shot{position:relative;overflow:hidden;background:#161616;aspect-ratio:3/4;}
+    .pd-portraits.pd-six{grid-template-columns:repeat(3,1fr);}
+    .fl-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1.5fr;gap:14px;margin-top:56px;}
+    .fl-grid .pd-shot{aspect-ratio:auto;height:38vh;opacity:1!important;transform:none!important;}
+    .fl-grid .fl-hero{grid-column:1/-1;height:auto;aspect-ratio:16/9;}
+    @media(max-width:760px){.fl-grid{grid-template-columns:1fr 1fr;}.fl-grid .pd-shot{height:auto;aspect-ratio:4/5;}.fl-grid .fl-hero{aspect-ratio:16/9;}}
+    .thread-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px;}
+    .thread-pair .pd-shot{aspect-ratio:4/5;opacity:1!important;transform:none!important;}
+    @media(max-width:760px){.thread-pair{grid-template-columns:1fr;}}
+    .pd-portrait + .pd-portrait{margin-top:-24px;}
+    .section-white .pd-shot{background:#e6e3dd;}
+    .pd-shot img{width:100%;height:100%;object-fit:cover;display:block;}
+    .pd-shot .brief{position:absolute;inset:0;display:flex;align-items:flex-end;padding:12px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+    .pd-shot.has-img .brief{display:none;}
+    .section-white .pd-col.new{border-color:var(--line-dark);}
+    .pd-col.new p{font-weight:400;}
+    .kicker{margin-top:14px;font-size:14px;color:var(--accent);font-style:italic;}
+    .section-white .kicker{color:var(--accent-dark);}
+    @media(max-width:760px){.pd-grid{grid-template-columns:1fr;gap:40px;}.pd-col{padding:0;text-align:left;}.pd-col + .pd-col{border-left:none;}.pd-portraits{grid-template-columns:1fr 1fr;gap:12px;}}
+
+    /* four up summary */
+    .four-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:48px;}
+    .four{border:1px solid var(--line);padding:26px 22px;min-height:240px;display:flex;flex-direction:column;}
+    .four .n{font-family:'Anton',sans-serif;color:var(--accent);font-size:12px;letter-spacing:.14em;margin-bottom:12px;}
+    .four h3{font-weight:300;font-size:22px;letter-spacing:-.01em;margin-bottom:6px;}
+    .four .one{font-size:13px;font-style:italic;opacity:.65;margin-bottom:16px;}
+    .four p{font-size:13.5px;opacity:.85;line-height:1.55;}
+    .four .w{margin-top:auto;padding-top:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+    @media(max-width:900px){.four-grid{grid-template-columns:repeat(2,1fr);}}
+
+    /* common thread */
+    .thread{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
+    .thread div{padding:28px 24px 28px 0;font-size:15px;line-height:1.5;}
+    .thread div b{display:block;font-weight:500;margin-bottom:6px;}
+    @media(max-width:900px){.thread{grid-template-columns:1fr 1fr;}}
+
+    /* infographics */
+    .info{justify-content:flex-start;padding-top:72px;padding-bottom:72px;}
+    .info-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:12px;}
+    .info-head .section-title{margin-bottom:0;}
+    .info-svg{width:100%;max-width:1100px;height:auto;display:block;margin:0 auto;}
+    @media(max-width:900px){.info-head{grid-template-columns:1fr;gap:16px;}}
+
+    /* what's possible */
+    .poss-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;}
+    .poss{border:1px solid var(--line);padding:22px 20px 20px;min-height:170px;}
+    .poss .pn{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:.14em;color:var(--accent);margin-bottom:10px;}
+    .poss h3{font-weight:300;font-size:19px;letter-spacing:-.01em;margin-bottom:8px;}
+    .poss p{font-size:13.5px;opacity:.78;line-height:1.5;}
+    .poss-rule{margin-top:36px;font-size:clamp(15px,1.5vw,19px);font-weight:300;color:var(--accent);font-style:italic;max-width:70ch;}
+    @media(max-width:900px){.poss-grid{grid-template-columns:repeat(2,1fr);}}
+
+    /* spacer + brand pillars */
+    .spacer{min-height:100vh;}
+    .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px;}
+    .pillar{border-top:1px solid var(--line-dark);padding-top:26px;min-height:0;}
+    .pillar .pn{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:.14em;color:var(--accent-dark);margin-bottom:14px;}
+    .pillar h3{font-size:clamp(28px,3.2vw,42px);font-weight:200;letter-spacing:-.01em;margin-bottom:18px;}
+    .pillar .ph{font-size:14px;color:#999;font-style:italic;}
+    .pillar .pl-line{font-size:17px;font-style:italic;color:var(--accent-dark);margin-bottom:14px;}
+    .pillar p{font-size:14.5px;line-height:1.6;opacity:.9;margin-bottom:14px;}
+    .pillar .pl-sub{font-size:13.5px;opacity:.75;}
+    .pillar .pl-list{list-style:none;margin:0 0 18px;}
+    .pillar .pl-list li{position:relative;padding-left:18px;margin-bottom:9px;font-size:14.5px;line-height:1.45;}
+    .pillar .pl-list li::before{content:"—";position:absolute;left:0;color:var(--accent-dark);}
+    .pillar .pl-sub b{font-weight:500;color:var(--ink);}
+    @media(max-width:900px){.pillar-grid{grid-template-columns:1fr;}}
+
+    /* five bubbles */
+    .bubble-row{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:48px;}
+    .bubble{aspect-ratio:1/1;border-radius:50%;border:1.2px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12% 10%;}
+    .b1{border-color:#4a6b8a;background:rgba(74,107,138,.08);}
+    .b2{border-color:#8c7247;background:rgba(140,114,71,.08);}
+    .b3{border-color:#5f7a5a;background:rgba(95,122,90,.08);}
+    .b4{border-color:#8a5a5a;background:rgba(138,90,90,.08);}
+    .b5{border-color:#6b5a7a;background:rgba(107,90,122,.08);}
+    .bubble .bn{font-family:'Anton',sans-serif;font-size:11px;letter-spacing:.14em;color:var(--accent-dark);margin-bottom:6px;}
+    .bubble h3{font-size:clamp(16px,1.6vw,21px);font-weight:300;letter-spacing:-.01em;margin-bottom:8px;}
+    .bubble p{font-size:clamp(11.5px,1.05vw,13.5px);line-height:1.4;opacity:.85;font-style:italic;}
+    .bubble .bw{margin-top:8px;font-size:10px;letter-spacing:.18em;color:#888;}
+    .shared-band{margin-top:40px;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);padding:22px 0;display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;}
+    .sb-k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;}
+    .sb-items{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;font-size:15px;font-weight:300;}
+    @media(max-width:900px){.bubble-row{grid-template-columns:repeat(3,1fr);}.shared-band{grid-template-columns:1fr;}.sb-items{grid-template-columns:1fr 1fr;}}
+
+    /* core idea */
+    .block-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:150px;}
+    .block{border-top:1px solid var(--line-dark);padding-top:24px;}
+    .block .pn{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:.14em;color:var(--accent-dark);margin-bottom:12px;}
+    .block h3{font-size:clamp(20px,2.2vw,29px);font-weight:200;letter-spacing:-.015em;line-height:1.1;margin-bottom:22px;white-space:nowrap;}
+    .block .pl-line{font-size:17px;font-style:italic;color:var(--accent-dark);margin-bottom:14px;}
+    .block .pl-list{list-style:none;margin:0 0 18px;}
+    .block .pl-list li{position:relative;padding-left:18px;margin-bottom:9px;font-size:14.5px;line-height:1.45;}
+    .block .pl-list li::before{content:"—";position:absolute;left:0;color:var(--accent-dark);}
+    .block .pl-sub{font-size:13.5px;opacity:.75;}
+    .block .pl-sub b{font-weight:500;color:var(--ink);}
+    #mindful .statement-text{font-size:clamp(44px,7vw,96px);}
+    #mindful .statement-sub{max-width:70ch;font-size:clamp(15px,1.5vw,19px);opacity:.8;}
+    #mindful .mindful-intro{margin-top:28px;font-size:clamp(15px,1.5vw,19px);font-weight:300;line-height:1.5;max-width:40ch;color:var(--accent);}
+    .vs-table{margin-top:40px;border-top:1px solid var(--line-dark);}
+    .vs-row{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;padding:16px 0;border-bottom:1px solid var(--line-dark);font-size:16px;font-weight:300;}
+    .vs-row div:first-child{color:#777;}
+    .vs-head{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;}
+    .vs-head div:first-child{color:#999;}
+    @media(max-width:900px){.block-grid{grid-template-columns:1fr;}.vs-row{grid-template-columns:1fr;gap:6px;}}
+
+    /* key thoughts list (shared day) */
+    .kt-list{margin-top:36px;}
+    .kt-item{display:flex;gap:28px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line);}
+    .kt-item:last-child{border-bottom:1px solid var(--line);}
+    .kt-num{font-family:'Anton',sans-serif;font-size:18px;line-height:1;color:var(--accent);min-width:64px;letter-spacing:.04em;}
+    .kt-text{font-size:clamp(14.5px,1.4vw,17px);font-weight:300;line-height:1.5;opacity:.92;}
+    .kt-text b{font-weight:500;}
+    .section-white .kt-item{border-color:var(--line-dark);}
+    .section-white .kt-num{color:var(--accent-dark);}
+    .kt-foot{margin-top:28px;font-size:15px;font-style:italic;opacity:.75;max-width:70ch;}
+
+    /* parking lot */
+    .park-list{list-style:none;margin-top:36px;columns:2;column-gap:56px;}
+    .park-list li{position:relative;padding-left:22px;margin-bottom:12px;font-size:14.5px;line-height:1.5;opacity:.9;break-inside:avoid;}
+    .park-list li::before{content:"+";position:absolute;left:0;color:var(--accent);}
+    @media(max-width:900px){.park-list{columns:1;}}
+
+    /* raw notes */
+    .notes-list{list-style:none;margin-top:36px;columns:2;column-gap:56px;}
+    .notes-list li{position:relative;padding-left:22px;margin-bottom:10px;font-size:14px;line-height:1.5;opacity:.9;break-inside:avoid;}
+    .notes-list li::before{content:"+";position:absolute;left:0;color:var(--accent-dark);}
+    @media(max-width:900px){.notes-list{columns:1;}}
+
+    /* exceptions block (quick take) */
+    .exc{margin-top:28px;max-width:70ch;}
+    .exc-design{margin-top:22px;}
+    .exc-design b{font-weight:500;color:var(--ink);}
+    .exc-design em.hl{font-weight:500;color:var(--ink);}
+    .exc-k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;margin-bottom:12px;}
+    .exc-list{list-style:none;}
+    .exc-list li{position:relative;padding-left:20px;margin-bottom:8px;font-size:14.5px;line-height:1.5;opacity:.85;}
+    .exc-list li::before{content:"—";position:absolute;left:0;color:var(--accent-dark);}
+    .exc-list b{font-weight:500;}
+    .exc-foot{margin-top:14px;font-size:15px;font-style:italic;color:var(--accent-dark);}
+
+    /* core comps page */
+    #core-comps .info-head{grid-template-columns:1fr 1.4fr;align-items:start;}
+    .cc-list{margin-top:4px;}
+    .cc-list li{font-size:13.5px;margin-bottom:9px;}
+    .cc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;margin-top:40px;}
+    .cc-comp{display:flex;flex-direction:column;gap:10px;}
+    .cc-name{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#777;margin-top:2px;}
+    .cc-tile{aspect-ratio:16/9;overflow:hidden;background:#e6e3dd;position:relative;}
+    .cc-tile img{width:100%;height:100%;object-fit:contain;display:block;}
+    .cc-tile .brief{position:absolute;inset:0;display:flex;align-items:flex-end;padding:10px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#777;line-height:1.4;}
+    .cc-tile.has-img .brief{display:none;}
+    @media(max-width:900px){.cc-grid{grid-template-columns:1fr 1fr;}#core-comps .info-head{grid-template-columns:1fr;}}
+
+    /* residents overview */
+    .ov-list{margin-top:40px;border-top:1px solid var(--line-dark);}
+    .ov-row{display:grid;grid-template-columns:56px 1.1fr 1.3fr;gap:28px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line-dark);}
+    .ov-num{font-family:'Anton',sans-serif;font-size:16px;color:var(--accent-dark);letter-spacing:.06em;}
+    .ov-name{font-size:clamp(20px,2vw,26px);font-weight:300;letter-spacing:-.01em;}
+    .ov-name span{display:block;font-size:12.5px;color:#777;margin-top:4px;font-weight:300;}
+    .ov-line{font-size:clamp(14px,1.3vw,17px);font-style:italic;opacity:.85;}
+    .ov-w{font-size:11px;letter-spacing:.18em;color:#999;text-align:right;}
+    @media(max-width:900px){.ov-row{grid-template-columns:40px 1fr;gap:8px 16px;}.ov-line,.ov-w{grid-column:2;text-align:left;}}
+
+    /* comp detail pages */
+    .comp-detail{padding-top:72px;padding-bottom:72px;}
+    .cd-where{font-size:13px;color:var(--muted);margin-top:-12px;letter-spacing:.04em;}
+    .cd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 16px;margin-top:36px;}
+    .cd-tile{display:flex;flex-direction:column;gap:8px;}
+    .cd-tile img{width:100%;aspect-ratio:16/11.3;object-fit:contain;display:block;background:#161616;}
+    .cd-cap{font-size:11px;letter-spacing:.08em;color:var(--muted);line-height:1.4;}
+    @media(max-width:900px){.cd-grid{grid-template-columns:1fr 1fr;}}
+
+    /* ghosted TBD overlay */
+    #rings,#map,#swot,#five,#house,#mindful-vs,.thread-page{position:relative;}
+    .section-black .tbd{color:rgba(246,245,242,.07);}
+    .tbd{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:2;
+      font-family:'Anton',sans-serif;font-size:clamp(160px,32vw,520px);line-height:1;letter-spacing:.02em;color:rgba(17,17,17,.07);user-select:none;}
+
+    /* the idea, in layers */
+    .layer-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center;}
+    .ly-images{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:72vh;}
+    .ly-tile{overflow:hidden;background:#161616;position:relative;}
+    .section-white .ly-tile{background:#e6e3dd;}
+    .ly-tile:first-child{grid-column:1/3;}
+    .ly-tile img{width:100%;height:100%;object-fit:cover;display:block;}
+    .ly-tile .brief{position:absolute;inset:0;display:flex;align-items:flex-end;padding:12px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+    .ly-tile.has-img .brief{display:none;}
+    @media(max-width:900px){.layer-grid{grid-template-columns:1fr;gap:28px;}.ly-images{height:48vh;}}
+    .layer .layer-name{font-size:clamp(40px,6vw,88px);font-weight:200;letter-spacing:-.02em;line-height:1;margin-bottom:28px;}
+    .layer .layer-body{font-size:clamp(17px,1.9vw,24px);font-weight:300;line-height:1.5;max-width:58ch;opacity:.9;}
+    .layer .layer-foot{margin-top:40px;font-size:15px;font-style:italic;opacity:.65;max-width:58ch;}
+
+    /* instigations */
+    .instig{position:relative;}
+    .ig-grid{display:grid;gap:14px;margin-top:40px;}
+    .ig-4{grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;height:66vh;}
+    .ig-4 .ig-tile:first-child{grid-row:1/3;}
+    .ig-1{grid-template-columns:1fr;height:66vh;}
+    .lt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:1100px;margin:40px auto 0;}
+    .lt-grid .ig-tile{aspect-ratio:1.6;}
+    .lt-grid .ig-tile.p{aspect-ratio:.82;}
+    .lt-grid .ig-tile img{position:absolute;inset:0;}
+    @media(max-width:760px){.lt-grid{grid-template-columns:1fr;}}
+    .bh-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1100px;margin:40px auto 0;}
+    .bh-grid .ig-tile{aspect-ratio:.84;}
+    .bh-grid .big{grid-column:1/3;grid-row:1/3;aspect-ratio:auto;}
+    .bh-grid .wide{grid-column:span 2;aspect-ratio:1.5;}
+    .bh-grid .full{grid-column:1/-1;aspect-ratio:1.5;}
+    .bh-grid .ig-tile img{position:absolute;inset:0;}
+    @media(max-width:760px){.bh-grid{grid-template-columns:1fr 1fr;grid-auto-rows:auto;}.bh-grid .ig-tile{aspect-ratio:4/5;}.bh-grid .big,.bh-grid .wide{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3;}}
+    .amb-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;max-width:1100px;margin:40px auto 0;}
+    .amb-grid .ig-tile img{position:absolute;inset:0;}
+    .amb-grid .x1{grid-column:span 6;aspect-ratio:2.6;}
+    .amb-grid .x2{grid-column:span 4;aspect-ratio:1.5;}
+    .amb-grid .x3{grid-column:span 2;}
+    .amb-grid .x4{grid-column:span 3;aspect-ratio:1.5;}
+    @media(max-width:760px){.amb-grid{grid-template-columns:1fr 1fr;}.amb-grid .ig-tile{grid-column:auto!important;aspect-ratio:4/5!important;}.amb-grid .x1{grid-column:1/-1!important;aspect-ratio:2!important;}}
+    .ig-tea{grid-template-columns:1.5fr 1.02fr;max-width:1100px;margin-left:auto;margin-right:auto;}
+    .ig-tea .ig-tile{aspect-ratio:auto;}
+    .ig-tea .ig-tile:first-child{aspect-ratio:1.5;}
+    .ig-tea .ig-tile img{position:absolute;inset:0;}
+    @media(max-width:760px){.ig-tea{grid-template-columns:1fr;}.ig-tea .ig-tile{aspect-ratio:1.2!important;}}
+    .ig-snd{grid-template-columns:1fr 1fr;max-width:1100px;margin-left:auto;margin-right:auto;}
+    .ig-snd .a{grid-column:1/-1;aspect-ratio:1.9;}
+    .ig-snd .b{aspect-ratio:.86;}
+    @media(max-width:760px){.ig-snd{grid-template-columns:1fr;}}
+    .club-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;max-width:1100px;margin:40px auto 0;}
+    .club-grid .ig-tile img{position:absolute;inset:0;}
+    .club-grid .c1{grid-column:span 4;aspect-ratio:1.5;}
+    .club-grid .c2{grid-column:span 2;}
+    .club-grid .c3{grid-column:span 2;aspect-ratio:.66;}
+    .club-grid .c4,.club-grid .c5{grid-column:span 2;}
+    .club-grid .c6{grid-column:span 6;aspect-ratio:2.2;}
+    @media(max-width:760px){.club-grid{grid-template-columns:1fr 1fr;}.club-grid .ig-tile{grid-column:auto!important;aspect-ratio:4/5!important;}}
+    .ig-3o{grid-template-columns:repeat(3,1fr);max-width:1100px;margin-left:auto;margin-right:auto;}
+    .ig-3o .ig-tile{aspect-ratio:4/5;}
+    .ig-5d{grid-template-columns:repeat(6,1fr);max-width:1100px;margin-left:auto;margin-right:auto;}
+    .ig-5d .t{grid-column:span 2;aspect-ratio:2/3;}
+    .ig-5d .w{grid-column:span 3;aspect-ratio:1.2;}
+    @media(max-width:760px){.ig-5d{grid-template-columns:1fr 1fr;}.ig-5d .t,.ig-5d .w{grid-column:auto;aspect-ratio:4/5;}}
+    .ig-4e{grid-template-columns:1fr 1fr;height:auto;max-width:900px;margin-left:auto;margin-right:auto;}
+    .ig-4e .ig-tile{aspect-ratio:1/1;}
+    .ig-4r{grid-template-columns:1fr 1fr 1fr 1.5fr;height:58vh;}
+    .ig-8b{grid-template-columns:repeat(5,1fr);grid-auto-rows:32vh;opacity:.92;}
+    .ig-jrow{display:flex;gap:14px;margin-top:14px;}
+    .b-thesis{width:100%;aspect-ratio:1.78;margin-top:calc(14px + .5in);}
+    .b-thesis img{position:absolute;inset:0;}
+    .b-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#c9a96e;opacity:.9;margin:0 0 12px;}
+    #instig-building .b-label + .ig-grid, #instig-building .b-label + .ig-jrow, #instig-building .b-label + .b-thesis{margin-top:0!important;}
+    .arr-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:43fr 57fr;gap:14px;max-width:1100px;aspect-ratio:2/1;margin:40px auto 0;}
+    .arr-small{display:grid;grid-template-columns:1fr 1fr 1fr;grid-auto-rows:auto;gap:14px;max-width:1100px;margin:14px auto 0;}
+    .arr-small .ig-tile{aspect-ratio:4/5;}
+    .arr-small .ig-tile.wide{grid-column:span 2;aspect-ratio:auto;}
+    @media(max-width:760px){.arr-small{grid-template-columns:1fr 1fr;}}
+    .arr-a{grid-column:1;grid-row:1/3;}.arr-b{grid-column:2;grid-row:1/3;}.arr-c{grid-column:3;grid-row:1;}.arr-d{grid-column:3;grid-row:2;}
+    .arr-grid .ig-tile{min-height:0;}
+    .arr-grid .ig-tile img{position:absolute;inset:0;}
+    @media(max-width:760px){.arr-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;aspect-ratio:auto;}.arr-a,.arr-b,.arr-c,.arr-d{grid-column:auto;grid-row:auto;aspect-ratio:3/4;}}
+    .ig-jrow .ig-tile{min-width:0;}
+    @media(max-width:760px){.ig-jrow{flex-direction:column;}.ig-jrow .ig-tile{flex:none!important;width:100%;}}
+    .ig-2{grid-template-columns:1fr 1fr;height:auto;max-width:980px;margin-left:auto;margin-right:auto;}
+    .ig-2 .ig-tile{aspect-ratio:3/4;}
+    .ig-2 .ig-tile.rv-wide{grid-column:span 2;aspect-ratio:auto;}
+    .ig-2 .ig-tile img{position:absolute;inset:0;}
+    .ig-8{grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr;height:66vh;}
+    .ig-8 .ig-tile.big{grid-column:1/3;grid-row:1/3;}
+    .ig-3{grid-template-columns:repeat(3,1fr);height:58vh;}
+    .ig-tile{position:relative;overflow:hidden;background:#161616;}
+    .section-white .ig-tile{background:#e6e3dd;}
+    .ig-tile img{width:100%;height:100%;object-fit:cover;display:block;}
+    .ig-tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+    .ig-tile .brief{position:absolute;inset:0;display:flex;align-items:flex-end;padding:12px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5;}
+    .ig-tile.has-img .brief{display:none;}
+    .ig-ref{margin-top:18px;font-size:12px;letter-spacing:.06em;color:var(--muted);}
+    /* Instigations restyled to match "the idea, in layers": centered text, on green, open spacing */
+    .instig{min-height:100vh;padding-top:176px;padding-bottom:176px;}
+    .instig .info-head{grid-template-columns:1fr;gap:40px;text-align:center;align-items:center;margin-bottom:0;max-width:70ch;margin-left:auto;margin-right:auto;}
+    .instig .info-head .section-title{font-size:clamp(40px,5.2vw,76px);max-width:none;margin:0 auto;}
+    .instig .info-head .lede{font-size:clamp(15px,1.45vw,18px);line-height:1.65;opacity:.92;max-width:70ch;margin:0 auto;}
+    .instig .ig-grid{margin-top:72px;gap:16px;}
+    .instig .ig-ref{text-align:center;margin-top:28px;}
+    @media(max-width:900px){.ig-4,.ig-3,.ig-8{grid-template-columns:1fr 1fr;height:auto;}.ig-8 .ig-tile.big{grid-column:1/3;grid-row:auto;}.ig-4 .ig-tile:first-child{grid-row:auto;grid-column:1/3;}.ig-tile{aspect-ratio:4/3;}.ig-1{height:auto;}}
+
+    /* alternatives table */
+    .alt-table{margin-top:36px;border-top:1px solid var(--line-dark);}
+    .alt-row{display:grid;grid-template-columns:1.1fr 1.3fr 1.3fr 1.4fr;gap:28px;padding:20px 0;border-bottom:1px solid var(--line-dark);font-size:13.5px;line-height:1.5;}
+    .alt-head{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;padding:12px 0;}
+    .alt-name{font-size:17px;font-weight:300;letter-spacing:-.01em;}
+    .alt-name span{display:block;font-size:11.5px;color:#777;margin-top:4px;letter-spacing:.02em;}
+    .alt-row b{font-weight:500;display:block;margin-bottom:2px;}
+    .alt-row div:nth-child(4){border-left:1px solid var(--line-dark);padding-left:24px;}
+    @media(max-width:900px){.alt-row{grid-template-columns:1fr;gap:10px;}.alt-row div:nth-child(4){border-left:none;padding-left:0;}}
+
+    footer{padding:48px 0;font-size:12px;color:var(--muted);letter-spacing:.06em;background:var(--black);position:relative;}
+    .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    a.top{color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:.12em;}
+    a.top:hover{color:var(--white);}
+    @media(max-width:860px){section{padding:80px 0;}.container{padding:0 24px;}.persona-cap{flex-direction:column;align-items:flex-start;}.persona-cap .sub{text-align:left;}}
+  
+    /* ---- Emilio Trial Extra Light (NarrowType trial), embedded ---- */
+    @font-face{font-family:'Emilio Trial';font-style:normal;font-weight:200;font-display:swap;src:url(data:font/otf;base64,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) format('opentype');}
+    @font-face{font-family:'Emilio Trial';font-style:italic;font-weight:200;font-display:swap;src:url(data:font/otf;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/EAAAAAAAA//YAAAAKAAAAAAAAAAoAAAAAAAD/zgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAeAAAAAAAA/+n/9gAAAAoAKAAA/+wAAAAAAAAAAAAA/7AAA//EABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/+IAAP/2AAAAAAAAAAD/2P/6ABQAAP/mAAD/8P/fAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAMgA1AD8ARgBGAAD/9QAAAAAAAAA8/+z/9gAKAAoAHgADAAAAAP/2AEYASQA8ADgAIQAAAAAAAAAsAB4AHgArADIAKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwAbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/+QAAAAAAAAAAAAAAAP/7AAoAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//4AAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAP/3AAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAA//oAAP+m/60AAAAAAAAAAAAAAAAAAAAAAAD/7AAAAAAAAP/7AAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/iAAD/rP+wAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/7wAP//YAAP/2//YADwAUAAAAAAAAAAP/zgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/94AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/uf/IAAAAAAAAAAD/9gAA//YAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/7wAAAAD/9gAA/8f/7gAA//0AAAAAAAAAAAAAAAD/9gAAAAD/9gAAAAD/4gAAAAAAAAAAAAAAAAAA//YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAHABQAAAADAAAAFAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAA/8H/zgAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgABAAIANQAAAAEAAwAzABIAAQAJAAIAEwADAAQABAAFAAYABwAEAAgACQAKAAkACwAMAA0ADgAPAA8AFAAQABEAGwAcABUAGgAVABYAFwAbABgAGAAZABoAGwAbABwAHAAiAB0AHgAfABsAIAAgACMAIAAhAAEAAgBBABIAFwABABcAFwAXAAEAFwAXACIAFwAXABgAGAABABcAAQAXABkAAgADAAQABAAWAAUAHQAMAAoADAAMAAwAEwAHAAoACQAcAAoACgAOAA4ADAAOAAwADgANABsADgAOAA4AGgAPABEAEAAfACEAIAAGAAAAEAAVAB4ACwAUABQACA==) format('opentype');}
+    :root{--font-headline:'Emilio Trial','Times New Roman',Georgia,serif;}
+    /* Headlines use Emilio Trial Extra Light — AEO deck treatment */
+    .hero h1,.divider-text,.statement-text,.section-title,.persona-cap h2,.pd-head h2,
+    .layer-name,.tell h3,.four h3,.block h3,.pillar h3,.poss h3,.bubble h3,.ov-name,.alt-name{
+      font-family:var(--font-headline);font-weight:200;letter-spacing:-.02em;
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+    /* descriptor sub-spans inside names stay in Inter */
+    .ov-name span,.alt-name span{font-family:'Inter',-apple-system,system-ui,sans-serif;letter-spacing:0;}
+    /* italic accents render in the italic Emilio cut */
+    .statement-text em,.section-title em,.layer-body em,.pd-portrait em,.divider-text em{font-style:italic;}
+    /* numerals — AEO treatment: Emilio Extra Light, not Anton bold-condensed */
+    .tell .tnum,.four .n,.poss .pn,.pillar .pn,.block .pn,.bubble .bn,.kt-num,.ov-num,
+    .pd-col.want h4::before,.pd-col.why h4::before,.pd-col.new h4::before{
+      font-family:var(--font-headline)!important;font-weight:200!important;
+      letter-spacing:-.01em;font-variant-numeric:tabular-nums;}
+    .ov-num{font-size:clamp(22px,2vw,30px);line-height:1;}
+    .kt-num{font-size:26px;}
+    /* Reusable full-screen photo divider — set the image per section with
+       inline style="--bg:url('assets/xxx.jpg')" on the .divider.has-photo section. */
+    /* Full-screen photo divider: image + scrim locked to the viewport. The
+       divider's text scrolls up over it, then the next opaque section slides
+       over the top. Set the image per section with inline --bg. */
+    .divider.has-photo{
+      position:relative;
+      background-color:var(--black);
+      background-image:
+        linear-gradient(90deg,rgba(10,10,10,.34) 0%,rgba(10,10,10,.72) 50%,rgba(10,10,10,.34) 100%),
+        var(--bg);
+      background-repeat:no-repeat,no-repeat;
+      background-position:center center,center center;
+      background-size:cover,cover;
+      background-attachment:fixed,fixed;
+    }
+    .divider.has-photo .container{position:relative;z-index:2;}
+    /* fixed backgrounds are unreliable on touch devices — fall back to a normal cover */
+    @media(max-width:860px){
+      .divider.has-photo{background-attachment:scroll,scroll;}
+      .liv-grid{grid-template-columns:1fr!important;}
+      /* #setting shares the intro's aerial; with no fixed attachment on mobile a
+         scrolling copy would slide up over the fixed landscape-bg. Instead let the
+         fixed landscape-bg show through so only the text scrolls, as on desktop. */
+      #setting{background:transparent;}
+    }
+    /* hairline rule between Quick Take and Core Comps, with generous breathing room */
+    .rule-band{padding:112px 0;}
+    .rule-band .hr-rule{border:0;border-top:1px solid var(--line-dark);width:100%;margin:0;}
+    /* match the blank-line gap between the headline sentences (statement-text line-height) */
+    .gap-line{margin-top:clamp(33px,4.7vw,66px);}
+
+    /* ===== Scroll choreography: pin 'Who they are', crossfade green→cream, reveal list + grid ===== */
+    #who-pin{position:relative;background:var(--white);display:block;padding:0;min-height:0;}
+    /* Who they are: centered, enlarged, allowed to break the site margin */
+    #who-parked .container{max-width:none;padding-left:5vw;padding-right:5vw;text-align:center;}
+    #who-parked .statement-text{margin-left:auto;margin-right:auto;}
+    .anim #who-pin{height:220vh;}
+    .anim #who-pin .pin-inner{position:sticky;top:0;height:100vh;will-change:background-color;}
+    /* two overlaid copy slides that crossfade on scroll */
+    .anim #who-parked .who-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;will-change:opacity;}
+    .anim #who-parked .who-b{opacity:0;}
+    /* Mindful Luxury: centered, pinned, green→cream fade like 'Who they are' */
+    #mindful-pin{position:relative;background:var(--white);display:block;padding:0;min-height:0;}
+    .anim #mindful-pin{height:200vh;}
+    .anim #mindful-pin .pin-inner{position:sticky;top:0;height:100vh;will-change:background-color;}
+    #mindful .container{text-align:center;will-change:opacity;}
+    #mindful .statement-text,#mindful .mindful-intro,#mindful .statement-sub{margin-left:auto;margin-right:auto;}
+    /* ===== Sentiment & Brand DNA: pin the heading center, build numbered blocks one at a time, then scroll all off ===== */
+    .build-pin{position:relative;background:var(--white);display:block;padding:0;min-height:0;}
+    .build-pin .pin-inner{background:var(--white);}
+    .anim .build-pin .pin-inner{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;}
+    .build-pin .pin-inner .container{width:100%;}
+    .build .build-head{text-align:center;}
+    .build .build-head .section-title{max-width:none;margin-left:auto;margin-right:auto;}
+    .build .build-head .eyebrow{margin-top:0;}
+    .build .build-head .lede{margin-top:20px;margin-bottom:0;margin-left:auto;margin-right:auto;}
+    .build .block-grid,.build .pillar-grid{margin-top:clamp(28px,4vw,48px);}
+    .anim #sentiment-pin{height:260vh;}
+    /* Brand DNA: cream, centered, pinned, content fades out on scroll like Mindful Luxury */
+    #pillars-pin{position:relative;background:var(--white);display:block;padding:0;min-height:0;}
+    .anim #pillars-pin{height:200vh;}
+    .anim #pillars-pin .pin-inner{position:sticky;top:0;height:100vh;}
+    #pillars-page .container{will-change:opacity;}
+    .anim .build-inner{will-change:opacity,transform;}
+    .anim .build-item{opacity:0;will-change:opacity,transform;}
+    @media(prefers-reduced-motion:reduce),(max-width:860px){
+      .anim .build-pin{height:auto;}
+      .anim #sentiment-pin{height:auto;}
+      .anim .build-pin .pin-inner{position:static;height:auto;display:block;overflow:visible;padding:96px 0;}
+      .anim .build-inner{opacity:1!important;transform:none!important;}
+      .anim .build-item{opacity:1!important;transform:none!important;}
+    }
+    /* 01–05 build on scroll: each row reveals as it enters, its number pops a beat later */
+    .anim .ov-row{opacity:0;transform:translateY(34px);
+      transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);}
+    .anim .ov-row.in{opacity:1;transform:none;}
+    .anim .ov-num{display:inline-block;opacity:0;transform:scale(.5);transform-origin:left center;
+      transition:opacity .5s ease .12s,transform .6s cubic-bezier(.34,1.6,.5,1) .12s;}
+    .anim .ov-row.in .ov-num{opacity:1;transform:none;}
+    /* image grid: each tile builds in as it scrolls into view */
+    .anim .photo-grid .pg-tile{opacity:0;transform:translateY(28px) scale(.97);
+      transition:opacity .7s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+    .anim .photo-grid .pg-tile.in{opacity:1;transform:none;}
+    /* core comps: each comp builds in on scroll */
+    .anim .cc-comp{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+    .anim .cc-comp.in{opacity:1;transform:none;}
+    /* Portrait pages: 01–03 columns slide up one at a time when the row enters, then the 3 images */
+    .anim .pd-col{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
+    .anim .pd-grid.in .pd-col{opacity:1;transform:none;}
+    .anim .pd-grid.in .pd-col:nth-child(1){transition-delay:0s}
+    .anim .pd-grid.in .pd-col:nth-child(2){transition-delay:.16s}
+    .anim .pd-grid.in .pd-col:nth-child(3){transition-delay:.32s}
+    .anim .pd-shot{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .8s cubic-bezier(.22,.61,.36,1);}
+    .anim .pd-portraits.in .pd-shot{opacity:1;transform:none;}
+    .anim .pd-portraits.in .pd-shot:nth-child(1){transition-delay:0s}
+    .anim .pd-portraits.in .pd-shot:nth-child(2){transition-delay:.16s}
+    .anim .pd-portraits.in .pd-shot:nth-child(3){transition-delay:.32s}
+    /* animated gold rule — scrubs with scroll (grows left→right, reverses on scroll-up) */
+    .gold-rule{background:var(--black);}
+    .gold-rule.light{background:var(--white);padding:96px 0;}
+    #core-comps{padding-top:96px;}
+    .gold-rule .gr-line{display:block;height:1px;background:var(--accent);width:100%;transform:scaleX(1);transform-origin:left center;}
+    .anim .gold-rule .gr-line{transform:scaleX(0);transition:transform .12s ease-out;}
+    @media(prefers-reduced-motion:reduce){
+      .anim .ov-row,.anim .ov-num,.anim .photo-grid .pg-tile,.anim .pd-col,.anim .pd-shot,.anim .cc-comp{opacity:1!important;transform:none!important;transition:none!important;}
+      .anim .gold-rule .gr-line{transform:scaleX(1)!important;transition:none!important;}
+      .anim #who-pin{height:auto;}
+      .anim #who-pin .pin-inner{position:static;height:auto;}
+      .anim #who-parked .who-slide{position:static;opacity:1!important;}
+      .anim #mindful-pin{height:auto;}
+      .anim #mindful-pin .pin-inner{position:static;height:auto;}
+      .anim #pillars-pin{height:auto;}
+      .anim #pillars-pin .pin-inner{position:static;height:auto;}
+      #pillars-page .container{opacity:1!important;}
+      .anim #intro-pin{height:auto;}
+      .anim #intro-pin .hero{position:static;opacity:1!important;}
+    }
+    @media(max-width:860px){.rule-band{padding:72px 0;}}
+  </style>
+</head>
+<body>
+
+  <style>
+    /* Fixed section nav, top-right — serif, fades to gold; flips to dark ink over light bands */
+    .deck-nav{position:fixed;top:0;right:0;z-index:120;display:flex;gap:clamp(16px,2.1vw,34px);
+      padding:26px clamp(22px,4vw,64px);font-family:var(--font-headline);font-weight:200;
+      font-size:clamp(15px,1.15vw,18px);letter-spacing:.015em;line-height:1;}
+    .deck-nav a{color:var(--white);text-decoration:none;opacity:.8;white-space:nowrap;
+      transition:color .4s ease,opacity .4s ease;}
+    .deck-nav a:hover,.deck-nav a.active{color:var(--accent);opacity:1;}
+    .deck-nav.on-light a{color:var(--black);opacity:.78;}
+    .deck-nav.on-light a:hover,.deck-nav.on-light a.active{color:var(--accent-dark);opacity:1;}
+    @media(max-width:860px){ .deck-nav{gap:14px;padding:16px 18px;font-size:13px;} }
+    @media(max-width:460px){ .deck-nav{gap:11px;padding:13px 14px;font-size:12px;letter-spacing:0;} }
+  </style>
+  <nav class="deck-nav" aria-label="Section navigation">
+    <a href="#intro-pin">Intro</a>
+    <a href="#contents">Contents</a>
+    <a href="#concept-1">Concept</a>
+    <a href="#creative-look">Look</a>
+    <a href="#mockups">Execution</a>
+  </nav>
+
+  <!-- Landscape image fixed behind the intro; revealed as the intro fades out -->
+  <div class="landscape-bg" aria-hidden="true"></div>
+
+  <!-- ============================ HERO ============================ -->
+  <div id="intro-pin">
+  <section class="hero section-black">
+    <div class="container">
+      <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239.5 115.8" role="img" aria-label="Studio Fabric">
+        <defs><style>.hero-logo .st0{fill:#caa182;}</style></defs>
+        <path class="st0" d="M19.3,51.2c-6,0-10.6-1.5-13.9-4.6-3.3-3-5.1-7-5.3-11.9h3.7c.2,4.1,1.7,7.4,4.5,9.8,2.8,2.4,6.5,3.6,11.1,3.6s7-1,9.5-3c2.5-2,3.7-4.7,3.7-8.1s-1.1-5.9-3.2-7.3c-2.1-1.4-6.2-2.7-12.4-3.8-5.1-.9-8.9-2.3-11.4-4.2-2.5-1.9-3.7-4.8-3.7-8.6S3.3,6,6.3,3.6C9.3,1.2,13.3,0,18.1,0s8.8,1.3,11.6,3.8c2.9,2.5,4.5,5.8,4.9,10h-3.6c-.3-3.4-1.7-6-4-7.8-2.3-1.8-5.3-2.8-8.8-2.8s-7.1.9-9.3,2.7c-2.3,1.8-3.4,4.2-3.4,7.1s1,5,3,6.4c2,1.4,5.6,2.5,10.7,3.4,2.2.4,4,.8,5.5,1.2,1.5.4,3,.9,4.6,1.7,1.6.7,2.8,1.5,3.8,2.5.9.9,1.7,2.1,2.3,3.6.6,1.4.9,3.1.9,5.1,0,4.2-1.6,7.7-4.7,10.4-3.1,2.7-7.2,4.1-12.2,4.1Z"/>
+        <path class="st0" d="M36.9,4.2V1h37.3v3.2h-16.8v46.1h-3.6V4.2h-16.8Z"/>
+        <path class="st0" d="M96.6,51.1c-5.5,0-9.7-1.4-12.8-4.1-3.1-2.8-4.6-6.8-4.6-12.1V1h3.6v33.5c0,4.7,1.2,8.1,3.5,10.2,2.3,2.1,5.8,3.2,10.5,3.2,9.3,0,14-4.5,14-13.4V1h3.6v33.8c0,5.4-1.6,9.5-4.8,12.2s-7.5,4.1-13,4.1Z"/>
+        <path class="st0" d="M122.5,50.3V1h17.3c6.9,0,12.1,2.2,15.5,6.7s5.1,10.5,5.1,18.1-1.8,13.5-5.3,17.9c-3.5,4.4-8.8,6.6-15.7,6.6h-16.8ZM126.1,47.1h13c5.8,0,10.2-1.9,13.1-5.6,2.9-3.7,4.4-9,4.4-15.7s-1.4-12.1-4.2-15.9-7-5.7-12.8-5.7h-13.5v42.9Z"/>
+        <path class="st0" d="M167.3,50.3V1h3.6v49.3h-3.6Z"/>
+        <path class="st0" d="M215.9,44c-4.1,4.8-9.5,7.2-16.1,7.2s-12-2.4-16-7.2c-4-4.8-6.1-10.9-6.1-18.4s2-13.5,6.1-18.4c4-4.8,9.4-7.2,16-7.2s12,2.4,16.1,7.2c4.1,4.8,6.1,10.9,6.1,18.4s-2,13.5-6.1,18.4ZM186.3,41.6c3.2,4.3,7.7,6.4,13.5,6.4s10.3-2.1,13.6-6.4c3.3-4.3,4.9-9.6,4.9-16s-1.6-11.7-4.9-16c-3.3-4.3-7.8-6.4-13.6-6.4s-10.3,2.1-13.5,6.4c-3.2,4.3-4.8,9.6-4.8,16s1.6,11.7,4.8,16Z"/>
+        <path class="st0" d="M6.5,107.3v-33.5c0-5-1.6-6.3-6.4-6.3v-1h36.4v14.1h-1c0-8.8-2.8-12.5-11.2-12.5h-12.4v22.4h10.6c4.8,0,6.3-3,6.3-8.8h1v19h-1c0-5.7-1.4-8.8-6.3-8.8h-10.6v15.4c0,5,1.5,6.3,6.4,6.3v1H0v-1c4.8,0,6.4-1.4,6.4-6.3Z"/>
+        <path class="st0" d="M40.8,107.8l16.6-42h1l16.8,42c2,4.9,3.9,5.9,6.9,5.9v1h-16.8v-1c4.8,0,6.1-1.4,4.4-5.7l-3.7-9.4h-19.6l-3.7,9.4c-1.7,4.3.8,5.7,5.5,5.7v1h-14.5v-1c3.5,0,5.5-1.2,7.3-5.9ZM65.1,96.9l-9.2-23-9.1,23h18.3Z"/>
+        <path class="st0" d="M90.7,107.3v-33.5c0-5-1.6-6.3-6.4-6.3v-1h22.7c9.2,0,15.5,4.1,15.5,12.5s-5.2,10.8-11.4,10.8v.4c7.1,0,13.7,4.3,13.7,11.9s-5.5,12.6-16.4,12.6h-24.1v-1c4.8,0,6.4-1.4,6.4-6.3ZM117,78.8c0-6.6-4.3-10.9-11.7-10.9h-9.2v21.3h8.8c7.7,0,12.1-4.4,12.1-10.4ZM119.2,102.2c0-6.6-4.6-11.4-12.6-11.4h-10.6v22.2h11c8,0,12.1-4.9,12.1-10.8Z"/>
+        <path class="st0" d="M135.8,107.3v-33.5c0-5-1.6-6.3-6.4-6.3v-1h21.9c9.2,0,16.4,3.5,16.4,12.6s-5.5,11.9-16,11.9h-3.3v.4c4.9,1.6,8.4,4.8,10.6,7.8l10.6,14.8v.8h-5.7l-17.2-23.8h-5.4v16.4c0,5,1.5,6.3,6.4,6.3v1h-18.2v-1c4.8,0,6.4-1.4,6.4-6.3ZM149.8,89.3c8.1,0,12.3-4.1,12.3-10.4s-4.2-11-12.4-11h-8.6v21.4h8.6Z"/>
+        <path class="st0" d="M179.2,107.3v-33.5c0-5-1.6-6.3-6.4-6.3v-1h18.2v1c-4.9,0-6.4,1.4-6.4,6.3v33.5c0,5,1.5,6.3,6.4,6.3v1h-18.2v-1c4.8,0,6.4-1.4,6.4-6.3Z"/>
+        <path class="st0" d="M195.7,90.5c0-14.8,10.5-25.3,25.1-25.3s13.5,2.3,17.4,5.1v12.7h-1c-2-10.6-7.1-16.2-17.2-16.2s-18.6,8.8-18.6,22.3,8.4,23.2,21,23.2,12.8-3.2,16.2-8.6l.8.6c-3.9,7.1-9.8,11.5-18.9,11.5-15,0-24.9-10.5-24.9-25.3Z"/>
+      </svg>
+      <div class="hero-top">
+        <p class="eyebrow">Brand Refresh</p>
+        <p class="lede">A redefining of the building concept and theme, uplevelling the amenities and establishing a new brand story and look.</p>
+        <div class="hero-meta">
+          <div><span>Location</span>270 Hennepin · Minneapolis</div>
+          <div><span>Prepared for</span>Roundhouse · November 2026</div>
+        </div>
+      </div>
+      <h1>270 Hennepin</h1>
+    </div>
+  </section>
+  </div>
+
+
+  <!-- ============================ 2.0 LAYOUTS (collage, mood board, before/after, mockups) ============================ -->
+  <style>
+    .pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:72px;}
+    .pgrid .ig-tile{aspect-ratio:9/16;}
+    .pgrid4{grid-template-columns:repeat(4,1fr);margin-top:14px;}
+    .pgrid4 .ig-tile{aspect-ratio:3/4;}
+    .lrow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+    .lrow .ig-tile{aspect-ratio:16/9;}
+    @media(max-width:860px){.pgrid{grid-template-columns:repeat(2,1fr);}.lrow{grid-template-columns:1fr;}}
+    .cgrid{margin-top:72px;display:flex;flex-direction:column;gap:22px;}
+    .crow{display:grid;grid-template-columns:170px repeat(3,1fr);gap:14px;align-items:center;}
+    .crow .ig-tile{aspect-ratio:16/9;}
+    .crow .ig-tile img{object-position:center top;}
+    .crow-name{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#c9a96e;margin:0;}
+    @media(max-width:860px){.crow{grid-template-columns:1fr 1fr 1fr;}.crow-name{grid-column:1/-1;}}
+    .mixrow{display:grid;grid-template-columns:1fr 2fr 1fr;gap:14px;margin-top:14px;height:46vh;}
+    .fullrow{aspect-ratio:21/9;margin-top:14px;}
+    @media(max-width:860px){.mixrow{grid-template-columns:1fr;height:auto;}.mixrow .ig-tile{aspect-ratio:4/5;}.mixrow .span2{aspect-ratio:16/9;}}
+    .collage{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:22vh;grid-auto-flow:dense;gap:14px;margin-top:72px;}
+    .collage .c-big{grid-column:span 2;grid-row:span 2;}
+    .collage .c-wide{grid-column:span 2;}
+    .collage .c-tall{grid-row:span 2;}
+    .mb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:72px;}
+    .mb-col{display:flex;flex-direction:column;gap:14px;}
+    .mb-col .ig-tile{aspect-ratio:4/5;}
+    .mb-col .ig-tile.tall{aspect-ratio:3/5;}
+    .mb-col .ig-tile.short{aspect-ratio:1;}
+    .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:72px;}
+    .ba-row .ig-tile{aspect-ratio:16/10;}
+    .ba-row .b-label{margin-top:14px;}
+    .idea-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:72px;}
+    .idea-row .ig-tile{aspect-ratio:4/5;}
+    .idea-row h3{font-weight:200;font-size:clamp(18px,1.8vw,24px);margin:18px 0 8px;}
+    .idea-row p{font-size:14px;line-height:1.55;opacity:.8;}
+    .mock{width:100%;aspect-ratio:16/9;margin-top:72px;}
+    .logo-grid{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:16px;margin-top:72px;height:70vh;}
+    .logo-grid .lg-main{grid-row:span 2;}
+    .pod{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:150px;}
+    @media(max-width:860px){
+      .collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:28vw;}
+      .mb-grid{grid-template-columns:repeat(2,1fr);}
+      .ba-row,.idea-row,.pod{grid-template-columns:1fr;}
+      .logo-grid{grid-template-columns:1fr;grid-template-rows:none;height:auto;}
+      .logo-grid .ig-tile{aspect-ratio:16/10;}
+    }
+  </style>
+
+  <!-- ============================ CONTENTS ============================ -->
+  <style>
+    #contents{min-height:100vh;display:flex;align-items:center;padding:clamp(90px,10vw,140px) 0;}
+    .toc{margin-top:clamp(40px,5vw,72px);border-top:1px solid rgba(201,169,110,.35);}
+    .toc-row{display:grid;grid-template-columns:56px 1.25fr 1fr;gap:24px;align-items:baseline;padding:clamp(18px,2.2vw,28px) 0;border-bottom:1px solid rgba(246,245,242,.1);color:inherit;text-decoration:none;}
+    .toc-row:hover .toc-t{color:var(--accent);}
+    .toc-n{font-size:11px;letter-spacing:.22em;color:var(--accent);}
+    .toc-t{font-family:var(--font-headline);font-weight:200;font-size:clamp(22px,2.6vw,36px);letter-spacing:-.01em;line-height:1.15;transition:color .2s;}
+    .toc-s{font-size:clamp(13px,1.1vw,15px);opacity:.7;line-height:1.5;}
+    @media(max-width:860px){.toc-row{grid-template-columns:44px 1fr;}.toc-s{grid-column:2;}}
+  </style>
+  <section class="section-black" id="contents">
+    <div class="container">
+      <p class="eyebrow">Contents</p>
+      <h2 class="section-title" style="max-width:none">What we'll cover.</h2>
+      <div class="toc">
+        <a class="toc-row" href="#location-1"><span class="toc-n">01</span><span class="toc-t">The Setting</span><span class="toc-s">The neighborhood · The comps · The building · The amenities</span></a>
+        <a class="toc-row" href="#concept-1"><span class="toc-n">02</span><span class="toc-t">The Concept</span><span class="toc-s">Mood board · Rendered spaces · Ideas</span></a>
+        <a class="toc-row" href="#creative-look"><span class="toc-n">03</span><span class="toc-t">The Look</span><span class="toc-s">Logo · Palette · Typography · Style guide</span></a>
+        <a class="toc-row" href="#mockups"><span class="toc-n">04</span><span class="toc-t">The Execution</span><span class="toc-s">Signage · Wayfinding · Print · Home page</span></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================ THE NEIGHBORHOOD ============================ -->
+  <section class="section-black info instig" id="location-1">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Location Overview</p><h2 class="section-title">The Neighborhood</h2></div>
+        <p class="lede">A walk around the block, taking a look at our immediate surroundings.</p>
+      </div>
+      <div class="pgrid">
+        <div class="ig-tile"><img src="assets/location-01.jpg" alt=""><div class="brief">Walkabout · photo 01</div></div>
+        <div class="ig-tile"><img src="assets/location-02.jpg" alt=""><div class="brief">Walkabout · photo 02</div></div>
+        <div class="ig-tile"><img src="assets/location-03.jpg" alt=""><div class="brief">Walkabout · photo 03</div></div>
+        <div class="ig-tile"><img src="assets/location-04.jpg" alt=""><div class="brief">Walkabout · photo 04</div></div>
+        <div class="ig-tile"><img src="assets/location-05.jpg" alt=""><div class="brief">Walkabout · photo 05</div></div>
+        <div class="ig-tile"><img src="assets/location-06.jpg" alt=""><div class="brief">Walkabout · photo 06</div></div>
+        <div class="ig-tile"><img src="assets/location-07.jpg" alt=""><div class="brief">Walkabout · photo 07</div></div>
+        <div class="ig-tile"><img src="assets/location-08.jpg" alt=""><div class="brief">Walkabout · photo 08</div></div>
+        <div class="ig-tile"><img src="assets/location-09.jpg" alt=""><div class="brief">Walkabout · photo 09</div></div>
+        <div class="ig-tile"><img src="assets/location-10.jpg" alt=""><div class="brief">Walkabout · photo 10</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ THE NEIGHBORHOOD ============================ -->
+  <section class="section-black info instig" id="location-2">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Location Overview</p><h2 class="section-title">The Neighborhood</h2></div>
+      </div>
+      <div class="pgrid">
+        <div class="ig-tile"><img src="assets/location-11.jpg" alt=""><div class="brief">Walkabout · photo 11</div></div>
+        <div class="ig-tile"><img src="assets/location-12.jpg" alt=""><div class="brief">Walkabout · photo 12</div></div>
+        <div class="ig-tile"><img src="assets/location-13.jpg" alt=""><div class="brief">Walkabout · photo 13</div></div>
+        <div class="ig-tile"><img src="assets/location-14.jpg" alt=""><div class="brief">Walkabout · photo 14</div></div>
+        <div class="ig-tile"><img src="assets/location-15.jpg" alt=""><div class="brief">Walkabout · photo 15</div></div>
+        <div class="ig-tile"><img src="assets/location-16.jpg" alt=""><div class="brief">Walkabout · photo 16</div></div>
+        <div class="ig-tile"><img src="assets/location-17.jpg" alt=""><div class="brief">Walkabout · photo 17</div></div>
+        <div class="ig-tile"><img src="assets/location-18.jpg" alt=""><div class="brief">Walkabout · photo 18</div></div>
+        <div class="ig-tile"><img src="assets/location-19.jpg" alt=""><div class="brief">Walkabout · photo 19</div></div>
+        <div class="ig-tile"><img src="assets/location-20.jpg" alt="" style="object-position:52% 50%"><div class="brief">Walkabout · photo 20</div></div>
+      </div>
+      <div class="lrow">
+        <div class="ig-tile"><img src="assets/location-21.jpg" alt=""><div class="brief">Walkabout · photo 21</div></div>
+        <div class="ig-tile"><img src="assets/location-22.jpg" alt=""><div class="brief">Walkabout · photo 22</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ COMP OVERVIEW — THE COMPS ============================ -->
+  <section class="section-black info instig" id="comps-1">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Comp Overview</p><h2 class="section-title">The Comps</h2></div>
+        <p class="lede">A look at the competing properties nearby and how they present.</p>
+      </div>
+      <div class="cgrid">
+        <div class="crow">
+          <p class="crow-name">222 Hennepin</p>
+          <div class="ig-tile"><img src="assets/comp-222-hennepin-1.jpg" alt=""><div class="brief">222 Hennepin · 1</div></div>
+          <div class="ig-tile"><img src="assets/comp-222-hennepin-2.jpg" alt=""><div class="brief">222 Hennepin · 2</div></div>
+          <div class="ig-tile"><img src="assets/comp-222-hennepin-3.jpg" alt=""><div class="brief">222 Hennepin · 3</div></div>
+        </div>
+        <div class="crow">
+          <p class="crow-name">365 Nicollet</p>
+          <div class="ig-tile"><img src="assets/comp-365-nicollet-1.jpg" alt=""><div class="brief">365 Nicollet · 1</div></div>
+          <div class="ig-tile"><img src="assets/comp-365-nicollet-2.jpg" alt=""><div class="brief">365 Nicollet · 2</div></div>
+          <div class="ig-tile"><img src="assets/comp-365-nicollet-3.jpg" alt=""><div class="brief">365 Nicollet · 3</div></div>
+        </div>
+        <div class="crow">
+          <p class="crow-name">724 Lofts</p>
+          <div class="ig-tile"><img src="assets/comp-724-lofts-1.jpg" alt=""><div class="brief">724 Lofts · 1</div></div>
+          <div class="ig-tile"><img src="assets/comp-724-lofts-2.jpg" alt=""><div class="brief">724 Lofts · 2</div></div>
+          <div class="ig-tile"><img src="assets/comp-724-lofts-3.jpg" alt=""><div class="brief">724 Lofts · 3</div></div>
+        </div>
+        <div class="crow">
+          <p class="crow-name">Archive</p>
+          <div class="ig-tile"><img src="assets/comp-archive-1.jpg" alt=""><div class="brief">Archive · 1</div></div>
+          <div class="ig-tile"><img src="assets/comp-archive-2.jpg" alt=""><div class="brief">Archive · 2</div></div>
+          <div class="ig-tile"><img src="assets/comp-archive-3.jpg" alt=""><div class="brief">Archive · 3</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ COMP OVERVIEW — THE COMPS ============================ -->
+  <section class="section-black info instig" id="comps-2">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Comp Overview</p><h2 class="section-title">The Comps</h2></div>
+      </div>
+      <div class="cgrid">
+        <div class="crow">
+          <p class="crow-name">Borealis</p>
+          <div class="ig-tile"><img src="assets/comp-borealis-1.jpg" alt=""><div class="brief">Borealis · 1</div></div>
+          <div class="ig-tile"><img src="assets/comp-borealis-2.jpg" alt=""><div class="brief">Borealis · 2</div></div>
+          <div class="ig-tile"><img src="assets/comp-borealis-3.jpg" alt=""><div class="brief">Borealis · 3</div></div>
+        </div>
+        <div class="crow">
+          <p class="crow-name">Grand Mill District</p>
+          <div class="ig-tile"><img src="assets/comp-grand-mill-district-1.jpg" alt=""><div class="brief">Grand Mill District · 1</div></div>
+          <div class="ig-tile"><img src="assets/comp-grand-mill-district-2.jpg" alt=""><div class="brief">Grand Mill District · 2</div></div>
+          <div class="ig-tile"><img src="assets/comp-grand-mill-district-3.jpg" alt=""><div class="brief">Grand Mill District · 3</div></div>
+        </div>
+        <div class="crow">
+          <p class="crow-name">NordHaus</p>
+          <div class="ig-tile"><img src="assets/comp-nordhaus-1.jpg" alt=""><div class="brief">NordHaus · 1</div></div>
+          <div class="ig-tile"><img src="assets/comp-nordhaus-2.jpg" alt=""><div class="brief">NordHaus · 2</div></div>
+          <div class="ig-tile"><img src="assets/comp-nordhaus-3.jpg" alt=""><div class="brief">NordHaus · 3</div></div>
+        </div>
+        <div class="crow">
+          <p class="crow-name">North Loop Green 360</p>
+          <div class="ig-tile"><img src="assets/comp-north-loop-green-360-1.jpg" alt=""><div class="brief">North Loop Green 360 · 1</div></div>
+          <div class="ig-tile"><img src="assets/comp-north-loop-green-360-2.jpg" alt=""><div class="brief">North Loop Green 360 · 2</div></div>
+          <div class="ig-tile"><img src="assets/comp-north-loop-green-360-3.jpg" alt=""><div class="brief">North Loop Green 360 · 3</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ CURRENT PRESENTATION — THE BUILDING ============================ -->
+  <section class="section-black info instig" id="current-1">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">The Building</h2></div>
+        <p class="lede">A walk around the building, taking a look at how it presents today.</p>
+      </div>
+      <div class="lrow" style="margin-top:72px">
+        <div class="ig-tile"><img src="assets/current-01.jpg" alt=""><div class="brief">Entrance</div></div>
+        <div class="ig-tile"><img src="assets/current-02.jpg" alt=""><div class="brief">Mezzanine</div></div>
+      </div>
+      <div class="pgrid" style="margin-top:14px">
+        <div class="ig-tile"><img src="assets/current-03.jpg" alt=""><div class="brief">Lobby</div></div>
+        <div class="ig-tile"><img src="assets/current-04.jpg" alt=""><div class="brief">Leasing</div></div>
+        <div class="ig-tile"><img src="assets/current-05.jpg" alt=""><div class="brief">Bar</div></div>
+        <div class="ig-tile"><img src="assets/current-06.jpg" alt=""><div class="brief">Lounge</div></div>
+        <div class="ig-tile"><img src="assets/current-07.jpg" alt=""><div class="brief">Reading corner</div></div>
+      </div>
+      <div class="lrow">
+        <div class="ig-tile"><img src="assets/current-08.jpg" alt=""><div class="brief">Fireplace lounge</div></div>
+        <div class="ig-tile"><img src="assets/current-09.jpg" alt=""><div class="brief">Coffee bar</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ CURRENT PRESENTATION — THE BUILDING ============================ -->
+  <section class="section-black info instig" id="current-3">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">The Entry</h2></div>
+      </div>
+      <div class="lrow" style="margin-top:72px">
+        <div class="ig-tile"><img src="assets/current-20.jpg" alt=""><div class="brief">Parking undercroft</div></div>
+        <div class="ig-tile"><img src="assets/current-21.jpg" alt=""><div class="brief">Upper parking entry</div></div>
+      </div>
+      <div class="pgrid" style="margin-top:14px">
+        <div class="ig-tile"><img src="assets/current-22.jpg" alt=""><div class="brief">Resident parking sign</div></div>
+        <div class="ig-tile"><img src="assets/current-23.jpg" alt=""><div class="brief">Service entry</div></div>
+        <div class="ig-tile"><img src="assets/current-24.jpg" alt=""><div class="brief">Garage</div></div>
+        <div class="ig-tile"><img src="assets/current-25.jpg" alt=""><div class="brief">Garage stair door</div></div>
+        <div class="ig-tile"><img src="assets/current-26.jpg" alt=""><div class="brief">Stairwell</div></div>
+      </div>
+      <div class="mixrow">
+        <div class="ig-tile"><img src="assets/current-27.jpg" alt=""><div class="brief">Service corridor</div></div>
+        <div class="ig-tile span2"><img src="assets/current-28.jpg" alt=""><div class="brief">Lower parking and loading</div></div>
+        <div class="ig-tile"><img src="assets/current-29.jpg" alt=""><div class="brief">Level -1 entry</div></div>
+      </div>
+      <div class="ig-tile fullrow"><img src="assets/current-30.jpg" alt=""><div class="brief">Garage ramp</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+
+
+  <!-- ============================ CURRENT PRESENTATION — THE AMENITIES ============================ -->
+  <section class="section-black info instig" id="amenities-1">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">The Amenities</h2></div>
+        <p class="lede">A walk through the amenities and common areas, taking in the vibe and the details.</p>
+      </div>
+      <div class="lrow" style="margin-top:72px">
+        <div class="ig-tile"><img src="assets/amenities-current-01.jpg" alt=""><div class="brief">Rooftop spa</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-02.jpg" alt=""><div class="brief">Indoor pool</div></div>
+      </div>
+      <div class="pgrid" style="margin-top:14px">
+        <div class="ig-tile"><img src="assets/amenities-current-03.jpg" alt=""><div class="brief">Conservatory</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-04.jpg" alt=""><div class="brief">Conservatory window seating</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-05.jpg" alt=""><div class="brief">Yoga studio</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-06.jpg" alt=""><div class="brief">Pool-side fountain nook</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-07.jpg" alt=""><div class="brief">Towel shelf and hamper</div></div>
+      </div>
+      <div class="lrow">
+        <div class="ig-tile"><img src="assets/amenities-current-08.jpg" alt=""><div class="brief">Rooftop grills</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-09.jpg" alt=""><div class="brief">Lounge art wall</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ CURRENT PRESENTATION — THE AMENITIES ============================ -->
+  <section class="section-black info instig" id="amenities-2">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">The Amenities</h2></div>
+      </div>
+      <div class="lrow" style="margin-top:72px">
+        <div class="ig-tile"><img src="assets/amenities-current-10.jpg" alt=""><div class="brief">Coworking lounge</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-11.jpg" alt=""><div class="brief">Club room</div></div>
+      </div>
+      <div class="pgrid" style="margin-top:14px">
+        <div class="ig-tile"><img src="assets/amenities-current-12.jpg" alt=""><div class="brief">Kitchenette lounge</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-13.jpg" alt=""><div class="brief">Private office</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-14.jpg" alt=""><div class="brief">Conference room</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-15.jpg" alt=""><div class="brief">Quiet room</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-16.jpg" alt=""><div class="brief">Golf simulator lounge</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ CURRENT PRESENTATION — THE AMENITIES ============================ -->
+  <section class="section-black info instig" id="amenities-3">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">The Amenities</h2></div>
+      </div>
+      <div class="lrow" style="margin-top:72px">
+        <div class="ig-tile"><img src="assets/amenities-current-17.jpg" alt=""><div class="brief">Fireplace lounge</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-18.jpg" alt=""><div class="brief">Sky bar</div></div>
+      </div>
+      <div class="mixrow">
+        <div class="ig-tile"><img src="assets/amenities-current-19.jpg" alt=""><div class="brief">Game table detail</div></div>
+        <div class="ig-tile span2"><img src="assets/amenities-current-21.jpg" alt=""><div class="brief">Game room</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-20.jpg" alt=""><div class="brief">Built-in shelving detail</div></div>
+      </div>
+      <div class="ig-tile fullrow"><img src="assets/amenities-current-22.jpg" alt=""><div class="brief">Covered terrace</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ CURRENT PRESENTATION — THE AMENITIES ============================ -->
+  <section class="section-black info instig" id="amenities-4">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">The Amenities</h2></div>
+      </div>
+      <div class="pgrid" style="margin-top:72px">
+        <div class="ig-tile"><img src="assets/amenities-current-23.jpg" alt=""><div class="brief">Fitness center sign</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-24.jpg" alt=""><div class="brief">Weight room</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-25.jpg" alt=""><div class="brief">Cardio row</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-26.jpg" alt=""><div class="brief">Strength machines</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-27.jpg" alt=""><div class="brief">Functional training</div></div>
+      </div>
+      <div class="pgrid pgrid4">
+        <div class="ig-tile"><img src="assets/amenities-current-28.jpg" alt=""><div class="brief">Hydration station</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-29.jpg" alt=""><div class="brief">Fitness artwork</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-30.jpg" alt=""><div class="brief">Towel fridge</div></div>
+        <div class="ig-tile"><img src="assets/amenities-current-31.jpg" alt=""><div class="brief">Yoga studio entry</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ CURRENT PRESENTATION — THE BUILDING ============================ -->
+  <section class="section-black info instig" id="current-2">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">The Corridors</h2></div>
+      </div>
+      <div class="pgrid">
+        <div class="ig-tile"><img src="assets/current-10.jpg" alt=""><div class="brief">Elevator lobby</div></div>
+        <div class="ig-tile"><img src="assets/current-11.jpg" alt=""><div class="brief">Corridor to the conservatory</div></div>
+        <div class="ig-tile"><img src="assets/current-12.jpg" alt=""><div class="brief">Gallery corridor</div></div>
+        <div class="ig-tile"><img src="assets/current-13.jpg" alt=""><div class="brief">Lounge artwork</div></div>
+        <div class="ig-tile"><img src="assets/current-14.jpg" alt=""><div class="brief">Corridor artwork</div></div>
+        <div class="ig-tile"><img src="assets/current-15.jpg" alt=""><div class="brief">Amenity directory</div></div>
+        <div class="ig-tile"><img src="assets/current-16.jpg" alt=""><div class="brief">Conservatory sign</div></div>
+        <div class="ig-tile"><img src="assets/current-17.jpg" alt=""><div class="brief">Lounge sign</div></div>
+        <div class="ig-tile"><img src="assets/current-18.jpg" alt=""><div class="brief">Elevator notices</div></div>
+        <div class="ig-tile"><img src="assets/current-19.jpg" alt=""><div class="brief">Review poster</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+
+  <!-- ============================ THE QUICK TAKE + OPPORTUNITIES ============================ -->
+  <section class="section-white info" id="pod" style="min-height:100vh;display:flex;align-items:center">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">The Quick Take</p><h2 class="section-title" style="max-width:44ch;font-size:clamp(22px,2.6vw,36px)">From the street, 270 Hennepin goes unnoticed. Inside, the spaces are nicely done, but they don't feel cheap, they just don't feel anything.</h2></div>
+      </div>
+      <p class="b-label" style="margin-top:clamp(56px,7vw,100px)">Opportunities</p>
+      <div class="pod" style="margin-top:20px">
+        <div class="block">
+          <ul class="pl-list">
+            <li>Opportunity 1 · to be written</li>
+            <li>Opportunity 2 · to be written</li>
+            <li>Opportunity 3 · to be written</li>
+            <li>Opportunity 4 · to be written</li>
+          </ul>
+        </div>
+        <div class="block">
+          <ul class="pl-list">
+            <li>Opportunity 5 · to be written</li>
+            <li>Opportunity 6 · to be written</li>
+            <li>Opportunity 7 · to be written</li>
+            <li>Opportunity 8 · to be written</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================ DIVIDER — MODERN HERITAGE ============================ -->
+  <section class="divider section-black" id="concept-1">
+    <div class="container">
+      <p class="eyebrow">Section 3.0 · Concept 01</p>
+      <h2 class="divider-text">Modern Heritage</h2>
+    </div>
+  </section>
+
+
+  <!-- ============================ CONCEPT 01 — INTRO STATEMENT ============================ -->
+  <section class="statement section-white" id="concept-1-intro">
+    <div class="container">
+      <p class="eyebrow">Concept 01 · Scandinavian Vibes</p>
+      <h2 class="statement-text">A modern take on Minnesota heritage, taking cues from Nordic roots and Scandinavian design to create a modern retreat that is both memorable and meaningful.<br><br>The vibe is hygge, but styled. An overlay that uses the existing spaces as a base and updates them with the warm woods, fabrics, textures and light of contemporary Scandi design.</h2>
+    </div>
+  </section>
+
+
+  <!-- ============================ MOOD BOARD ============================ -->
+  <section class="section-black info instig" id="mood-board">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Concept 01 · Mood Board</p><h2 class="section-title">Design, Hygge, Furniture, Accents</h2></div>
+        <p class="lede">The material and mood world of the concept, on one page.</p>
+      </div>
+      <div class="ig-jrow" style="margin-top:72px">
+        <div class="ig-tile" style="flex:1.333 1 0;aspect-ratio:1.333"><img src="assets/mood-09.jpg" alt=""><div class="brief">Mood · 09</div></div>
+        <div class="ig-tile" style="flex:1.499 1 0;aspect-ratio:1.499"><img src="assets/mood-06.jpg" alt=""><div class="brief">Mood · 06</div></div>
+        <div class="ig-tile" style="flex:1.5 1 0;aspect-ratio:1.5"><img src="assets/mood-11.jpg" alt=""><div class="brief">Mood · 11</div></div>
+      </div>
+      <div class="ig-jrow">
+        <div class="ig-tile" style="flex:1.401 1 0;aspect-ratio:1.401"><img src="assets/mood-02.jpg" alt=""><div class="brief">Mood · 02</div></div>
+        <div class="ig-tile" style="flex:0.727 1 0;aspect-ratio:0.727"><img src="assets/mood-10.jpg" alt=""><div class="brief">Mood · 10</div></div>
+        <div class="ig-tile" style="flex:1.5 1 0;aspect-ratio:1.5"><img src="assets/mood-08.jpg" alt=""><div class="brief">Mood · 08</div></div>
+      </div>
+      <div class="ig-jrow">
+        <div class="ig-tile" style="flex:1.6 1 0;aspect-ratio:1.6"><img src="assets/mood-04.jpg" alt=""><div class="brief">Mood · 04</div></div>
+        <div class="ig-tile" style="flex:1.5 1 0;aspect-ratio:1.5"><img src="assets/mood-12.jpg" alt=""><div class="brief">Mood · 12</div></div>
+        <div class="ig-tile" style="flex:1.401 1 0;aspect-ratio:1.401"><img src="assets/mood-03.jpg" alt=""><div class="brief">Mood · 03</div></div>
+      </div>
+      <div class="ig-jrow">
+        <div class="ig-tile" style="flex:0.89 1 0;aspect-ratio:0.89"><img src="assets/mood-14.jpg" alt=""><div class="brief">Mood · 14</div></div>
+        <div class="ig-tile" style="flex:1.5 1 0;aspect-ratio:1.5"><img src="assets/mood-13.jpg" alt=""><div class="brief">Mood · 13</div></div>
+        <div class="ig-tile" style="flex:1.777 1 0;aspect-ratio:1.777"><img src="assets/mood-07.jpg" alt=""><div class="brief">Mood · 07</div></div>
+      </div>
+      <div class="ig-jrow">
+        <div class="ig-tile" style="flex:1.0 1 0;aspect-ratio:1.0"><img src="assets/mood-15.jpg" alt=""><div class="brief">Mood · 15</div></div>
+        <div class="ig-tile" style="flex:0.803 1 0;aspect-ratio:0.803"><img src="assets/mood-18.jpg" alt=""><div class="brief">Mood · 18</div></div>
+        <div class="ig-tile" style="flex:0.88 1 0;aspect-ratio:0.88"><img src="assets/mood-17.jpg" alt=""><div class="brief">Mood · 17</div></div>
+        <div class="ig-tile" style="flex:1.0 1 0;aspect-ratio:1.0"><img src="assets/mood-16.jpg" alt=""><div class="brief">Mood · 16</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ RENDERED SPACE POOL ============================ -->
+  <section class="section-black info instig" id="render-pool">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Rendered Spaces · 01</p><h2 class="section-title">The Pool</h2></div>
+        <p class="lede">Description to come.</p>
+      </div>
+      <div class="ba-row">
+        <div><div class="ig-tile"><img src="assets/render-pool-before.jpg" alt=""><div class="brief">Pool · before</div></div><p class="b-label">Before</p></div>
+        <div><div class="ig-tile"><img src="assets/render-pool-after.jpg" alt=""><div class="brief">Pool · after, rendered</div></div><p class="b-label">After</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ RENDERED SPACE LOUNGE ============================ -->
+  <section class="section-black info instig" id="render-lounge">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Rendered Spaces · 02</p><h2 class="section-title">The Lounge</h2></div>
+        <p class="lede">Description to come.</p>
+      </div>
+      <div class="ba-row">
+        <div><div class="ig-tile"><img src="assets/render-lounge-before.jpg" alt=""><div class="brief">Lounge · before</div></div><p class="b-label">Before</p></div>
+        <div><div class="ig-tile"><img src="assets/render-lounge-after.jpg" alt=""><div class="brief">Lounge · after, rendered</div></div><p class="b-label">After</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ RENDERED SPACE FITNESS ============================ -->
+  <section class="section-black info instig" id="render-fitness">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Rendered Spaces · 03</p><h2 class="section-title">Fitness</h2></div>
+        <p class="lede">Description to come.</p>
+      </div>
+      <div class="ba-row">
+        <div><div class="ig-tile"><img src="assets/render-fitness-before.jpg" alt=""><div class="brief">Fitness · before</div></div><p class="b-label">Before</p></div>
+        <div><div class="ig-tile"><img src="assets/render-fitness-after.jpg" alt=""><div class="brief">Fitness · after, rendered</div></div><p class="b-label">After</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ RENDERED SPACE LOBBY ============================ -->
+  <section class="section-black info instig" id="render-lobby">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Rendered Spaces · 04</p><h2 class="section-title">The Lobby</h2></div>
+        <p class="lede">Description to come.</p>
+      </div>
+      <div class="ba-row">
+        <div><div class="ig-tile"><img src="assets/render-lobby-before.jpg" alt=""><div class="brief">Lobby · before</div></div><p class="b-label">Before</p></div>
+        <div><div class="ig-tile"><img src="assets/render-lobby-after.jpg" alt=""><div class="brief">Lobby · after, rendered</div></div><p class="b-label">After</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ RENDERED SPACE ARRIVAL ============================ -->
+  <section class="section-black info instig" id="render-arrival">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Rendered Spaces · 05</p><h2 class="section-title">The Arrival</h2></div>
+        <p class="lede">Description to come.</p>
+      </div>
+      <div class="ba-row">
+        <div><div class="ig-tile"><img src="assets/render-arrival-before.jpg" alt=""><div class="brief">Arrival · before</div></div><p class="b-label">Before</p></div>
+        <div><div class="ig-tile"><img src="assets/render-arrival-after.jpg" alt=""><div class="brief">Arrival · after, rendered</div></div><p class="b-label">After</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 09 — FPO ============================ -->
+  <section class="section-black info instig" id="instig-03">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Idea 01 · Corridor Artwork</p><h2 class="section-title">Installations, not murals</h2></div>
+        <p class="lede">Art integrated with the texture of materials of the building, not overt paint of random photos set on top of it. Physical, sculptural, made by hand — a few serious pieces placed where people actually pass, so the building collects rather than decorates.</p>
+      </div>
+      <div class="ig-grid ig-2" style="grid-template-columns:repeat(3,1fr);max-width:1100px">
+        <div class="ig-tile"><img src="assets/install-1.jpg" alt="A ceramic relief tile wall beside the pool"><div class="brief">Relief tile wall · ceramic, built into the architecture</div></div>
+        <div class="ig-tile"><img src="assets/install-2.jpg" alt="A textured tile wall panel in a plaster hall"><div class="brief">Wall relief · the entry hall</div></div>
+        <div class="ig-tile"><img src="assets/install-4.jpg" alt="Composed ceramic shapes on a wall"><div class="brief">Ceramic assemblage · a composed wall</div></div>
+        <div class="ig-tile"><img src="assets/install-5.jpg" alt="A stacked ceramic totem in the garden"><div class="brief">Stacked ceramic totem · the courtyard</div></div>
+        <div class="ig-tile"><img src="assets/install-6.jpg" alt="A room-scale woven fiber wall sculpture"><div class="brief">Woven fiber · sculptural, room-scale</div></div>
+        <div class="ig-tile"><img src="assets/install-7.jpg" alt="A hanging rope fiber piece"><div class="brief">Fiber hanging · quiet, made by hand</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 03 — THE ENTRY ============================ -->
+  <section class="section-black info instig" id="instig-entrance">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Idea 02 · Candles, Scent and the Coffee Bar</p><h2 class="section-title">The Entry</h2></div>
+        <p class="lede">The first moments inside: the scent, lit candles, mood and light, a soundtrack, a concierge who is also the barista — the hello, the drink offered, the name remembered.<br><br>The building should smell like somewhere. D.S. &amp; Durga or Loewe, distinct not off the shelf. And aligned with the texture, tile, lighting and mood — so that coming home has a sense.</p>
+      </div>
+      <div style="margin-top:72px;display:flex;flex-direction:column;gap:14px">
+        <div class="ig-jrow">
+          <div class="ig-tile" style="flex:1.0 1 0;aspect-ratio:1.0"><img src="assets/scent-1.jpg" alt="A lit match, the first scent"><div class="brief">The scent · Le Labo Papyrus 20, the lit match</div></div>
+          <div class="ig-tile" style="flex:1.8 1 0;aspect-ratio:1.8"><img src="assets/scent-2.jpg" alt="Ceramic diffuser and botanicals"><div class="brief">The mood · Loewe home scents, ceramic, botanicals</div></div>
+          <div class="ig-tile" style="flex:0.662 1 0;aspect-ratio:0.662"><img src="assets/scent-3.jpg" alt="Palo santo, smoke and wood"><div class="brief">The air · palo santo, smoke and wood</div></div>
+        </div>
+        <div class="ig-jrow">
+          <div class="ig-tile" style="flex:0.75 1 0;aspect-ratio:0.75"><img src="assets/barista-1.jpg" alt="A barista pouring latte art"><div class="brief">The pour · a flat white, made by hand</div></div>
+          <div class="ig-tile" style="flex:0.75 1 0;aspect-ratio:0.75"><img src="assets/barista-2.jpg" alt="A light-filled lobby coffee bar"><div class="brief">The bar · light, stone, the machine</div></div>
+          <div class="ig-tile" style="flex:0.75 1 0;aspect-ratio:0.75"><img src="assets/barista-3.jpg" alt="A concierge who is also the barista"><div class="brief">The hello · concierge and barista, the name remembered</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ INSTIGATION 07 — THE LIGHT ============================ -->
+  <section class="section-black info instig" id="instig-light">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Idea 03 · Light</p><h2 class="section-title">The Light</h2></div>
+        <p class="lede">Light as a mood. Showing material not reflecting or glossing over it. Low, warm and layered — a soft glow, daylight pulled deep into the room by morning or late shadows showing layers by evening. Nothing harsh, nothing overhead, nothing direct.</p>
+      </div>
+      <div class="lt-grid">
+        <div class="ig-tile p"><img src="assets/light-7.jpg" alt=""><div class="brief">Pendants over the long table</div></div>
+        <div class="ig-tile p"><img src="assets/light-8.jpg" alt=""><div class="brief">Sconces, a lamp, the fire</div></div>
+        <div class="ig-tile"><img src="assets/light-3.jpg" alt=""><div class="brief">Living, dining, kitchen in one warm light</div></div>
+        <div class="ig-tile"><img src="assets/light-4.jpg" alt=""><div class="brief">Morning sun across the counter</div></div>
+        <div class="ig-tile"><img src="assets/light-5.jpg" alt=""><div class="brief">Daylight deep into the plan</div></div>
+        <div class="ig-tile"><img src="assets/light-6.jpg" alt=""><div class="brief">Sauna · light along the slats</div></div>
+        <div class="ig-tile"><img src="assets/light-1.jpg" alt=""><div class="brief">Warm wood, a glow beneath the cabinets</div></div>
+        <div class="ig-tile"><img src="assets/light-2.jpg" alt=""><div class="brief">Arched windows, pendants over the island</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ IDEA 04 AMENITIES ============================ -->
+  <section class="section-black info instig" id="idea-amenities">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Idea 04</p><h2 class="section-title">Uplevelled Amenities and Spaces</h2></div>
+        <p class="lede">Further ideas, to be confirmed. One page per idea or two to three together.</p>
+      </div>
+      <div class="idea-row">
+        <div><div class="ig-tile"><img src="assets/idea-amenity-1.jpg" alt=""><div class="brief">Idea 1 · image</div></div><h3>Idea 1</h3><p>To come.</p></div>
+        <div><div class="ig-tile"><img src="assets/idea-amenity-2.jpg" alt=""><div class="brief">Idea 2 · image</div></div><h3>Idea 2</h3><p>To come.</p></div>
+        <div><div class="ig-tile"><img src="assets/idea-amenity-3.jpg" alt=""><div class="brief">Idea 3 · image</div></div><h3>Idea 3</h3><p>To come.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- ============================ STYLE GUIDE ============================ -->
+  <style>
+    /* Reusable Style Guide blocks — colour palette (variable count) + typography.
+       Swap the hex / Pantone / CMYK values and add or remove swatches; layout holds. */
+    .sg{padding:clamp(90px,12vw,150px) 0;}
+    .sg .sg-head{margin-bottom:clamp(36px,4.5vw,64px);}
+    .sg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:clamp(20px,2.4vw,32px);}
+    .sg-chip{height:200px;width:100%;border:1px solid rgba(246,245,242,.12);}
+    .sg-name{font-family:var(--font-headline);font-weight:200;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.01em;margin:20px 0 14px;}
+    .sg-rows{display:flex;flex-direction:column;}
+    .sg-row{display:flex;justify-content:space-between;gap:14px;font-size:11px;letter-spacing:.06em;padding:8px 0;border-top:1px solid rgba(246,245,242,.09);}
+    .sg-row .k{color:var(--muted);text-transform:uppercase;letter-spacing:.18em;}
+    .sg-row .v{color:var(--white);text-align:right;font-variant-numeric:tabular-nums;}
+    .sg-row .v.sg-tbd{color:var(--accent-dark);}
+    .sg-type{margin-top:clamp(40px,5vw,64px);}
+    .sg-specimen{font-weight:200;line-height:1.22;word-break:break-word;overflow-wrap:anywhere;margin-top:14px;}
+    .sg-specimen.head{font-family:var(--font-headline);font-size:clamp(24px,5vw,60px);letter-spacing:-.01em;}
+    .sg-specimen.body{font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(20px,2.8vw,32px);}
+    @media(max-width:860px){.sg-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}.sg-chip{height:150px;}}
+  </style>
+
+
+  <!-- ============================ DIVIDER — CREATIVE LOOK ============================ -->
+  <section class="divider section-black" id="creative-look">
+    <div class="container">
+      <p class="eyebrow">Section 4.0</p>
+      <h2 class="divider-text">The Look</h2>
+    </div>
+  </section>
+
+
+  <!-- ============================ CREATIVE LOOK LOGO ============================ -->
+  <section class="section-black info instig" id="cl-logo">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">The Look · 01</p><h2 class="section-title">Logo</h2></div>
+        <p class="lede">The name and mark.</p>
+      </div>
+      <div class="logo-grid">
+        <div class="ig-tile lg-main"><img src="assets/logo-primary.jpg" alt=""><div class="brief">Primary logo</div></div>
+        <div class="ig-tile"><img src="assets/logo-secondary.jpg" alt=""><div class="brief">Secondary mark / monogram</div></div>
+        <div class="ig-tile"><img src="assets/logo-lockups.jpg" alt=""><div class="brief">Lockups · reversed, one color</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <!-- Style Guide — colour palette (variable number of swatches) -->
+  <section class="section-black sg" id="sg-color">
+    <div class="container">
+      <div class="sg-head">
+        <p class="eyebrow">The Look · 02</p>
+        <h2 class="section-title">Color Palette</h2>
+      </div>
+      <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
+      <div class="sg-grid">
+
+        <div class="sg-swatch">
+          <div class="sg-chip" style="background:#11181f"></div>
+          <div class="sg-name">Charcoal</div>
+          <div class="sg-rows">
+            <div class="sg-row"><span class="k">Pantone</span><span class="v sg-tbd">TBD</span></div>
+            <div class="sg-row"><span class="k">CMYK</span><span class="v sg-tbd">TBD</span></div>
+            <div class="sg-row"><span class="k">Hex</span><span class="v">#11181F</span></div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-chip" style="background:#f6f5f2"></div>
+          <div class="sg-name">Cream</div>
+          <div class="sg-rows">
+            <div class="sg-row"><span class="k">Pantone</span><span class="v sg-tbd">TBD</span></div>
+            <div class="sg-row"><span class="k">CMYK</span><span class="v sg-tbd">TBD</span></div>
+            <div class="sg-row"><span class="k">Hex</span><span class="v">#F6F5F2</span></div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-chip" style="background:#b89a6a"></div>
+          <div class="sg-name">Gold</div>
+          <div class="sg-rows">
+            <div class="sg-row"><span class="k">Pantone</span><span class="v sg-tbd">TBD</span></div>
+            <div class="sg-row"><span class="k">CMYK</span><span class="v sg-tbd">TBD</span></div>
+            <div class="sg-row"><span class="k">Hex</span><span class="v">#B89A6A</span></div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-chip" style="background:#8c7247"></div>
+          <div class="sg-name">Bronze</div>
+          <div class="sg-rows">
+            <div class="sg-row"><span class="k">Pantone</span><span class="v sg-tbd">TBD</span></div>
+            <div class="sg-row"><span class="k">CMYK</span><span class="v sg-tbd">TBD</span></div>
+            <div class="sg-row"><span class="k">Hex</span><span class="v">#8C7247</span></div>
+          </div>
+        </div>
+
+      </div>
+      <p class="ig-ref" style="margin-top:clamp(28px,3vw,40px)">Placeholder palette — current deck colors. Swap in the brand's Pantone, CMYK and hex per swatch; add or remove swatches as the palette needs.</p>
+    </div>
+  </section>
+
+  <!-- Style Guide — typography -->
+  <section class="section-black sg" id="sg-type">
+    <div class="container">
+      <div class="sg-head">
+        <p class="eyebrow">The Look · 03</p>
+        <h2 class="section-title">Typography</h2>
+      </div>
+      <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
+
+      <div class="sg-type">
+        <p class="b-label">Emilio Trial Extra Light · Headlines &amp; Accents</p>
+        <p class="sg-specimen head">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
+      </div>
+
+      <div class="sg-type">
+        <p class="b-label">Inter · Body Copy</p>
+        <p class="sg-specimen body">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
+      </div>
+
+      <p class="ig-ref" style="margin-top:clamp(28px,3vw,40px)">Placeholder typefaces — current deck fonts. Swap in the brand's headline and body typefaces.</p>
+    </div>
+  </section>
+
+
+  <!-- ============================ CREATIVE LOOK GRAPHIC ============================ -->
+  <section class="section-black info instig" id="cl-graphic">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">The Look · 04</p><h2 class="section-title">Graphic Language</h2></div>
+        <p class="lede">Pattern, texture and the supporting design elements.</p>
+      </div>
+      <div class="ig-grid" style="grid-template-columns:repeat(3,1fr);grid-auto-rows:34vh">
+        <div class="ig-tile"><img src="assets/graphic-1.jpg" alt=""><div class="brief">Pattern</div></div>
+        <div class="ig-tile"><img src="assets/graphic-2.jpg" alt=""><div class="brief">Texture</div></div>
+        <div class="ig-tile"><img src="assets/graphic-3.jpg" alt=""><div class="brief">Iconography</div></div>
+        <div class="ig-tile"><img src="assets/graphic-4.jpg" alt=""><div class="brief">Graphic device</div></div>
+        <div class="ig-tile"><img src="assets/graphic-5.jpg" alt=""><div class="brief">Layout grid</div></div>
+        <div class="ig-tile"><img src="assets/graphic-6.jpg" alt=""><div class="brief">Applied</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ CREATIVE LOOK PHOTO ============================ -->
+  <section class="section-black info instig" id="cl-photo">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">The Look · 05</p><h2 class="section-title">Photography Style</h2></div>
+        <p class="lede">How the property is shot. Light, people, detail.</p>
+      </div>
+      <div class="collage">
+        <div class="ig-tile c-big"><img src="assets/photo-style-01.jpg" alt=""><div class="brief">Photography style · photo 01</div></div>
+        <div class="ig-tile c-wide"><img src="assets/photo-style-02.jpg" alt=""><div class="brief">Photography style · photo 02</div></div>
+        <div class="ig-tile"><img src="assets/photo-style-03.jpg" alt=""><div class="brief">Photography style · photo 03</div></div>
+        <div class="ig-tile"><img src="assets/photo-style-04.jpg" alt=""><div class="brief">Photography style · photo 04</div></div>
+        <div class="ig-tile c-wide"><img src="assets/photo-style-05.jpg" alt=""><div class="brief">Photography style · photo 05</div></div>
+        <div class="ig-tile"><img src="assets/photo-style-06.jpg" alt=""><div class="brief">Photography style · photo 06</div></div>
+        <div class="ig-tile"><img src="assets/photo-style-07.jpg" alt=""><div class="brief">Photography style · photo 07</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ CREATIVE LOOK SYSTEM ============================ -->
+  <section class="section-black info instig" id="cl-system">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">The Look · 06</p><h2 class="section-title">The System</h2></div>
+        <p class="lede">Everything together.</p>
+      </div>
+      <div class="ig-tile mock"><img src="assets/style-guide-summary.jpg" alt=""><div class="brief">The system on one page · logo, palette, type, graphics together</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ DIVIDER — CREATIVE MOCKUPS ============================ -->
+  <section class="divider section-black" id="mockups">
+    <div class="container">
+      <p class="eyebrow">Section 5.0</p>
+      <h2 class="divider-text">The Execution</h2>
+    </div>
+  </section>
+
+
+  <!-- ============================ MOCKUP ENTRY ============================ -->
+  <section class="section-black info instig" id="mockup-entry">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Mockup 01</p><h2 class="section-title">Entry</h2></div>
+      </div>
+      <div class="ig-tile mock"><img src="assets/mockup-entry.jpg" alt=""><div class="brief">Entry · mockup</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ MOCKUP SIGNAGE ============================ -->
+  <section class="section-black info instig" id="mockup-signage">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Mockup 02</p><h2 class="section-title">Signage</h2></div>
+      </div>
+      <div class="ig-tile mock"><img src="assets/mockup-signage.jpg" alt=""><div class="brief">Signage · mockup</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ MOCKUP A-FRAME ============================ -->
+  <section class="section-black info instig" id="mockup-a-frame">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Mockup 03</p><h2 class="section-title">A-Frame</h2></div>
+      </div>
+      <div class="ig-tile mock"><img src="assets/mockup-a-frame.jpg" alt=""><div class="brief">A-Frame · mockup</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ MOCKUP WAYFINDING ============================ -->
+  <section class="section-black info instig" id="mockup-wayfinding">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Mockup 04</p><h2 class="section-title">Wayfinding</h2></div>
+      </div>
+      <div class="ig-tile mock"><img src="assets/mockup-wayfinding.jpg" alt=""><div class="brief">Wayfinding · mockup</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ MOCKUP BUSINESS CARD ============================ -->
+  <section class="section-black info instig" id="mockup-business-card">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Mockup 05</p><h2 class="section-title">Business Card</h2></div>
+      </div>
+      <div class="ig-tile mock"><img src="assets/mockup-business-card.jpg" alt=""><div class="brief">Business Card · mockup</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ MOCKUP HANDOUT ============================ -->
+  <section class="section-black info instig" id="mockup-handout">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Mockup 06</p><h2 class="section-title">Handout</h2></div>
+      </div>
+      <div class="ig-tile mock"><img src="assets/mockup-handout.jpg" alt=""><div class="brief">Handout · mockup</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ MOCKUP HOME PAGE ============================ -->
+  <section class="section-black info instig" id="mockup-home-page">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Mockup 07</p><h2 class="section-title">Home Page</h2></div>
+      </div>
+      <div class="ig-tile mock"><img src="assets/mockup-home-page.jpg" alt=""><div class="brief">Home Page · mockup</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+
+  <!-- ============================ MOCKUP GARAGE ============================ -->
+  <section class="section-black info instig" id="mockup-garage">
+    <div class="container">
+      <div class="info-head">
+        <div><p class="eyebrow">Mockup 08</p><h2 class="section-title">Garage</h2></div>
+      </div>
+      <div class="ig-tile mock"><img src="assets/mockup-garage.jpg" alt=""><div class="brief">Garage · mockup</div></div>
+    </div>
+  </section>
+
+  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
+
+  <footer>
+    <div class="container foot-inner">
+      <div>270 Hennepin · Studio Fabric</div>
+      <a class="top" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mark tiles whose photo actually loaded so the shot brief hides.
+    document.querySelectorAll('.cc-tile img, .ly-tile img, .pd-shot img, .ig-tile img, .pg-tile img').forEach(function(img){
+      function ok(){ img.parentNode.classList.add('has-img'); }
+      function fail(){ img.style.display='none'; }
+      if(img.complete){ (img.naturalWidth>0) ? ok() : fail(); }
+      img.addEventListener('load', ok);
+      img.addEventListener('error', fail);
+    });
+  </script>
+
+  <script>
+    // ===== Scroll choreography for the Resident Profile sequence =====
+    (function(){
+      var root = document.documentElement;
+      root.classList.add('anim');
+      var targets = document.querySelectorAll('.ov-row, .pg-tile, .pd-grid, .pd-portraits, .cc-comp');
+
+      // 1) Pin: hold 'Who they are', crossfade to 'What they want', then bridge green→cream into the overview.
+      var pin   = document.getElementById('who-pin');
+      var inner = pin && pin.querySelector('.pin-inner');
+      var slideA = pin && pin.querySelector('.who-a');
+      var slideB = pin && pin.querySelector('.who-b');
+      var GREEN = [17,24,31], CREAM = [246,245,242];
+      function clamp(v){ return v<0?0:(v>1?1:v); }
+      function smooth(t){ t=clamp(t); return t*t*(3-2*t); }
+      function tick(){
+        if(!pin || !inner) return;
+        var r = pin.getBoundingClientRect();
+        var maxPin = r.height - window.innerHeight;
+        if(maxPin <= 0) return;                 // reduced-motion / short viewport
+        var p = clamp(-r.top / maxPin);
+        var aOut = smooth((p - 0.25) / 0.17);   // 'who' holds, then fades fully out (.25–.42)
+        var bIn  = smooth((p - 0.48) / 0.17);   // after a beat, 'want' fades in (.48–.65)
+        var bOut = smooth((p - 0.82) / 0.18);   // 'want' fades out + green→cream (.82–1) into the overview
+        if(slideA) slideA.style.opacity = (1 - aOut).toFixed(3);
+        if(slideB) slideB.style.opacity = (bIn * (1 - bOut)).toFixed(3);
+        var c0 = Math.round(GREEN[0] + (CREAM[0]-GREEN[0])*bOut);
+        var c1 = Math.round(GREEN[1] + (CREAM[1]-GREEN[1])*bOut);
+        var c2 = Math.round(GREEN[2] + (CREAM[2]-GREEN[2])*bOut);
+        inner.style.backgroundColor = 'rgb('+c0+','+c1+','+c2+')';
+      }
+      // Gold rules: scrub scaleX from scroll position (grows left→right, reverses on scroll-up).
+      var goldLines = document.querySelectorAll('.gr-line');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function updateRules(){
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        for(var i=0;i<goldLines.length;i++){
+          var r = goldLines[i].getBoundingClientRect();
+          var p = reduceMotion ? 1 : (vh*0.9 - r.top) / (vh*0.4);
+          p = p<0?0:(p>1?1:p);
+          goldLines[i].style.transform = 'scaleX('+p.toFixed(3)+')';
+        }
+      }
+      // Intro: pin the hero and fade it out to reveal the landscape image behind it.
+      var introPin = document.getElementById('intro-pin');
+      var heroEl = introPin && introPin.querySelector('.hero');
+      function tickIntro(){
+        if(!introPin || !heroEl) return;
+        var r = introPin.getBoundingClientRect();
+        var maxPin = r.height - window.innerHeight;
+        if(maxPin <= 0){ heroEl.style.opacity=''; return; }
+        var p = clamp(-r.top / maxPin);
+        heroEl.style.opacity = (1 - smooth(p / 0.6)).toFixed(3);   // fade out over first 60% of the pin
+      }
+      // Mindful Luxury: hold, then fade text out + green→cream into the cream layers.
+      var mpin = document.getElementById('mindful-pin');
+      var minner = mpin && mpin.querySelector('.pin-inner');
+      var mtext = mpin && mpin.querySelector('.container');
+      function tickMindful(){
+        if(!mpin || !minner) return;
+        var r = mpin.getBoundingClientRect();
+        var maxPin = r.height - window.innerHeight;
+        if(maxPin <= 0) return;
+        var p = clamp(-r.top / maxPin);
+        var f = smooth((p - 0.35) / 0.45);
+        minner.style.backgroundColor = 'rgb('+Math.round(GREEN[0]+(CREAM[0]-GREEN[0])*f)+','+Math.round(GREEN[1]+(CREAM[1]-GREEN[1])*f)+','+Math.round(GREEN[2]+(CREAM[2]-GREEN[2])*f)+')';
+        if(mtext) mtext.style.opacity = (1 - f).toFixed(3);
+      }
+      // Sentiment & Brand DNA: heading locks center, numbered blocks build one at a time, then all scrolls off.
+      function makeBuildTick(pinId){
+        var pEl = document.getElementById(pinId);
+        if(!pEl) return function(){};
+        var innerEl = pEl.querySelector('.build-inner');
+        var items = pEl.querySelectorAll('.build-item');
+        var N = items.length;
+        var bStart = 0.14, bEnd = 0.86;                   // build window; content then holds and scrolls away naturally
+        return function(){
+          var r = pEl.getBoundingClientRect();
+          var maxPin = r.height - window.innerHeight;
+          if(maxPin <= 0){                                // not pinned (reduced-motion / short viewport): show all
+            for(var k=0;k<N;k++){ items[k].style.opacity=''; items[k].style.transform=''; }
+            return;
+          }
+          var p = clamp(-r.top / maxPin);
+          var slot = (bEnd - bStart) / (N || 1);
+          for(var i=0;i<N;i++){
+            var s = bStart + i*slot;
+            var inF = smooth((p - s) / (slot*0.85));       // each block rises + fades in, in turn
+            items[i].style.opacity = inF.toFixed(3);
+            items[i].style.transform = 'translateY('+((1-inF)*40).toFixed(1)+'px)';
+          }
+        };
+      }
+      var tickSentiment = makeBuildTick('sentiment-pin');
+      // Brand DNA: pin centered, then fade the content out on scroll (cream bg, no color shift).
+      var ppin = document.getElementById('pillars-pin');
+      var pcont = ppin && ppin.querySelector('.container');
+      function tickPillars(){
+        if(!ppin) return;
+        var r = ppin.getBoundingClientRect();
+        var maxPin = r.height - window.innerHeight;
+        if(maxPin <= 0){ if(pcont) pcont.style.opacity=''; return; }
+        var p = clamp(-r.top / maxPin);
+        var f = smooth((p - 0.35) / 0.45);
+        if(pcont) pcont.style.opacity = (1 - f).toFixed(3);
+      }
+      // Core comps: pin each home page centered, then crossfade to the next (same mechanic as the who-pin crossfade).
+      var cpin = document.getElementById('comp-pin');
+      var cslides = cpin ? cpin.querySelectorAll('.comp-slide') : [];
+      function tickComps(){
+        if(!cpin || !cslides.length) return;
+        var r = cpin.getBoundingClientRect();
+        var maxPin = r.height - window.innerHeight;
+        if(maxPin <= 0){ for(var k=0;k<cslides.length;k++){ cslides[k].style.opacity=''; } return; }
+        var p = clamp(-r.top / maxPin);
+        var N = cslides.length, beat = 1/N, fd = 0.34;
+        for(var i=0;i<N;i++){
+          var start = i*beat, inEnd = start + fd*beat;
+          var outStart = (i+1)*beat, outEnd = outStart + fd*beat;
+          var op;
+          if(i===0){ op = (p < outStart) ? 1 : (p < outEnd ? 1 - smooth((p-outStart)/(fd*beat)) : 0); }
+          else if(i===N-1){ op = (p < start) ? 0 : (p < inEnd ? smooth((p-start)/(fd*beat)) : 1); }
+          else if(p < start){ op = 0; }
+          else if(p < inEnd){ op = smooth((p-start)/(fd*beat)); }
+          else if(p < outStart){ op = 1; }
+          else if(p < outEnd){ op = 1 - smooth((p-outStart)/(fd*beat)); }
+          else { op = 0; }
+          cslides[i].style.opacity = op.toFixed(3);
+        }
+      }
+      var ticking = false;
+      // Fallback reveal (for previews/iframes where IntersectionObserver may not fire): anything within the viewport gets 'in'.
+      function revealVisible(){
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        for(var i=0;i<targets.length;i++){
+          var el = targets[i]; if(el.classList.contains('in')) continue;
+          var r = el.getBoundingClientRect();
+          if(r.top < vh*1.05 && r.bottom > -vh*0.05){ el.classList.add('in'); }
+        }
+      }
+      // Section nav: highlight the active link and flip to dark text over light bands.
+      var navEl = document.querySelector('.deck-nav');
+      var navLinks = navEl ? [].slice.call(navEl.querySelectorAll('a')) : [];
+      var navTargets = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+      var navBands = [].slice.call(document.body.children).filter(function(el){ return el.matches && el.matches('section,.pin-wrap,footer,#intro-pin'); });
+      function bandIsLight(el){
+        if(el.classList.contains('section-white')) return true;
+        if(el.classList.contains('section-black')) return false;
+        var inner = el.querySelector('.pin-inner,.hero,section');
+        if(inner){ if(inner.classList.contains('section-white')) return true; if(inner.classList.contains('section-black')) return false; }
+        return false;
+      }
+      function navTick(){
+        if(!navEl) return;
+        var navY = 30, vh = window.innerHeight, band = null;
+        for(var i=0;i<navBands.length;i++){ var r=navBands[i].getBoundingClientRect(); if(r.top<=navY && r.bottom>navY){ band=navBands[i]; break; } }
+        if(band) navEl.classList.toggle('on-light', bandIsLight(band));
+        var idx = 0;
+        for(var j=0;j<navTargets.length;j++){ var t=navTargets[j]; if(t && t.getBoundingClientRect().top <= vh*0.45) idx=j; }
+        for(var k=0;k<navLinks.length;k++){ navLinks[k].classList.toggle('active', k===idx); }
+      }
+      function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); navTick(); updateRules(); tickIntro(); revealVisible(); ticking=false; }); } }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      window.addEventListener('resize', onScroll);
+      tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); navTick(); updateRules(); tickIntro(); revealVisible();
+      window.addEventListener('load', revealVisible); setTimeout(revealVisible, 800);
+
+      // 2) Build on scroll: each row and each tile reveals as it enters the viewport.
+      if('IntersectionObserver' in window){
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, {root:null, rootMargin:'0px 0px -20% 0px', threshold:0.01});
+        targets.forEach(function(el){ io.observe(el); });
+      } else {
+        targets.forEach(function(el){ el.classList.add('in'); });
+      }
+    })();
+  </script>
+</body>
+</html>
