@@ -768,6 +768,7 @@
     .vba-stage{position:relative;width:100%;overflow:hidden;background:#161616;}
     .vba-land{aspect-ratio:16/9;}
     .vba-port{width:min(480px,74vw);aspect-ratio:3/4;}
+    .vba-9x16{width:min(420px,78vw);aspect-ratio:9/16;}
     .vba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .55s ease;}
     .vba-img.on{opacity:1;}
     .vba-switch{display:inline-flex;gap:18px;margin-top:20px;}
@@ -1222,25 +1223,15 @@
       <div class="info-head">
         <div><p class="eyebrow">Concept 01 · The Vibe</p><h2 class="section-title">The Lobby Lounge</h2></div>
       </div>
-      <div class="ba-six">
-        <div class="ig-tile ba-sm"><img src="assets/render-lounge-before-1.jpg" alt="" style="object-position:center 55%"></div>
-        <div class="ig-tile ba-sm"><img src="assets/render-lounge-before-2.jpg" alt="" style="object-position:center 55%"></div>
-        <div class="ig-tile ba-sm"><img src="assets/render-lounge-before-3.jpg" alt="" style="object-position:center 45%"><span class="ba-tag">Before</span></div>
-        <div class="ig-tile ba-sm"><img src="assets/render-lounge-before-4.jpg" alt="" style="object-position:center 50%"></div>
-        <div class="ig-tile ba-big" style="grid-column:3;grid-row:1/3"><img src="assets/render-lounge-after-1.jpg" alt=""><span class="ba-tag">After</span></div>
-        <div class="ig-tile ba-big" style="grid-column:4;grid-row:1/3"><img src="assets/render-lounge-after-2.jpg" alt=""><span class="ba-tag">After</span></div>
-      </div>
-      <div class="ig-jrow" style="margin-top:16px">
-        <div class="ig-tile" style="flex:0.757 1 0;aspect-ratio:0.757"><img src="assets/render-lounge-after-c1.jpg" alt=""><span class="ba-tag">After</span></div>
-        <div class="ig-tile" style="flex:0.731 1 0;aspect-ratio:0.731"><img src="assets/render-lounge-after-c2.jpg" alt=""></div>
-        <div class="ig-tile" style="flex:0.792 1 0;aspect-ratio:0.792"><img src="assets/render-lounge-after-c3.jpg" alt=""></div>
-        <div class="ig-tile" style="flex:0.886 1 0;aspect-ratio:0.886"><img src="assets/render-lounge-after-c6.jpg" alt=""></div>
-        <div class="ig-tile" style="flex:0.768 1 0;aspect-ratio:0.768"><img src="assets/render-lounge-after-c5.jpg" alt=""></div>
-      </div>
-      <div class="ig-jrow" style="margin-top:16px">
-        <div class="ig-tile" style="flex:0.9 1 0;aspect-ratio:0.9"><img src="assets/render-lounge-after-v4.jpg" alt="Four bar wall options"><span class="ba-tag">After · Bar wall options</span></div>
-        <div class="ig-tile" style="flex:0.563 1 0;aspect-ratio:0.563"><img src="assets/render-lounge-after-bar.jpg" alt="The curved stone bar"><span class="ba-tag">After</span></div>
-        <div class="ig-tile" style="flex:0.563 1 0;aspect-ratio:0.563"><img src="assets/render-lounge-after-top.jpg" alt="The coffee bar from above"></div>
+      <div class="vibe-ba vibe-port">
+        <div class="vba-stage vba-9x16">
+          <img class="vba-img on" data-k="before" src="assets/lobby-before.jpg" alt="The Lobby Lounge, before">
+          <img class="vba-img" data-k="after" src="assets/lobby-after.jpg" alt="The Lobby Lounge, after">
+        </div>
+        <div class="vba-switch">
+          <button type="button" class="ba-tbtn on" data-show="before">Before</button>
+          <button type="button" class="ba-tbtn" data-show="after">After</button>
+        </div>
       </div>
     </div>
   </section>
