@@ -548,7 +548,8 @@
     #logo-pin .ll-horizontal{width:min(1800px,94vw);}
     #logo-pin .ll-mark{width:clamp(98px,12vw,182px);}
     #logo-pin .ls-cap{position:absolute;left:0;right:0;bottom:clamp(20px,3vh,40px);text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);}
-    #logo-row .logo-trio{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(246,245,242,.16);border-bottom:1px solid rgba(246,245,242,.16);margin-top:clamp(24px,4vw,48px);}
+    #logo-row{min-height:0;padding:clamp(90px,12vw,150px) 0;}
+    #logo-row .logo-trio{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(246,245,242,.16);border-bottom:1px solid rgba(246,245,242,.16);}
     #logo-row .lt-cell{display:flex;align-items:center;justify-content:center;padding:clamp(24px,4vh,52px) clamp(16px,2.5vw,40px);min-height:clamp(140px,24vh,240px);}
     #logo-row .lt-cell + .lt-cell{border-left:1px solid rgba(246,245,242,.16);}
     #logo-row .lt-cell img{display:block;height:auto;}
@@ -1478,8 +1479,6 @@
       </div>
     </div>
   </section>
-
-  <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
 
   <!-- Style Guide — colour palette (variable number of swatches) -->
   <section class="section-black sg" id="sg-color">
