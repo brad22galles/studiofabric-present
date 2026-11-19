@@ -1420,10 +1420,16 @@
     .sg-row .k{color:var(--muted);text-transform:uppercase;letter-spacing:.18em;}
     .sg-row .v{color:var(--white);text-align:right;font-variant-numeric:tabular-nums;}
     .sg-row .v.sg-tbd{color:var(--accent-dark);}
+    /* Brand fonts — scoped to the type specimens in The Look · 03 only */
+    @font-face{font-family:'Ashcroft';src:url('assets/fonts/AshcroftTest-ExtraLight.otf') format('opentype');font-weight:200;font-display:swap;}
+    @font-face{font-family:'Systemia';src:url('assets/fonts/SystemiaTest-Regular.otf') format('opentype');font-weight:400;font-display:swap;}
     .sg-type{margin-top:clamp(40px,5vw,64px);}
     .sg-specimen{font-weight:200;line-height:1.22;word-break:break-word;overflow-wrap:anywhere;margin-top:14px;}
-    .sg-specimen.head{font-family:var(--font-headline);font-size:clamp(24px,5vw,60px);letter-spacing:-.01em;}
-    .sg-specimen.body{font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(20px,2.8vw,32px);}
+    .sg-specimen.head{font-family:'Ashcroft','Times New Roman',Georgia,serif;font-size:clamp(24px,5vw,60px);letter-spacing:-.01em;}
+    .sg-specimen.body{font-family:'Systemia',-apple-system,system-ui,sans-serif;font-weight:400;font-size:clamp(20px,2.8vw,32px);}
+    .font-dl{display:inline-flex;align-items:center;gap:10px;margin-top:20px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(184,154,106,.5);padding:11px 22px;text-decoration:none;transition:background .35s ease,color .35s ease;}
+    .font-dl:hover{background:var(--accent);color:var(--black);}
+    .font-dl .ar{font-size:13px;line-height:1;}
     @media(max-width:860px){.sg-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}.sg-chip{height:150px;}}
   </style>
 
@@ -1519,16 +1525,16 @@
       <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
 
       <div class="sg-type">
-        <p class="b-label">Emilio Trial Extra Light · Headlines &amp; Accents</p>
+        <p class="b-label">Ashcroft Extra Light · Headlines &amp; Accents</p>
         <p class="sg-specimen head">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
+        <a class="font-dl" href="assets/fonts/Ashcroft.zip" download="Ashcroft.zip">Download Ashcroft <span class="ar">↓</span></a>
       </div>
 
       <div class="sg-type">
-        <p class="b-label">Inter · Body Copy</p>
+        <p class="b-label">Systemia · Body Copy</p>
         <p class="sg-specimen body">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
+        <a class="font-dl" href="assets/fonts/Systemia.zip" download="Systemia.zip">Download Systemia <span class="ar">↓</span></a>
       </div>
-
-      <p class="ig-ref" style="margin-top:clamp(28px,3vw,40px)">Placeholder typefaces — current deck fonts. Swap in the brand's headline and body typefaces.</p>
     </div>
   </section>
 
