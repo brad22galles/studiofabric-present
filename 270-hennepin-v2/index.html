@@ -1429,11 +1429,12 @@
     .sg-row .v.sg-tbd{color:var(--accent-dark);}
     /* Brand fonts — scoped to the type specimens in The Look · 03 only */
     @font-face{font-family:'Ashcroft';src:url('assets/fonts/AshcroftTest-ExtraLight.otf') format('opentype');font-weight:200;font-display:swap;}
-    @font-face{font-family:'Systemia';src:url('assets/fonts/SystemiaTest-Regular.otf') format('opentype');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Systemia';src:url('assets/fonts/SystemiaTest-Light.otf') format('opentype');font-weight:300;font-display:swap;}
     .sg-type{margin-top:clamp(40px,5vw,64px);}
+    .sg-type + .sg-type{margin-top:clamp(72px,9vw,130px);}
     .sg-specimen{font-weight:200;line-height:1.22;word-break:break-word;overflow-wrap:anywhere;margin-top:14px;}
     .sg-specimen.head{font-family:'Ashcroft','Times New Roman',Georgia,serif;font-size:clamp(24px,5vw,60px);letter-spacing:-.01em;}
-    .sg-specimen.body{font-family:'Systemia',-apple-system,system-ui,sans-serif;font-weight:400;font-size:clamp(20px,2.8vw,32px);}
+    .sg-specimen.body{font-family:'Systemia',-apple-system,system-ui,sans-serif;font-weight:300;font-size:clamp(24px,5vw,60px);}
     .font-dl{position:relative;display:inline-flex;align-items:center;gap:9px;margin-top:22px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);text-decoration:none;padding-bottom:7px;}
     .font-dl::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform-origin:left center;transition:transform .4s ease;}
     .font-dl:hover::after{animation:dl-line .55s ease;}
