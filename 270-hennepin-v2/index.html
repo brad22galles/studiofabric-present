@@ -1413,7 +1413,7 @@
     .sg{padding:clamp(90px,12vw,150px) 0;}
     .sg .sg-head{margin-bottom:clamp(36px,4.5vw,64px);}
     .sg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:clamp(20px,2.4vw,32px);}
-    .sg-chip{height:200px;width:100%;border:1px solid rgba(246,245,242,.12);}
+    .sg-chip{height:420px;width:100%;border:1px solid rgba(246,245,242,.12);}
     .sg-name{font-family:var(--font-headline);font-weight:200;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.01em;margin:20px 0 14px;}
     .sg-rows{display:flex;flex-direction:column;}
     .sg-row{display:flex;justify-content:space-between;gap:14px;font-size:11px;letter-spacing:.06em;padding:8px 0;border-top:1px solid rgba(246,245,242,.09);}
@@ -1432,7 +1432,7 @@
     .font-dl:hover::after{animation:dl-line .55s ease;}
     .font-dl .ar{font-size:13px;line-height:1;}
     @keyframes dl-line{from{transform:scaleX(0);}to{transform:scaleX(1);}}
-    @media(max-width:860px){.sg-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}.sg-chip{height:150px;}}
+    @media(max-width:860px){.sg-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}.sg-chip{height:300px;}}
   </style>
 
 
@@ -1471,6 +1471,16 @@
       </div>
       <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
       <div class="sg-grid">
+
+        <div class="sg-swatch">
+          <div class="sg-chip" style="background:#f2edea"></div>
+          <div class="sg-name">Off-White</div>
+          <div class="sg-rows">
+            <div class="sg-row"><span class="k">Pantone</span><span class="v">NA</span></div>
+            <div class="sg-row"><span class="k">CMYK</span><span class="v">3 / 5 / 5 / 0</span></div>
+            <div class="sg-row"><span class="k">Hex</span><span class="v">#F2EDEA</span></div>
+          </div>
+        </div>
 
         <div class="sg-swatch">
           <div class="sg-chip" style="background:#11181f"></div>
