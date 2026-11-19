@@ -549,6 +549,16 @@
     #pillars-pin{position:relative;background:var(--white);display:block;padding:0;min-height:0;}
     .anim #pillars-pin{height:200vh;}
     .anim #pillars-pin .pin-inner{position:sticky;top:0;height:100vh;}
+    /* The Look · 01 intro — pin the "Logo" title center, then fade it out to reveal the logos */
+    #cl-logo{position:relative;display:block;padding:0;min-height:0;background:var(--black);}
+    .anim #cl-logo{height:190vh;}
+    .anim #cl-logo .pin-inner{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;}
+    .anim #cl-logo .cl-logo-intro{will-change:opacity,transform;}
+    @media(max-width:860px){
+      .anim #cl-logo{height:auto;}
+      .anim #cl-logo .pin-inner{position:static;height:auto;min-height:70vh;}
+      .anim #cl-logo .cl-logo-intro{opacity:1!important;transform:none!important;}
+    }
     /* The Look · 01 — logo showcase: large crossfade (pinned), then a ruled trio row */
     #logo-pin{position:relative;background:var(--black);}
     .anim #logo-pin{height:340vh;}
@@ -1466,10 +1476,12 @@
 
 
   <!-- ============================ CREATIVE LOOK LOGO ============================ -->
-  <section class="section-black info instig" id="cl-logo">
-    <div class="container">
-      <div class="info-head">
-        <div><p class="eyebrow">The Look · 01</p><h2 class="section-title">Logo</h2></div>
+  <!-- The Look · 01 — intro rises in, locks center, fades out to reveal the logos -->
+  <section class="section-black pin-wrap" id="cl-logo">
+    <div class="pin-inner">
+      <div class="container cl-logo-intro" style="text-align:center">
+        <p class="eyebrow">The Look · 01</p>
+        <h2 class="section-title" style="max-width:none;margin:0 auto">Logo</h2>
       </div>
     </div>
   </section>
@@ -1781,6 +1793,21 @@
           lslides[i].style.opacity = op.toFixed(3);
         }
       }
+      // The Look · 01 intro: rise in, lock centered, then fade out to reveal the logos.
+      var liPin = document.getElementById('cl-logo');
+      var liCont = liPin && liPin.querySelector('.cl-logo-intro');
+      function tickLogoIntro(){
+        if(!liPin || !liCont) return;
+        var r = liPin.getBoundingClientRect();
+        var maxPin = r.height - window.innerHeight;
+        if(maxPin <= 0){ liCont.style.opacity=''; liCont.style.transform=''; return; }
+        var p = clamp(-r.top / maxPin);
+        var riseIn = smooth(p / 0.28);
+        var fadeOut = smooth((p - 0.62) / 0.33);
+        var y = (1 - riseIn) * 54 - fadeOut * 30;
+        liCont.style.transform = 'translateY(' + y.toFixed(1) + 'px)';
+        liCont.style.opacity = (riseIn * (1 - fadeOut)).toFixed(3);
+      }
       var ticking = false;
       // Fallback reveal (for previews/iframes where IntersectionObserver may not fire): anything within the viewport gets 'in'.
       function revealVisible(){
@@ -1812,10 +1839,10 @@
         for(var j=0;j<navTargets.length;j++){ var t=navTargets[j]; if(t && t.getBoundingClientRect().top <= vh*0.45) idx=j; }
         for(var k=0;k<navLinks.length;k++){ navLinks[k].classList.toggle('active', k===idx); }
       }
-      function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); tickLogos(); navTick(); updateRules(); tickIntro(); revealVisible(); ticking=false; }); } }
+      function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); tickLogos(); tickLogoIntro(); navTick(); updateRules(); tickIntro(); revealVisible(); ticking=false; }); } }
       window.addEventListener('scroll', onScroll, {passive:true});
       window.addEventListener('resize', onScroll);
-      tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); tickLogos(); navTick(); updateRules(); tickIntro(); revealVisible();
+      tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); tickLogos(); tickLogoIntro(); navTick(); updateRules(); tickIntro(); revealVisible();
       window.addEventListener('load', revealVisible); setTimeout(revealVisible, 800);
 
       // 2) Build on scroll: each row and each tile reveals as it enters the viewport.
