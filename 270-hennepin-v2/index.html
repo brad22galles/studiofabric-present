@@ -549,13 +549,12 @@
     #logo-pin .ll-mark{width:clamp(98px,12vw,182px);}
     #logo-pin .ls-cap{position:absolute;left:0;right:0;bottom:clamp(20px,3vh,40px);text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);}
     #logo-row .logo-trio{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(246,245,242,.16);border-bottom:1px solid rgba(246,245,242,.16);margin-top:clamp(24px,4vw,48px);}
-    #logo-row .lt-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(18px,2vw,26px);padding:clamp(48px,7vh,96px) clamp(16px,2vw,36px);min-height:44vh;}
+    #logo-row .lt-cell{display:flex;align-items:center;justify-content:center;padding:clamp(24px,4vh,52px) clamp(16px,2.5vw,40px);min-height:clamp(140px,24vh,240px);}
     #logo-row .lt-cell + .lt-cell{border-left:1px solid rgba(246,245,242,.16);}
     #logo-row .lt-cell img{display:block;height:auto;}
-    #logo-row .lt-primary{width:clamp(130px,14vw,210px);}
-    #logo-row .lt-horizontal{width:clamp(180px,22vw,300px);}
-    #logo-row .lt-mark{width:clamp(66px,7vw,96px);}
-    #logo-row .lt-cap{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
+    #logo-row .lt-primary{width:56%;max-width:240px;}
+    #logo-row .lt-horizontal{width:86%;max-width:360px;}
+    #logo-row .lt-mark{width:26%;max-width:108px;}
     @media(max-width:860px){
       .anim #logo-pin{height:auto;}
       .anim #logo-pin .pin-inner{position:static;height:auto;overflow:visible;}
@@ -1473,9 +1472,9 @@
   <section class="section-black" id="logo-row">
     <div class="container">
       <div class="logo-trio">
-        <div class="lt-cell"><img class="lt-primary" src="assets/logo-primary.svg" alt="270 Hennepin primary logo"><p class="lt-cap">Primary Logo</p></div>
-        <div class="lt-cell"><img class="lt-horizontal" src="assets/logo-horizontal.svg" alt="270 Hennepin horizontal logo"><p class="lt-cap">Horizontal Logo</p></div>
-        <div class="lt-cell"><img class="lt-mark" src="assets/logo-mark.svg" alt="270 Hennepin logo mark"><p class="lt-cap">Logo Mark</p></div>
+        <div class="lt-cell"><img class="lt-primary" src="assets/logo-primary.svg" alt="270 Hennepin primary logo"></div>
+        <div class="lt-cell"><img class="lt-horizontal" src="assets/logo-horizontal.svg" alt="270 Hennepin horizontal logo"></div>
+        <div class="lt-cell"><img class="lt-mark" src="assets/logo-mark.svg" alt="270 Hennepin logo mark"></div>
       </div>
     </div>
   </section>
