@@ -541,13 +541,13 @@
     #logo-pin{position:relative;background:var(--black);}
     .anim #logo-pin{height:340vh;}
     .anim #logo-pin .pin-inner{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--black);}
-    #logo-pin .logo-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:15vh 6vw;}
+    #logo-pin .logo-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:13vh 0;}
     .anim #logo-pin .logo-slide:not(.ls-first){opacity:0;}
-    #logo-pin .logo-slide img{display:block;height:auto;}
+    #logo-pin .logo-slide img{display:block;height:auto;flex-shrink:0;}
     #logo-pin .ll-primary{width:clamp(300px,42vw,620px);}
-    #logo-pin .ll-horizontal{width:clamp(420px,66vw,1040px);}
-    #logo-pin .ll-mark{width:clamp(150px,18vw,280px);}
-    #logo-pin .ls-cap{position:absolute;left:0;right:0;bottom:clamp(40px,7vh,88px);text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);}
+    #logo-pin .ll-horizontal{width:min(1800px,94vw);}
+    #logo-pin .ll-mark{width:clamp(98px,12vw,182px);}
+    #logo-pin .ls-cap{position:absolute;left:0;right:0;bottom:clamp(20px,3vh,40px);text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);}
     #logo-row .logo-trio{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(246,245,242,.16);border-bottom:1px solid rgba(246,245,242,.16);margin-top:clamp(24px,4vw,48px);}
     #logo-row .lt-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(18px,2vw,26px);padding:clamp(48px,7vh,96px) clamp(16px,2vw,36px);min-height:44vh;}
     #logo-row .lt-cell + .lt-cell{border-left:1px solid rgba(246,245,242,.16);}
