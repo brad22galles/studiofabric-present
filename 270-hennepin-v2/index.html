@@ -761,6 +761,21 @@
     /* The Execution — full-bleed image reel (edge to edge, no gaps) */
     .exec-reel{display:block;width:100%;font-size:0;line-height:0;background:var(--black);}
     .exec-reel .exec-shot{display:block;width:100%;height:auto;margin:0;padding:0;border:0;}
+    /* Vibe before/after toggle — full-width landscape + portrait, download-style switch */
+    .vibe-ba{display:flex;flex-direction:column;align-items:flex-start;margin-top:clamp(40px,5vw,64px);}
+    .vibe-ba.vibe-port{align-items:center;}
+    .vibe-ba + .vibe-ba{margin-top:clamp(48px,6vw,84px);}
+    .vba-stage{position:relative;width:100%;overflow:hidden;background:#161616;}
+    .vba-land{aspect-ratio:16/9;}
+    .vba-port{width:min(480px,74vw);aspect-ratio:3/4;}
+    .vba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .55s ease;}
+    .vba-img.on{opacity:1;}
+    .vba-switch{display:inline-flex;gap:30px;margin-top:20px;}
+    .ba-tbtn{position:relative;background:none;border:0;padding:0 0 7px;cursor:pointer;font-family:inherit;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);transition:color .3s ease;}
+    .ba-tbtn::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .45s ease;}
+    .ba-tbtn.on{color:var(--accent);}
+    .ba-tbtn.on::after{transform:scaleX(1);}
+    .ba-tbtn:hover{color:var(--accent);}
     /* The Look · 01 — three logos stacked, centered on black */
     .logo-stack{display:flex;flex-direction:column;align-items:center;gap:clamp(60px,8vw,110px);margin-top:clamp(56px,7vw,96px);padding:clamp(20px,4vw,48px) 0;}
     .logo-item{text-align:center;}
@@ -1177,13 +1192,25 @@
       <div class="info-head">
         <div><p class="eyebrow">Concept 01 · The Vibe</p><h2 class="section-title">The Entry</h2></div>
       </div>
-      <div class="ba-quad">
-        <div class="ba-col">
-          <div class="ig-tile"><img src="assets/render-entry-before.jpg" alt=""><span class="ba-tag">Before</span></div>
-          <div class="ig-tile"><img src="assets/render-entry-after.jpg" alt=""><span class="ba-tag">After</span></div>
+      <div class="vibe-ba">
+        <div class="vba-stage vba-land">
+          <img class="vba-img on" data-k="before" src="assets/render-entry-before.jpg" alt="The Entry, before">
+          <img class="vba-img" data-k="after" src="assets/render-entry-after.jpg" alt="The Entry, after">
         </div>
-        <div class="ig-tile ba-tall"><img src="assets/render-entry-before-2.jpg" alt="" style="object-position:center 58%"><span class="ba-tag">Before</span></div>
-        <div class="ig-tile ba-tall"><img src="assets/render-entry-after-2.jpg" alt=""><span class="ba-tag">After</span></div>
+        <div class="vba-switch">
+          <button type="button" class="ba-tbtn on" data-show="before">Before</button>
+          <button type="button" class="ba-tbtn" data-show="after">After</button>
+        </div>
+      </div>
+      <div class="vibe-ba vibe-port">
+        <div class="vba-stage vba-port">
+          <img class="vba-img on" data-k="before" src="assets/render-entry-before-2.jpg" alt="The Entry detail, before">
+          <img class="vba-img" data-k="after" src="assets/render-entry-after-2.jpg" alt="The Entry detail, after">
+        </div>
+        <div class="vba-switch">
+          <button type="button" class="ba-tbtn on" data-show="before">Before</button>
+          <button type="button" class="ba-tbtn" data-show="after">After</button>
+        </div>
       </div>
     </div>
   </section>
@@ -1619,6 +1646,21 @@
       if(img.complete){ (img.naturalWidth>0) ? ok() : fail(); }
       img.addEventListener('load', ok);
       img.addEventListener('error', fail);
+    });
+  </script>
+
+  <script>
+    // Vibe before/after toggle: crossfade images, light up the active Before/After button.
+    document.querySelectorAll('.vibe-ba').forEach(function(fig){
+      var imgs = fig.querySelectorAll('.vba-img');
+      var btns = fig.querySelectorAll('.ba-tbtn');
+      btns.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var k = btn.getAttribute('data-show');
+          btns.forEach(function(b){ b.classList.toggle('on', b === btn); });
+          imgs.forEach(function(im){ im.classList.toggle('on', im.getAttribute('data-k') === k); });
+        });
+      });
     });
   </script>
 
