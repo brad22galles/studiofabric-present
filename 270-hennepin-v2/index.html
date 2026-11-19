@@ -712,6 +712,14 @@
     /* The Execution — full-bleed image reel (edge to edge, no gaps) */
     .exec-reel{display:block;width:100%;font-size:0;line-height:0;background:var(--black);}
     .exec-reel .exec-shot{display:block;width:100%;height:auto;margin:0;padding:0;border:0;}
+    /* The Look · 01 — three logos stacked, centered on black */
+    .logo-stack{display:flex;flex-direction:column;align-items:center;gap:clamp(60px,8vw,110px);margin-top:clamp(56px,7vw,96px);padding:clamp(20px,4vw,48px) 0;}
+    .logo-item{text-align:center;}
+    .logo-item img{display:block;margin:0 auto;height:auto;}
+    .logo-item .lg-primary{width:clamp(260px,34vw,400px);}
+    .logo-item .lg-horizontal{width:clamp(320px,62vw,720px);}
+    .logo-item .lg-mark{width:clamp(110px,14vw,165px);}
+    .logo-cap{margin-top:clamp(22px,2.4vw,30px);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
     .logo-grid{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:16px;margin-top:72px;height:70vh;}
     .logo-grid .lg-main{grid-row:span 2;}
     .pod{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:150px;}
@@ -1422,12 +1430,20 @@
     <div class="container">
       <div class="info-head">
         <div><p class="eyebrow">The Look · 01</p><h2 class="section-title">Logo</h2></div>
-        <p class="lede">The name and mark.</p>
       </div>
-      <div class="logo-grid">
-        <div class="ig-tile lg-main"><img src="assets/logo-primary.jpg" alt=""><div class="brief">Primary logo</div></div>
-        <div class="ig-tile"><img src="assets/logo-secondary.jpg" alt=""><div class="brief">Secondary mark / monogram</div></div>
-        <div class="ig-tile"><img src="assets/logo-lockups.jpg" alt=""><div class="brief">Lockups · reversed, one color</div></div>
+      <div class="logo-stack">
+        <div class="logo-item">
+          <img class="lg-primary" src="assets/logo-primary.svg" alt="270 Hennepin primary logo">
+          <p class="logo-cap">Primary Logo</p>
+        </div>
+        <div class="logo-item">
+          <img class="lg-horizontal" src="assets/logo-horizontal.svg" alt="270 Hennepin horizontal logo">
+          <p class="logo-cap">Horizontal Logo</p>
+        </div>
+        <div class="logo-item">
+          <img class="lg-mark" src="assets/logo-mark.svg" alt="270 Hennepin logo mark">
+          <p class="logo-cap">Logo Mark</p>
+        </div>
       </div>
     </div>
   </section>
