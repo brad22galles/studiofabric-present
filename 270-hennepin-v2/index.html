@@ -769,6 +769,11 @@
     .vba-land{aspect-ratio:16/9;}
     .vba-port{width:min(480px,74vw);aspect-ratio:3/4;}
     .vba-9x16{width:min(420px,78vw);aspect-ratio:9/16;}
+    /* Two vertical before/after toggles side by side */
+    .lobby-ba-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:clamp(28px,4vw,60px);margin-top:clamp(40px,5vw,64px);}
+    .lobby-ba-row .vibe-ba{margin-top:0;}
+    .lobby-ba-row .vba-9x16{width:min(400px,42vw);}
+    @media(max-width:760px){.lobby-ba-row{flex-direction:column;align-items:center;}.lobby-ba-row .vba-9x16{width:min(420px,80vw);}}
     .vba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .55s ease;}
     .vba-img.on{opacity:1;}
     .vba-switch{display:inline-flex;gap:18px;margin-top:20px;}
@@ -1223,6 +1228,7 @@
       <div class="info-head">
         <div><p class="eyebrow">Concept 01 · The Vibe</p><h2 class="section-title">The Lobby Lounge</h2></div>
       </div>
+      <div class="lobby-ba-row">
       <div class="vibe-ba vibe-port">
         <div class="vba-stage vba-9x16">
           <img class="vba-img on" data-k="before" src="assets/lobby-before.jpg" alt="The Lobby Lounge, before">
@@ -1243,7 +1249,8 @@
           <button type="button" class="ba-tbtn" data-show="after">After</button>
         </div>
       </div>
-      <div class="ig-jrow" style="margin-top:clamp(40px,5vw,64px)">
+      </div>
+      <div class="ig-jrow" style="margin-top:clamp(84px,10vw,140px)">
         <div class="ig-tile" style="flex:1.777 1 0;aspect-ratio:1.777"><img src="assets/lobby-side-1.jpg" alt="Lobby lounge seating"></div>
         <div class="ig-tile" style="flex:0.886 1 0;aspect-ratio:0.886"><img src="assets/lobby-living.jpg" alt="Lobby living room"></div>
       </div>
