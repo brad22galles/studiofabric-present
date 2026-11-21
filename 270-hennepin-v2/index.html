@@ -1425,11 +1425,18 @@
     /* Brand fonts — scoped to the type specimens in The Look · 03 only */
     @font-face{font-family:'Ashcroft';src:url('assets/fonts/AshcroftTest-ExtraLight.otf') format('opentype');font-weight:200;font-display:swap;}
     @font-face{font-family:'Systemia';src:url('assets/fonts/SystemiaTest-Light.otf') format('opentype');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Basis Grotesque Pro';src:url('assets/fonts/BasisGrotesquePro-Light.otf') format('opentype');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Basis Grotesque Pro';src:url('assets/fonts/BasisGrotesquePro-Regular.otf') format('opentype');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Basis Grotesque Pro';src:url('assets/fonts/BasisGrotesquePro-Black.otf') format('opentype');font-weight:900;font-display:swap;}
     .sg-type{margin-top:clamp(40px,5vw,64px);}
     .sg-type + .sg-type{margin-top:clamp(72px,9vw,130px);}
     .sg-specimen{font-weight:200;line-height:1.22;word-break:break-word;overflow-wrap:anywhere;margin-top:14px;}
     .sg-specimen.head{font-family:'Ashcroft','Times New Roman',Georgia,serif;font-size:clamp(24px,5vw,60px);letter-spacing:-.01em;}
     .sg-specimen.body{font-family:'Systemia',-apple-system,system-ui,sans-serif;font-weight:300;font-size:clamp(24px,5vw,60px);}
+    .sg-specimen.basis{font-family:'Basis Grotesque Pro',-apple-system,system-ui,sans-serif;font-size:clamp(24px,5vw,60px);letter-spacing:-.01em;}
+    .sg-specimen.basis.b2-light{font-weight:300;}
+    .sg-specimen.basis.b2-regular{font-weight:400;}
+    .sg-specimen.basis.b2-black{font-weight:900;}
     .font-dl{position:relative;display:inline-flex;align-items:center;gap:9px;margin-top:22px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);text-decoration:none;padding-bottom:7px;}
     .font-dl::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform-origin:left center;transition:transform .4s ease;}
     .font-dl:hover::after{animation:dl-line .55s ease;}
@@ -1721,15 +1728,18 @@
       <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
 
       <div class="sg-type">
-        <p class="b-label">Ashcroft Extra Light · Headlines &amp; Accents</p>
-        <p class="sg-specimen head">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
-        <a class="font-dl" href="assets/fonts/Ashcroft.zip" download="Ashcroft.zip">Download Ashcroft <span class="ar">↓</span></a>
+        <p class="b-label">Basis Grotesque Pro · Light</p>
+        <p class="sg-specimen basis b2-light">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
       </div>
 
       <div class="sg-type">
-        <p class="b-label">Systemia · Body Copy</p>
-        <p class="sg-specimen body">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
-        <a class="font-dl" href="assets/fonts/Systemia.zip" download="Systemia.zip">Download Systemia <span class="ar">↓</span></a>
+        <p class="b-label">Basis Grotesque Pro · Regular</p>
+        <p class="sg-specimen basis b2-regular">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
+      </div>
+
+      <div class="sg-type">
+        <p class="b-label">Basis Grotesque Pro · Black</p>
+        <p class="sg-specimen basis b2-black">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
       </div>
     </div>
   </section>
