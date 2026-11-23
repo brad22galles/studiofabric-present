@@ -642,7 +642,17 @@
       .anim #intro-pin .hero{position:static;opacity:1!important;}
     }
     @media(max-width:860px){.rule-band{padding:72px 0;}}
-  </style>
+      .acc-reveal{opacity:0;transform:translateY(16px);visibility:hidden;transition:opacity .7s ease .15s,transform .7s ease .15s,visibility 0s linear .85s;}
+    .acc-reveal.show{opacity:1;transform:none;visibility:visible;transition:opacity .7s ease .15s,transform .7s ease .15s,visibility 0s;}
+    .acc-reveal .acc-cell{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;}
+    .acc-reveal.show .acc-cell{opacity:1;transform:none;}
+    .acc-reveal.show .acc-cell:nth-child(1){transition-delay:.25s}.acc-reveal.show .acc-cell:nth-child(2){transition-delay:.35s}.acc-reveal.show .acc-cell:nth-child(3){transition-delay:.45s}.acc-reveal.show .acc-cell:nth-child(4){transition-delay:.55s}
+    .acc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+    .acc-cell{margin:0;}
+    .acc-cell .ig-tile{aspect-ratio:1;}
+    .acc-cell figcaption{margin-top:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;}
+    @media(max-width:860px){.acc-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
 </head>
 <body>
 
@@ -663,8 +673,8 @@
     <a href="#intro-pin">Intro</a>
     <a href="#contents">Contents</a>
     <a href="#concept-1">Concept</a>
-    <a href="#creative-look">Look</a>
-    <a href="#mockups">Execution</a>
+    <a href="#creative-look">Brand</a>
+    <a href="#mockups">Delivery</a>
   </nav>
 
   <!-- Landscape image fixed behind the intro; revealed as the intro fades out -->
@@ -820,8 +830,8 @@
       <div class="toc">
         <a class="toc-row" href="#location-1"><span class="toc-n">01</span><span class="toc-t">The Setting</span><span class="toc-s">The neighborhood · The comps · Arrival · Amenities</span></a>
         <a class="toc-row" href="#concept-1"><span class="toc-n">02</span><span class="toc-t">The Concept</span><span class="toc-s">Mood board · Rendered spaces · Ideas</span></a>
-        <a class="toc-row" href="#creative-look"><span class="toc-n">03</span><span class="toc-t">The Look</span><span class="toc-s">Logo · Palette · Typography · Style guide</span></a>
-        <a class="toc-row" href="#mockups"><span class="toc-n">04</span><span class="toc-t">The Execution</span><span class="toc-s">Signage · Wayfinding · Print · Home page</span></a>
+        <a class="toc-row" href="#creative-look"><span class="toc-n">03</span><span class="toc-t">The Brand</span><span class="toc-s">Logo · Palette · Typography · Style guide</span></a>
+        <a class="toc-row" href="#mockups"><span class="toc-n">04</span><span class="toc-t">The Delivery</span><span class="toc-s">Signage · Wayfinding · Print · Home page</span></a>
       </div>
     </div>
   </section>
@@ -886,12 +896,6 @@
           <div class="ig-tile"><img src="assets/comp-365-nicollet-3.jpg" alt=""><div class="brief">365 Nicollet · 3</div></div>
         </div>
         <div class="crow">
-          <p class="crow-name">724 Lofts</p>
-          <div class="ig-tile"><img src="assets/comp-724-lofts-1.jpg" alt=""><div class="brief">724 Lofts · 1</div></div>
-          <div class="ig-tile"><img src="assets/comp-724-lofts-2.jpg" alt=""><div class="brief">724 Lofts · 2</div></div>
-          <div class="ig-tile"><img src="assets/comp-724-lofts-3.jpg" alt=""><div class="brief">724 Lofts · 3</div></div>
-        </div>
-        <div class="crow">
           <p class="crow-name">Archive</p>
           <div class="ig-tile"><img src="assets/comp-archive-1.jpg" alt=""><div class="brief">Archive · 1</div></div>
           <div class="ig-tile"><img src="assets/comp-archive-2.jpg" alt=""><div class="brief">Archive · 2</div></div>
@@ -910,16 +914,16 @@
           <div class="ig-tile"><img src="assets/comp-grand-mill-district-3.jpg" alt=""><div class="brief">Grand Mill District · 3</div></div>
         </div>
         <div class="crow">
-          <p class="crow-name">NordHaus</p>
-          <div class="ig-tile"><img src="assets/comp-nordhaus-1.jpg" alt=""><div class="brief">NordHaus · 1</div></div>
-          <div class="ig-tile"><img src="assets/comp-nordhaus-2.jpg" alt=""><div class="brief">NordHaus · 2</div></div>
-          <div class="ig-tile"><img src="assets/comp-nordhaus-3.jpg" alt=""><div class="brief">NordHaus · 3</div></div>
-        </div>
-        <div class="crow">
           <p class="crow-name">North Loop Green 360</p>
           <div class="ig-tile"><img src="assets/comp-north-loop-green-360-1.jpg" alt=""><div class="brief">North Loop Green 360 · 1</div></div>
           <div class="ig-tile"><img src="assets/comp-north-loop-green-360-2.jpg" alt=""><div class="brief">North Loop Green 360 · 2</div></div>
           <div class="ig-tile"><img src="assets/comp-north-loop-green-360-3.jpg" alt=""><div class="brief">North Loop Green 360 · 3</div></div>
+        </div>
+        <div class="crow">
+          <p class="crow-name">Rafter</p>
+          <div class="ig-tile"><img src="assets/comp-rafter-1.jpg" alt=""><div class="brief">Rafter · 1</div></div>
+          <div class="ig-tile"><img src="assets/comp-rafter-2.jpg" alt=""><div class="brief">Rafter · 2</div></div>
+          <div class="ig-tile"><img src="assets/comp-rafter-3.jpg" alt=""><div class="brief">Rafter · 3</div></div>
         </div>
       </div>
     </div>
@@ -927,11 +931,11 @@
 
   <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
 
-  <!-- ============================ CURRENT PRESENTATION — THE BUILDING ============================ -->
+  <!-- ============================ BUILDING AUDIT — THE BUILDING ============================ -->
   <section class="section-black info instig" id="current-1">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">Arrival</h2></div>
+        <div><p class="eyebrow">Building Audit</p><h2 class="section-title">Arrival</h2></div>
         <p class="lede">A walk around the building, taking a look at how it presents today.</p>
       </div>
       <div class="lrow" style="margin-top:72px">
@@ -954,11 +958,11 @@
 
   <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
 
-  <!-- ============================ CURRENT PRESENTATION — THE BUILDING ============================ -->
+  <!-- ============================ BUILDING AUDIT — THE BUILDING ============================ -->
   <section class="section-black info instig" id="current-3">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">Parking</h2></div>
+        <div><p class="eyebrow">Building Audit</p><h2 class="section-title">Parking</h2></div>
       </div>
       <div class="lrow" style="margin-top:72px">
         <div class="ig-tile"><img src="assets/current-20.jpg" alt=""><div class="brief">Parking undercroft</div></div>
@@ -985,11 +989,11 @@
 
 
 
-  <!-- ============================ CURRENT PRESENTATION — THE AMENITIES ============================ -->
+  <!-- ============================ BUILDING AUDIT — THE AMENITIES ============================ -->
   <section class="section-black info instig" id="amenities-1">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">Amenities</h2></div>
+        <div><p class="eyebrow">Building Audit</p><h2 class="section-title">Level 19 Amenities</h2></div>
         <p class="lede">A walk through the amenities and common areas, taking in the vibe and the details.</p>
       </div>
       <div class="lrow" style="margin-top:72px">
@@ -1013,33 +1017,32 @@
   <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
 
 
-  <!-- ============================ CURRENT PRESENTATION — THE AMENITIES ============================ -->
+  <!-- ============================ BUILDING AUDIT — THE AMENITIES ============================ -->
   <section class="section-black info instig" id="amenities-2">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">Amenities</h2></div>
+        <div><p class="eyebrow">Building Audit</p><h2 class="section-title">Cowork &amp; Theatre</h2></div>
       </div>
       <div class="lrow" style="margin-top:72px">
         <div class="ig-tile"><img src="assets/amenities-current-10.jpg" alt=""><div class="brief">Coworking lounge</div></div>
         <div class="ig-tile"><img src="assets/amenities-current-11.jpg" alt=""><div class="brief">Club room</div></div>
       </div>
-      <div class="pgrid" style="margin-top:14px">
+      <div class="pgrid" style="margin-top:14px;grid-template-columns:repeat(4,1fr)">
         <div class="ig-tile"><img src="assets/amenities-current-12.jpg" alt=""><div class="brief">Kitchenette lounge</div></div>
         <div class="ig-tile"><img src="assets/amenities-current-13.jpg" alt=""><div class="brief">Private office</div></div>
         <div class="ig-tile"><img src="assets/amenities-current-14.jpg" alt=""><div class="brief">Conference room</div></div>
         <div class="ig-tile"><img src="assets/amenities-current-15.jpg" alt=""><div class="brief">Quiet room</div></div>
-        <div class="ig-tile"><img src="assets/amenities-current-16.jpg" alt=""><div class="brief">Golf simulator lounge</div></div>
       </div>
     </div>
   </section>
 
   <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
 
-  <!-- ============================ CURRENT PRESENTATION — THE AMENITIES ============================ -->
+  <!-- ============================ BUILDING AUDIT — THE AMENITIES ============================ -->
   <section class="section-black info instig" id="amenities-3">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">Amenities</h2></div>
+        <div><p class="eyebrow">Building Audit</p><h2 class="section-title">The Lounge</h2></div>
       </div>
       <div class="lrow" style="margin-top:72px">
         <div class="ig-tile"><img src="assets/amenities-current-17.jpg" alt=""><div class="brief">Fireplace lounge</div></div>
@@ -1056,11 +1059,11 @@
 
   <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
 
-  <!-- ============================ CURRENT PRESENTATION — THE AMENITIES ============================ -->
+  <!-- ============================ BUILDING AUDIT — THE AMENITIES ============================ -->
   <section class="section-black info instig" id="amenities-4">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">Amenities</h2></div>
+        <div><p class="eyebrow">Building Audit</p><h2 class="section-title">Fitness</h2></div>
       </div>
       <div class="pgrid" style="margin-top:72px">
         <div class="ig-tile"><img src="assets/amenities-current-23.jpg" alt=""><div class="brief">Fitness center sign</div></div>
@@ -1080,11 +1083,11 @@
 
   <div class="gold-rule" style="padding:0"><div class="container"><span class="gr-line"></span></div></div>
 
-  <!-- ============================ CURRENT PRESENTATION — THE BUILDING ============================ -->
+  <!-- ============================ BUILDING AUDIT — THE BUILDING ============================ -->
   <section class="section-black info instig" id="current-2">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Current Presentation</p><h2 class="section-title">Corridors</h2></div>
+        <div><p class="eyebrow">Building Audit</p><h2 class="section-title">Corridors</h2></div>
       </div>
       <div class="pgrid">
         <div class="ig-tile"><img src="assets/current-10.jpg" alt=""><div class="brief">Elevator lobby</div></div>
@@ -1111,35 +1114,15 @@
       <div class="info-head">
         <div><p class="eyebrow">OK, Let's Go.</p><h2 class="section-title" style="max-width:44ch;font-size:clamp(22px,2.6vw,36px)">From the street, to the entry, to the spaces... the building is <em>nice but unnoticed</em>. Everything is new, nice and polished. It doesn't feel dated, off trend or cheap. <em>It just doesn't feel, anything.</em><br><br>The opportunity, as we know, is to give it a story – physical to mood – that writes a script, dresses it in a look and creates a feel.</h2></div>
       </div>
-      <p class="b-label" style="margin-top:clamp(56px,7vw,100px)">Opportunities</p>
-      <div class="pod" style="margin-top:20px">
-        <div class="block">
-          <ul class="pl-list">
-            <li><b>Street presence.</b> Announcing the building. A residence, for rent, available now, how to reach us. Signage that says here we are. Hello!</li>
-            <li><b>Sense of arrival.</b> Organic planting, vibrancy, bikes at the door and hospitality cues that call attention from the street.</li>
-            <li><b>The entry is chapter one.</b> A first impression that welcomes and sets the tone.</li>
-            <li><b>A lobby that's lived in.</b> The greeting, the scent, the sound, a coffee, a soft recline, other people and a reason to stay.</li>
-            <li><b>Amenities with a point of view.</b> Venture on and the style carries with you. One floor, everything on it. Pool, fitness and lounges styled as moments, not checklists.</li>
-          </ul>
-        </div>
-        <div class="block">
-          <ul class="pl-list">
-            <li><b>The details.</b> The sounds, the scents, the nuances. Books on the shelves, art in the hallway, games on the table. A night at the Marriott, or my home?</li>
-            <li><b>A material story.</b> Warm oak, linen, thick rugs, barefoot feels, soft seating, candles and vibe lighting, Nordic roots made modern.</li>
-            <li><b>Echoed in sound.</b> From a background playlist to a vinyl lounge, proper speakers that are seen as well as heard, and a B&amp;O soundbath in the yoga studio.</li>
-            <li><b>Considered art.</b> Framed photos, where the frames matter equally. Discreet but intentional pieces, many small but composed moments, authored and signed. Larger installations in larger spaces, like the garage.</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </section>
 
 
-  <!-- ============================ DIVIDER — MODERN HERITAGE ============================ -->
+  <!-- ============================ DIVIDER — A SENSE OF HOME ============================ -->
   <section class="divider section-black has-photo" id="concept-1" style="--bg:url('assets/concept-bg.jpg')">
     <div class="container">
       <p class="eyebrow">Section 3.0 · Concept 01</p>
-      <h2 class="divider-text">Modern Heritage</h2>
+      <h2 class="divider-text">A Sense of Home</h2>
     </div>
   </section>
 
@@ -1147,7 +1130,7 @@
   <!-- ============================ CONCEPT 01 — INTRO STATEMENT ============================ -->
   <section class="statement section-white" id="concept-1-intro">
     <div class="container">
-      <p class="eyebrow">Concept 01 · Scandinavian Vibes</p>
+      <p class="eyebrow">Modern Heritage</p>
       <h2 class="statement-text">A literal nod to the contrasting architecture along with the city's Scandinavian heritage. This theme takes cues from Nordic and design sensibilities to create a modern retreat that is both meaningful and memorable.<br><br>The vibe is hygge, but styled. An overlay that uses the existing spaces as a base and updates them with the warm woods, fabrics, textures and light of contemporary Scandi design.</h2>
     </div>
   </section>
@@ -1196,7 +1179,7 @@
   <section class="section-black info instig" id="render-entry">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Concept 01 · The Vibe</p><h2 class="section-title">The Entry</h2></div>
+        <div><p class="eyebrow">Concept 01 · Building Uplevel</p><h2 class="section-title">The Entry</h2></div>
       </div>
       <div class="vibe-ba">
         <div class="vba-stage vba-land">
@@ -1226,7 +1209,7 @@
   <section class="section-black info instig" id="render-lounge">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Concept 01 · The Vibe</p><h2 class="section-title">The Lobby Lounge</h2></div>
+        <div><p class="eyebrow">Concept 01 · Building Uplevel</p><h2 class="section-title">The Lobby Lounge</h2></div>
       </div>
       <div class="lobby-ba-row">
       <div class="vibe-ba vibe-port">
@@ -1260,7 +1243,7 @@
   <section class="section-black info instig" id="render-pool">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Concept 01 · The Vibe</p><h2 class="section-title">The Pool</h2></div>
+        <div><p class="eyebrow">Concept 01 · Building Uplevel</p><h2 class="section-title">The Pool</h2></div>
       </div>
       <div class="vibe-ba">
         <div class="vba-stage vba-land">
@@ -1272,6 +1255,15 @@
           <button type="button" class="ba-tbtn" data-show="after">After</button>
         </div>
       </div>
+      <div class="acc-reveal">
+      <p class="b-label" style="margin-top:clamp(48px,6vw,80px)">Accents</p>
+      <div class="acc-grid">
+        <figure class="acc-cell"><div class="ig-tile"><img src="assets/pool-accent-1.jpg" alt="Teak towel valet"></div><figcaption>Teak towel valet</figcaption></figure>
+        <figure class="acc-cell"><div class="ig-tile"><img src="assets/pool-accent-2.jpg" alt="Infused water station"></div><figcaption>Infused water station</figcaption></figure>
+        <figure class="acc-cell"><div class="ig-tile"><img src="assets/pool-accent-3.jpg" alt="Robe and towel hooks"></div><figcaption>Robe &amp; Towel Hooks</figcaption></figure>
+        <figure class="acc-cell"><div class="ig-tile"><img src="assets/pool-accent-4.jpg" alt="Finnish sauna accents"></div><figcaption>Finnish Sauna Accents</figcaption></figure>
+      </div>
+      </div>
     </div>
   </section>
 
@@ -1281,7 +1273,7 @@
   <section class="section-black info instig" id="render-conservatory">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Concept 01 · The Vibe</p><h2 class="section-title">The Conservatory</h2></div>
+        <div><p class="eyebrow">Concept 01 · Building Uplevel</p><h2 class="section-title">The Conservatory</h2></div>
       </div>
       <div class="vibe-ba vibe-port">
         <div class="vba-stage vba-9x16">
@@ -1302,7 +1294,7 @@
   <section class="section-black info instig" id="render-fitness">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Concept 01 · The Vibe</p><h2 class="section-title">Fitness</h2></div>
+        <div><p class="eyebrow">Concept 01 · Building Uplevel</p><h2 class="section-title">Fitness</h2></div>
       </div>
       <div class="vibe-ba">
         <div class="vba-stage vba-land">
@@ -1322,7 +1314,7 @@
   <section class="section-black info instig" id="render-arrival">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Concept 01 · The Vibe</p><h2 class="section-title">The Cowork</h2></div>
+        <div><p class="eyebrow">Concept 01 · Building Uplevel</p><h2 class="section-title">The Cowork</h2></div>
       </div>
       <div class="vibe-ba">
         <div class="vba-stage vba-land">
@@ -1342,7 +1334,7 @@
   <section class="section-black info instig" id="render-lounge2">
     <div class="container">
       <div class="info-head">
-        <div><p class="eyebrow">Concept 01 · The Vibe</p><h2 class="section-title">Sky Lounge</h2></div>
+        <div><p class="eyebrow">Concept 01 · Building Uplevel</p><h2 class="section-title">Sky Lounge</h2></div>
       </div>
       <div class="vibe-ba">
         <div class="vba-stage vba-land">
@@ -1416,7 +1408,7 @@
   <section class="divider section-black has-photo" id="creative-look" style="--bg:url('assets/look-bg.jpg')">
     <div class="container">
       <p class="eyebrow">Section 4.0</p>
-      <h2 class="divider-text">The Look</h2>
+      <h2 class="divider-text">The Brand</h2>
     </div>
   </section>
 
@@ -1443,11 +1435,34 @@
     </div>
   </section>
 
+  <!-- Style Guide — typography -->
+  <section class="section-black sg" id="sg-type">
+    <div class="container">
+      <div class="sg-head">
+        <p class="eyebrow">The Brand · 02</p>
+        <h2 class="section-title">Typography</h2>
+      </div>
+      <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
+
+      <div class="sg-type">
+        <p class="b-label">Ashcroft Extra Light · Headlines &amp; Accents</p>
+        <p class="sg-specimen head">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
+        <a class="font-dl" href="assets/fonts/Ashcroft.zip" download="Ashcroft.zip">Download Ashcroft <span class="ar">↓</span></a>
+      </div>
+
+      <div class="sg-type">
+        <p class="b-label">Systemia · Body Copy</p>
+        <p class="sg-specimen body">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
+        <a class="font-dl" href="assets/fonts/Systemia.zip" download="Systemia.zip">Download Systemia <span class="ar">↓</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- Style Guide — colour palette (variable number of swatches) -->
   <section class="section-black sg" id="sg-color">
     <div class="container">
       <div class="sg-head">
-        <p class="eyebrow">The Look · 02</p>
+        <p class="eyebrow">The Brand · 03</p>
         <h2 class="section-title">Color Palette</h2>
       </div>
       <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
@@ -1507,35 +1522,12 @@
     </div>
   </section>
 
-  <!-- Style Guide — typography -->
-  <section class="section-black sg" id="sg-type">
-    <div class="container">
-      <div class="sg-head">
-        <p class="eyebrow">The Look · 03</p>
-        <h2 class="section-title">Typography</h2>
-      </div>
-      <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
-
-      <div class="sg-type">
-        <p class="b-label">Ashcroft Extra Light · Headlines &amp; Accents</p>
-        <p class="sg-specimen head">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
-        <a class="font-dl" href="assets/fonts/Ashcroft.zip" download="Ashcroft.zip">Download Ashcroft <span class="ar">↓</span></a>
-      </div>
-
-      <div class="sg-type">
-        <p class="b-label">Systemia · Body Copy</p>
-        <p class="sg-specimen body">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
-        <a class="font-dl" href="assets/fonts/Systemia.zip" download="Systemia.zip">Download Systemia <span class="ar">↓</span></a>
-      </div>
-    </div>
-  </section>
-
 
   <!-- ============================ DIVIDER — CREATIVE MOCKUPS ============================ -->
   <section class="divider section-black has-photo" id="mockups" style="--bg:url('assets/execution-bg.jpg')">
     <div class="container">
       <p class="eyebrow">Section 5.0</p>
-      <h2 class="divider-text">The Execution</h2>
+      <h2 class="divider-text">The Delivery</h2>
     </div>
   </section>
 
@@ -1554,6 +1546,8 @@
     <img class="exec-shot" src="assets/exec-10.jpg" alt="Now Leasing storefront">
     <img class="exec-shot" src="assets/exec-11.jpg" alt="A-frame and dog bowl">
     <img class="exec-shot" src="assets/exec-12.jpg" alt="Now Leasing and resident parking signage">
+    <img class="exec-shot" src="assets/exec-12b.jpg" alt="Garage underpass with lit planters">
+    <img class="exec-shot" src="assets/exec-12c.jpg" alt="Garage vestibule with bench and olive tree">
     <img class="exec-shot" src="assets/exec-13.jpg" alt="Wayfinding signage">
   </div>
 
@@ -1585,6 +1579,8 @@
           var k = btn.getAttribute('data-show');
           btns.forEach(function(b){ b.classList.toggle('on', b === btn); });
           imgs.forEach(function(im){ im.classList.toggle('on', im.getAttribute('data-k') === k); });
+          var sec = fig.closest('section'); var acc = sec && sec.querySelector('.acc-reveal');
+          if(acc) acc.classList.toggle('show', k === 'after');
         });
       });
     });
