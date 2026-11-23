@@ -560,31 +560,55 @@
       .anim #cl-logo .cl-logo-intro{opacity:1!important;transform:none!important;}
     }
     /* The Look · 01 — logo showcase: large crossfade (pinned), then a ruled trio row */
-    #logo-pin{position:relative;background:var(--black);}
-    .anim #logo-pin{height:340vh;}
-    .anim #logo-pin .pin-inner{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--black);}
-    #logo-pin .logo-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:13vh 0;}
-    .anim #logo-pin .logo-slide:not(.ls-first){opacity:0;}
-    #logo-pin .logo-slide img{display:block;height:auto;flex-shrink:0;}
-    #logo-pin .ll-primary{width:clamp(300px,42vw,620px);}
-    #logo-pin .ll-horizontal{width:min(1800px,94vw);}
-    #logo-pin .ll-mark{width:clamp(98px,12vw,182px);}
-    #logo-pin .ls-cap{position:absolute;left:0;right:0;bottom:clamp(20px,3vh,40px);text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);}
-    #logo-row{min-height:0;padding:clamp(90px,12vw,150px) 0;}
-    #logo-row .logo-dl{text-align:center;margin-top:clamp(18px,2.5vw,34px);}
-    #logo-row .logo-trio{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(246,245,242,.16);border-bottom:1px solid rgba(246,245,242,.16);}
-    #logo-row .lt-cell{display:flex;align-items:center;justify-content:center;padding:clamp(24px,4vh,52px) clamp(16px,2.5vw,40px);min-height:clamp(140px,24vh,240px);}
-    #logo-row .lt-cell + .lt-cell{border-left:1px solid rgba(246,245,242,.16);}
-    #logo-row .lt-cell img{display:block;height:auto;}
-    #logo-row .lt-primary{width:56%;max-width:240px;}
-    #logo-row .lt-horizontal{width:86%;max-width:360px;}
-    #logo-row .lt-mark{width:26%;max-width:108px;}
+    .logo-pin{position:relative;background:var(--black);}
+    .anim .logo-pin{height:340vh;}
+    .anim .logo-pin .pin-inner{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--black);}
+    .logo-pin .logo-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:13vh 0;}
+    .anim .logo-pin .logo-slide:not(.ls-first){opacity:0;}
+    .logo-pin .logo-slide img{display:block;height:auto;flex-shrink:0;}
+    .logo-pin .ll-primary{width:clamp(300px,42vw,620px);}
+    .logo-pin .ll-horizontal{width:min(1800px,94vw);}
+    .logo-pin .ll-mark{width:clamp(98px,12vw,182px);}
+    .logo-pin .ls-cap{position:absolute;left:0;right:0;bottom:clamp(20px,3vh,40px);text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);}
+    .logo-row{min-height:0;padding:clamp(90px,12vw,150px) 0;}
+    .logo-row .logo-dl{text-align:center;margin-top:clamp(18px,2.5vw,34px);}
+    .logo-row .logo-trio{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(246,245,242,.16);border-bottom:1px solid rgba(246,245,242,.16);}
+    .logo-row .lt-cell{display:flex;align-items:center;justify-content:center;padding:clamp(24px,4vh,52px) clamp(16px,2.5vw,40px);min-height:clamp(140px,24vh,240px);}
+    .logo-row .lt-cell + .lt-cell{border-left:1px solid rgba(246,245,242,.16);}
+    .logo-row .lt-cell img{display:block;height:auto;}
+    .logo-row .lt-primary{width:56%;max-width:240px;}
+    .logo-row .lt-horizontal{width:86%;max-width:360px;}
+    .logo-row .lt-mark{width:26%;max-width:108px;}
     @media(max-width:860px){
-      .anim #logo-pin{height:auto;}
-      .anim #logo-pin .pin-inner{position:static;height:auto;overflow:visible;}
-      #logo-pin .logo-slide{position:static;opacity:1!important;min-height:66vh;padding:12vh 6vw;}
-      #logo-row .logo-trio{grid-template-columns:1fr;}
-      #logo-row .lt-cell + .lt-cell{border-left:none;border-top:1px solid rgba(246,245,242,.16);}
+      .anim .logo-pin{height:auto;}
+      .anim .logo-pin .pin-inner{position:static;height:auto;overflow:visible;}
+      .logo-pin .logo-slide{position:static;opacity:1!important;min-height:66vh;padding:12vh 6vw;}
+      .logo-row .logo-trio{grid-template-columns:1fr;}
+      .logo-row .lt-cell + .lt-cell{border-left:none;border-top:1px solid rgba(246,245,242,.16);}
+    }
+    /* Concept 2 — single logo: fades in, rules grow on scroll, slight pause, then scrolls up & off */
+    #c2-logo{position:relative;background:var(--black);}
+    .anim #c2-logo{height:320vh;}
+    .anim #c2-logo .pin-inner{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--black);}
+    .c2-logo-stage{width:min(1000px,82vw);will-change:transform,opacity;}
+    .c2-logo-svg{display:block;width:100%;height:auto;}
+    .c2-logo-svg .c2-mark{fill:var(--white);}
+    .anim .c2-logo-svg .c2-mark{opacity:0;will-change:opacity;}
+    .c2-logo-svg .c2-rule{fill:var(--white);transform-box:fill-box;transform-origin:left center;}
+    .anim .c2-logo-svg .c2-rule{transform:scaleX(0);will-change:transform;}
+    @media(max-width:860px){
+      .anim #c2-logo{height:auto;}
+      .anim #c2-logo .pin-inner{position:static;height:auto;min-height:62vh;overflow:visible;}
+      .anim .c2-logo-stage{opacity:1!important;transform:none!important;}
+      .anim .c2-logo-svg .c2-mark{opacity:1!important;}
+      .anim .c2-logo-svg .c2-rule{transform:scaleX(1)!important;}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .anim #c2-logo{height:auto;}
+      .anim #c2-logo .pin-inner{position:static;height:auto;}
+      .anim .c2-logo-stage{opacity:1!important;transform:none!important;}
+      .anim .c2-logo-svg .c2-mark{opacity:1!important;}
+      .anim .c2-logo-svg .c2-rule{transform:scaleX(1)!important;}
     }
     #pillars-page .container{will-change:opacity;}
     .anim .build-inner{will-change:opacity,transform;}
@@ -661,8 +685,11 @@
     .deck-nav{position:fixed;top:0;right:0;z-index:120;display:flex;gap:clamp(16px,2.1vw,34px);
       padding:26px clamp(22px,4vw,64px);font-family:var(--font-headline);font-weight:200;
       font-size:clamp(15px,1.15vw,18px);letter-spacing:.015em;line-height:1;}
-    .deck-nav a{color:var(--white);text-decoration:none;opacity:.8;white-space:nowrap;
+    .deck-nav a{color:var(--white);text-decoration:none;opacity:.8;white-space:nowrap;position:relative;
       transition:color .4s ease,opacity .4s ease;}
+    .deck-nav a::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:currentColor;
+      transform:scaleX(0);transform-origin:left center;transition:transform .45s cubic-bezier(.22,.61,.36,1);}
+    .deck-nav a:hover::after,.deck-nav a.active::after{transform:scaleX(1);}
     .deck-nav a:hover,.deck-nav a.active{color:var(--accent);opacity:1;}
     .deck-nav.on-light a{color:var(--black);opacity:.78;}
     .deck-nav.on-light a:hover,.deck-nav.on-light a.active{color:var(--accent-dark);opacity:1;}
@@ -673,8 +700,8 @@
     <a href="#intro-pin">Intro</a>
     <a href="#contents">Contents</a>
     <a href="#concept-1">Concept</a>
-    <a href="#creative-look">Brand</a>
-    <a href="#mockups">Delivery</a>
+    <a href="#creative-look">Brand 01</a>
+    <a href="#creative-look-2">Brand 02</a>
   </nav>
 
   <!-- Landscape image fixed behind the intro; revealed as the intro fades out -->
@@ -1390,24 +1417,44 @@
     /* Brand fonts — scoped to the type specimens in The Look · 03 only */
     @font-face{font-family:'Ashcroft';src:url('assets/fonts/AshcroftTest-ExtraLight.otf') format('opentype');font-weight:200;font-display:swap;}
     @font-face{font-family:'Systemia';src:url('assets/fonts/SystemiaTest-Light.otf') format('opentype');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Basis Grotesque Pro';src:url('assets/fonts/BasisGrotesquePro-Light.otf') format('opentype');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Basis Grotesque Pro';src:url('assets/fonts/BasisGrotesquePro-Regular.otf') format('opentype');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Basis Grotesque Pro';src:url('assets/fonts/BasisGrotesquePro-Black.otf') format('opentype');font-weight:900;font-display:swap;}
     .sg-type{margin-top:clamp(40px,5vw,64px);}
     .sg-type + .sg-type{margin-top:clamp(72px,9vw,130px);}
     .sg-specimen{font-weight:200;line-height:1.22;word-break:break-word;overflow-wrap:anywhere;margin-top:14px;}
     .sg-specimen.head{font-family:'Ashcroft','Times New Roman',Georgia,serif;font-size:clamp(24px,5vw,60px);letter-spacing:-.01em;}
     .sg-specimen.body{font-family:'Systemia',-apple-system,system-ui,sans-serif;font-weight:300;font-size:clamp(24px,5vw,60px);}
+    .sg-specimen.basis{font-family:'Basis Grotesque Pro',-apple-system,system-ui,sans-serif;font-size:clamp(24px,5vw,60px);letter-spacing:-.01em;}
+    .sg-specimen.basis.b2-light{font-weight:300;}
+    .sg-specimen.basis.b2-regular{font-weight:400;}
+    .sg-specimen.basis.b2-black{font-weight:900;}
     .font-dl{position:relative;display:inline-flex;align-items:center;gap:9px;margin-top:22px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);text-decoration:none;padding-bottom:7px;}
     .font-dl::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform-origin:left center;transition:transform .4s ease;}
     .font-dl:hover::after{animation:dl-line .55s ease;}
     .font-dl .ar{font-size:13px;line-height:1;}
     @keyframes dl-line{from{transform:scaleX(0);}to{transform:scaleX(1);}}
     @media(max-width:860px){.sg-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}.sg-chip{height:300px;}}
+    /* Custom Artwork — full-width lead image, then a masonry grid */
+    .custom-art{padding:clamp(90px,12vw,150px) 0;}
+    .ca-lead{display:block;width:100%;height:auto;margin-top:clamp(24px,3vw,44px);}
+    .ca-grid{display:flex;align-items:stretch;gap:clamp(14px,1.6vw,26px);margin-top:clamp(24px,3vw,44px);}
+    .ca-col{flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(14px,1.6vw,26px);}
+    .ca-col img{display:block;width:100%;height:auto;}
+    .ca-col .ca-fill{flex:1 1 0;min-height:0;overflow:hidden;}
+    .ca-col .ca-fill img{width:100%;height:100%;object-fit:cover;object-position:center;}
+    @media(max-width:620px){
+      .ca-grid{flex-direction:column;}
+      .ca-col .ca-fill{flex:none;overflow:visible;}
+      .ca-col .ca-fill img{height:auto;}
+    }
   </style>
 
 
   <!-- ============================ DIVIDER — CREATIVE LOOK ============================ -->
   <section class="divider section-black has-photo" id="creative-look" style="--bg:url('assets/look-bg.jpg')">
     <div class="container">
-      <p class="eyebrow">Section 4.0</p>
+      <p class="eyebrow">Direction 01</p>
       <h2 class="divider-text">The Brand</h2>
     </div>
   </section>
@@ -1415,7 +1462,7 @@
 
   <!-- ============================ CREATIVE LOOK LOGO ============================ -->
   <!-- The Look · 01 — pinned large-logo crossfade: Primary -> Horizontal -> Mark -->
-  <div id="logo-pin" class="section-black">
+  <div id="logo-pin" class="section-black logo-pin">
     <div class="pin-inner">
       <div class="logo-slide ls-first"><img class="ll-primary" src="assets/logo-primary.svg" alt="270 Hennepin primary logo"><p class="ls-cap">Primary Logo</p></div>
       <div class="logo-slide"><img class="ll-horizontal" src="assets/logo-horizontal.svg" alt="270 Hennepin horizontal logo"><p class="ls-cap">Horizontal Logo</p></div>
@@ -1424,7 +1471,7 @@
   </div>
 
   <!-- The three logos in a row, ruled top / bottom / between -->
-  <section class="section-black" id="logo-row">
+  <section class="section-black logo-row" id="logo-row">
     <div class="container">
       <div class="logo-trio">
         <div class="lt-cell"><img class="lt-primary" src="assets/logo-primary.svg" alt="270 Hennepin primary logo"></div>
@@ -1526,7 +1573,7 @@
   <!-- ============================ DIVIDER — CREATIVE MOCKUPS ============================ -->
   <section class="divider section-black has-photo" id="mockups" style="--bg:url('assets/execution-bg.jpg')">
     <div class="container">
-      <p class="eyebrow">Section 5.0</p>
+      <p class="eyebrow">Direction 01</p>
       <h2 class="divider-text">The Delivery</h2>
     </div>
   </section>
@@ -1549,6 +1596,169 @@
     <img class="exec-shot" src="assets/exec-12b.jpg" alt="Garage underpass with lit planters">
     <img class="exec-shot" src="assets/exec-12c.jpg" alt="Garage vestibule with bench and olive tree">
     <img class="exec-shot" src="assets/exec-13.jpg" alt="Wayfinding signage">
+  </div>
+
+  <!-- ============================ DIVIDER — CREATIVE LOOK 02 ============================ -->
+  <section class="divider section-black has-photo" id="creative-look-2" style="--bg:url('assets/look-bg.jpg')">
+    <div class="container">
+      <p class="eyebrow">Direction 02</p>
+      <h2 class="divider-text">The Brand</h2>
+    </div>
+  </section>
+
+
+  <!-- ============================ CONCEPT 2 LOGO ============================ -->
+  <!-- Concept 2 single logo: mark fades in, the two rules grow in on scroll, slight pause, then scrolls up & off -->
+  <section id="c2-logo" class="section-black c2-logo-pin">
+    <div class="pin-inner">
+      <div class="c2-logo-stage">
+        <svg class="c2-logo-svg" viewBox="0 0 409.4534 150.0026" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="270 Hennepin — Concept 2 logo">
+          <g class="c2-mark">
+          <path d="M361.1496,137.8243h10.5779v-41.5572c.3303.7432,1.1561,2.3123,2.4775,4.542l24.125,37.0152h11.0696v-57.8332h-10.5742v41.3094c-.3303-.7432-1.1561-2.3123-2.4774-4.5457l-24.125-36.7637h-11.0734v57.8332ZM338.0156,137.8243h10.9045v-57.8332h-10.9045v57.8332ZM292.4945,107.9148v-18.1754h15.0336c7.3535,0,11.0734,3.4684,11.0734,9.0877s-3.7199,9.0877-11.0734,9.0877h-15.0336ZM281.5863,137.8243h10.9083v-20.1611h15.3639c13.3031,0,21.6475-6.8542,21.6475-18.836s-8.3444-18.836-21.6475-18.836h-26.2721v57.8332ZM232.0976,137.8243h40.1532v-9.7483h-29.2488v-15.285h26.6888v-9.7483h-26.6888v-13.3031h29.001v-9.7483h-39.9055v57.8332ZM171.6181,137.8243h10.5779v-41.5572c.3303.7432,1.1561,2.3123,2.4774,4.542l24.125,37.0152h11.0696v-57.8332h-10.5741v41.3094c-.3303-.7432-1.1561-2.3123-2.4774-4.5457l-24.125-36.7637h-11.0734v57.8332ZM111.1423,137.8243h10.5742v-41.5572c.3303.7432,1.1561,2.3123,2.4774,4.542l24.125,37.0152h11.0734v-57.8332h-10.5779v41.3094c-.3303-.7432-1.1561-2.3123-2.4774-4.5457l-24.125-36.7637h-11.0696v57.8332ZM61.6498,137.8243h40.1533v-9.7483h-29.245v-15.285h26.685v-9.7483h-26.685v-13.3031h28.9973v-9.7483h-39.9055v57.8332ZM2.3302,137.8243h10.9045v-24.4553h25.2849v24.4553h10.9045v-57.8332h-10.9045v23.2992H13.2347v-23.2992H2.3302v57.8332Z"/>
+          <path d="M129.4029,30.0782c0,12.4773-6.2799,19.9959-15.2025,19.9959s-15.2025-7.5187-15.2025-19.9959,6.2762-19.9922,15.2025-19.9922,15.2025,7.5186,15.2025,19.9922M88.0897,30.0782c-.2477,17.8488,11.156,30.3223,26.1107,30.0746,14.9547.2477,26.3547-12.2258,26.107-30.0746C140.5551,12.2332,129.1552-.2441,114.2004.0036c-14.9547-.2478-26.3584,12.2295-26.1107,30.0746M51.0783,58.9967h10.9045l21.6476-48.25V1.1635h-38.9971v10.0787h27.9237l-21.4786,47.7545ZM.0994,58.9967h39.3275v-10.0787h-23.0514l12.9728-12.6424c3.7987-3.6336,6.4451-6.858,7.849-9.6658,1.4865-2.8941,2.2297-6.1973,2.2297-9.9961C39.4268,7.0268,32.4863.0036,20.0127.0036,7.9484.0036.0994,8.0178.0994,17.1918c0,2.56.3303,4.7071,1.0736,6.5239l10.5742-1.982c-.4955-1.2387-.7432-2.56-.7432-3.9639,0-5.0412,3.6373-8.1793,9.0089-8.1793,5.3678,0,8.84,3.3032,8.84,8.2619,0,4.0465-1.8205,6.9406-6.7754,11.8129L.0994,51.2303v7.7664Z"/>
+          </g>
+        <rect class="c2-rule" x="0" y="67.6455" width="138.9171" height="3.7535"/>
+        <rect class="c2-rule" x="0" y="146.2492" width="409.4534" height="3.7535"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CUSTOM ARTWORK (Direction 02) ============================ -->
+  <section class="section-black custom-art" id="custom-art-2">
+    <div class="container">
+      <div class="sg-head">
+        <p class="eyebrow">The Brand</p>
+        <h2 class="section-title">Custom Artwork</h2>
+      </div>
+      <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
+      <img class="ca-lead" src="assets/art-lead.jpg" alt="Custom botanical artwork — chrysanthemum pattern">
+      <div class="ca-grid">
+        <div class="ca-col">
+          <img src="assets/art-01.jpg" alt="Bombay Sapphire Artist's Edition bottles">
+          <img src="assets/art-03.jpg" alt="Elysian Snailbones IPA can">
+          <img src="assets/art-02.jpg" alt="Artist in studio">
+        </div>
+        <div class="ca-col">
+          <img src="assets/art-04.jpg" alt="Snake and floral botanical pattern">
+          <img src="assets/art-05.jpg" alt="Dragon botanical mural">
+          <div class="ca-fill"><img src="assets/art-06.jpg" alt="Night garden illustration with moon"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Style Guide — colour palette (variable number of swatches) -->
+  <section class="section-black sg" id="sg-color-2">
+    <div class="container">
+      <div class="sg-head">
+        <p class="eyebrow">The Brand · 02</p>
+        <h2 class="section-title">Color Palette</h2>
+      </div>
+      <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
+      <div class="sg-grid">
+
+        <div class="sg-swatch">
+          <div class="sg-chip" style="background:#f2edea"></div>
+          <div class="sg-name">Off-White</div>
+          <div class="sg-rows">
+            <div class="sg-row"><span class="k">Pantone</span><span class="v">NA</span></div>
+            <div class="sg-row"><span class="k">CMYK</span><span class="v">3 / 5 / 5 / 0</span></div>
+            <div class="sg-row"><span class="k">Hex</span><span class="v">#F2EDEA</span></div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-chip" style="background:#e7e3dc"></div>
+          <div class="sg-name">Warm Gray 2</div>
+          <div class="sg-rows">
+            <div class="sg-row"><span class="k">Pantone</span><span class="v">Warm Gray 2 U</span></div>
+            <div class="sg-row"><span class="k">CMYK</span><span class="v">0 / 2 / 5 / 9</span></div>
+            <div class="sg-row"><span class="k">Hex</span><span class="v">#E7E3DC</span></div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-chip" style="background:#d6cfc7"></div>
+          <div class="sg-name">Warm Gray 3</div>
+          <div class="sg-rows">
+            <div class="sg-row"><span class="k">Pantone</span><span class="v">Warm Gray 3 U</span></div>
+            <div class="sg-row"><span class="k">CMYK</span><span class="v">0 / 4 / 8 / 17</span></div>
+            <div class="sg-row"><span class="k">Hex</span><span class="v">#D6CFC7</span></div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-chip" style="background:#b1aba6"></div>
+          <div class="sg-name">Warm Gray 4</div>
+          <div class="sg-rows">
+            <div class="sg-row"><span class="k">Pantone</span><span class="v">Warm Gray 4 U</span></div>
+            <div class="sg-row"><span class="k">CMYK</span><span class="v">31 / 28 / 31 / 0</span></div>
+            <div class="sg-row"><span class="k">Hex</span><span class="v">#B1ABA6</span></div>
+          </div>
+        </div>
+
+        <div class="sg-swatch">
+          <div class="sg-chip" style="background:#000000"></div>
+          <div class="sg-name">Black</div>
+          <div class="sg-rows">
+            <div class="sg-row"><span class="k">Pantone</span><span class="v">NA</span></div>
+            <div class="sg-row"><span class="k">CMYK</span><span class="v">0 / 0 / 0 / 100</span></div>
+            <div class="sg-row"><span class="k">Hex</span><span class="v">#000000</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Style Guide — typography -->
+  <section class="section-black sg" id="sg-type-2">
+    <div class="container">
+      <div class="sg-head">
+        <p class="eyebrow">The Brand · 03</p>
+        <h2 class="section-title">Typography</h2>
+      </div>
+      <div class="gold-rule" style="background:transparent;padding:0 0 clamp(32px,4vw,56px)"><span class="gr-line"></span></div>
+
+      <div class="sg-type">
+        <p class="b-label">Basis Grotesque Pro · Light</p>
+        <p class="sg-specimen basis b2-light">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
+      </div>
+
+      <div class="sg-type">
+        <p class="b-label">Basis Grotesque Pro · Regular</p>
+        <p class="sg-specimen basis b2-regular">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
+      </div>
+
+      <div class="sg-type">
+        <p class="b-label">Basis Grotesque Pro · Black</p>
+        <p class="sg-specimen basis b2-black">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>1234567890 !&amp;?</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================ DIVIDER — CREATIVE MOCKUPS 02 ============================ -->
+  <section class="divider section-black has-photo" id="mockups-2" style="--bg:url('assets/execution2-bg.jpg')">
+    <div class="container">
+      <p class="eyebrow">Direction 02</p>
+      <h2 class="divider-text">The Delivery</h2>
+    </div>
+  </section>
+
+
+  <!-- ============================ THE EXECUTION 02 — FULL-BLEED REEL ============================ -->
+  <div class="exec-reel">
+    <img class="exec-shot" src="assets/exec2-01.jpg" alt="Business cards">
+    <img class="exec-shot" src="assets/exec2-02.jpg" alt="Leasing brochure spread">
+    <img class="exec-shot" src="assets/exec2-03.jpg" alt="Rack cards">
+    <img class="exec-shot" src="assets/exec2-04.jpg" alt="Coffee bar branding">
+    <img class="exec-shot" src="assets/exec2-05.jpg" alt="Email and story templates">
+    <img class="exec-shot" src="assets/exec2-09.jpg" alt="Branded umbrella and tote bag">
+    <img class="exec-shot" src="assets/exec2-07.jpg" alt="Wayfinding and directory signage">
+    <img class="exec-shot" src="assets/exec2-08.jpg" alt="A-frame sidewalk sign">
+    <img class="exec-shot" src="assets/exec2-06.jpg" alt="Storefront window graphics">
   </div>
 
   <footer>
@@ -1717,28 +1927,55 @@
         }
       }
       // The Look · 01 logos: pin, fade Primary in large, crossfade to Horizontal, then Mark (comps-crossfade mechanic + a lead-in).
-      var lpin = document.getElementById('logo-pin');
-      var lslides = lpin ? lpin.querySelectorAll('.logo-slide') : [];
+      var lpins = [].slice.call(document.querySelectorAll('.logo-pin'));
       function tickLogos(){
-        if(!lpin || !lslides.length) return;
-        var r = lpin.getBoundingClientRect();
-        var maxPin = r.height - window.innerHeight;
-        if(maxPin <= 0){ for(var k=0;k<lslides.length;k++){ lslides[k].style.opacity=''; } return; }
-        var p = clamp(-r.top / maxPin);
-        var N = lslides.length, lead = 0.12, seg = (1 - lead) / N, fd = 0.42;
-        for(var i=0;i<N;i++){
-          var inStart = (i===0) ? 0 : lead + i*seg;
-          var inEnd   = (i===0) ? lead : inStart + fd*seg;
-          var outStart = lead + (i+1)*seg, outEnd = outStart + fd*seg;
-          var op;
-          if(p < inStart) op = 0;
-          else if(p < inEnd) op = smooth((p-inStart)/(inEnd-inStart));
-          else if(i===N-1) op = 1;
-          else if(p < outStart) op = 1;
-          else if(p < outEnd) op = 1 - smooth((p-outStart)/(outEnd-outStart));
-          else op = 0;
-          lslides[i].style.opacity = op.toFixed(3);
+        for(var pi=0; pi<lpins.length; pi++){
+          var lpin = lpins[pi];
+          var lslides = lpin.querySelectorAll('.logo-slide');
+          if(!lslides.length) continue;
+          var r = lpin.getBoundingClientRect();
+          var maxPin = r.height - window.innerHeight;
+          if(maxPin <= 0){ for(var k=0;k<lslides.length;k++){ lslides[k].style.opacity=''; } continue; }
+          var p = clamp(-r.top / maxPin);
+          var N = lslides.length, lead = 0.12, seg = (1 - lead) / N, fd = 0.42;
+          for(var i=0;i<N;i++){
+            var inStart = (i===0) ? 0 : lead + i*seg;
+            var inEnd   = (i===0) ? lead : inStart + fd*seg;
+            var outStart = lead + (i+1)*seg, outEnd = outStart + fd*seg;
+            var op;
+            if(p < inStart) op = 0;
+            else if(p < inEnd) op = smooth((p-inStart)/(inEnd-inStart));
+            else if(i===N-1) op = 1;
+            else if(p < outStart) op = 1;
+            else if(p < outEnd) op = 1 - smooth((p-outStart)/(outEnd-outStart));
+            else op = 0;
+            lslides[i].style.opacity = op.toFixed(3);
+          }
         }
+      }
+      // Concept 2 logo: mark fades in, the two rules grow in (scroll-reactive), a slight pause, then the lockup scrolls up & off.
+      var c2 = document.getElementById('c2-logo');
+      var c2stage = c2 && c2.querySelector('.c2-logo-stage');
+      var c2mark = c2 && c2.querySelector('.c2-mark');
+      var c2rules = c2 ? c2.querySelectorAll('.c2-rule') : [];
+      function tickC2Logo(){
+        if(!c2 || !c2stage) return;
+        var r = c2.getBoundingClientRect();
+        var maxPin = r.height - window.innerHeight;
+        if(maxPin <= 0){
+          if(c2mark) c2mark.style.opacity='';
+          c2stage.style.transform=''; c2stage.style.opacity='';
+          for(var k=0;k<c2rules.length;k++) c2rules[k].style.transform='';
+          return;
+        }
+        var p = clamp(-r.top / maxPin);
+        var fadeIn = smooth(p / 0.18);                 // 0   -> .18  mark fades in
+        var grow   = smooth((p - 0.24) / 0.34);        // .24 -> .58  rules grow L->R with scroll
+        var exit   = smooth((p - 0.74) / 0.26);        // .58 -> .74  hold (pause), then .74 -> 1 exit up
+        if(c2mark) c2mark.style.opacity = fadeIn.toFixed(3);
+        for(var i=0;i<c2rules.length;i++){ c2rules[i].style.transform = 'scaleX(' + grow.toFixed(3) + ')'; }
+        c2stage.style.transform = 'translateY(' + (-exit * 46).toFixed(2) + 'vh)';
+        c2stage.style.opacity = (1 - exit).toFixed(3);
       }
       // The Look · 01 intro: rise in, lock centered, then fade out to reveal the logos.
       var liPin = document.getElementById('cl-logo');
@@ -1786,10 +2023,10 @@
         for(var j=0;j<navTargets.length;j++){ var t=navTargets[j]; if(t && t.getBoundingClientRect().top <= vh*0.45) idx=j; }
         for(var k=0;k<navLinks.length;k++){ navLinks[k].classList.toggle('active', k===idx); }
       }
-      function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); tickLogos(); tickLogoIntro(); navTick(); updateRules(); tickIntro(); revealVisible(); ticking=false; }); } }
+      function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); tickLogos(); tickC2Logo(); tickLogoIntro(); navTick(); updateRules(); tickIntro(); revealVisible(); ticking=false; }); } }
       window.addEventListener('scroll', onScroll, {passive:true});
       window.addEventListener('resize', onScroll);
-      tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); tickLogos(); tickLogoIntro(); navTick(); updateRules(); tickIntro(); revealVisible();
+      tick(); tickMindful(); tickSentiment(); tickPillars(); tickComps(); tickLogos(); tickC2Logo(); tickLogoIntro(); navTick(); updateRules(); tickIntro(); revealVisible();
       window.addEventListener('load', revealVisible); setTimeout(revealVisible, 800);
 
       // 2) Build on scroll: each row and each tile reveals as it enters the viewport.
